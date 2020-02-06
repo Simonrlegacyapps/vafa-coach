@@ -1,0 +1,382 @@
+page-onetoone {
+
+    .jd-teamtwo{
+        text-align: center!important;
+    }
+    .jd-teamone{
+        text-align: center!important;
+    }
+
+    .bar.custBar{
+        background-color: #2AB2BF;
+        background-image: url("../img/headerBgImg.png");
+        background-position: 0 0;
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+    }
+    .wide-as-needed {
+        white-space: nowrap;
+        background-color: #f2f5f5 !important;
+    }
+    .wide-as-needed .button {
+        background-color: transparent;
+        border-radius: 0;
+        font-family: Gotham-Medium;
+        font-size: 16px;
+        box-shadow: none;
+        color: #565e73;
+        line-height: 45px;
+        min-width: 90px;
+        padding: 0;
+        text-align: center;
+        text-transform: none;
+    }
+    
+    
+    
+    .wide-as-needed-round  .button {
+        background-color: transparent;
+        border-radius: 0;
+        box-shadow: none;
+        color: #565e73;
+        font-family:Gotham-Medium;
+        font-size: 14px;
+        line-height: 45px;
+        min-width: 90px;
+        padding: 0;
+        text-align: center;
+        text-transform: none;
+    }
+    .wide-as-needed-round .button.active{
+        color:#fff;
+    }
+    .has-subheader.has-bar-sub-subheader {
+        top: 132px;
+    }
+    
+    .bar-subheader.bar.bar-header.disable-user-behavior, .wide-as-needed.text-center, .bar-sub-subheader .wide-as-needed {
+        border-bottom: 1px solid #565e73;
+        box-shadow: none;
+    }
+    
+    .wide-as-needed .button.active{
+        color: #04235c;
+        border-bottom: 2px solid;
+    }
+    
+    .bar-subheader.bar.bar-header.disable-user-behavior, .wide-as-needed.text-center.onlyForStats, .bar-sub-subheader .wide-as-needed{
+        border-bottom:1px solid #101931;
+        box-shadow:none;
+    }
+    .list-cust-only
+    {
+        margin-top: -8px;
+    }
+    .list-padding
+    {
+         padding: 6px 0;
+    }
+    
+    .ion-ios-search-strong::before {
+        color: #fff;
+        content: "";
+        font-size: 23px;
+      
+    
+    }
+    
+    .item.item-thumbnail-left.newsList-CustomCSS.onlyFor1on1 > h2 {
+        color: #fff;
+        font-family: Gotham-Medium;
+        font-size: 16px;
+       padding-left:25px;
+        white-space: normal;
+    }
+    
+    .shareImgs {
+        height: 30px;
+        width: 30px;
+    }
+    
+    .some-container span:last-child .list-comma{
+        display: none;
+    }
+    
+    .matchDetailsSubContent p,span
+    {
+        line-height:20px;
+    }
+    
+    .matchDetailsContent p span
+    {  
+      font-family:Gotham-Medium;
+      font-size:15px;
+      color:#fff;
+    }
+    .HeadingForMatchDetails
+    {
+        font-family:Gotham-Bold;
+        color:#fff;
+        padding-right:5px;
+        font-size:17px;
+    }
+    .ion-record::before {
+        color: #7F7F7F;
+        content: "";
+    }
+    .Select-Player{
+        width: 40%;
+        float:left;
+        text-align: center;
+       }
+       .selectPlayerImg {
+           max-width: 75px;
+           width: 100%;
+       }
+       .leftP-VS-rightP {
+         color: #bfbec5;
+         float: left;
+         font-size: 16px;
+         text-align: center;
+         width: 20%;
+         padding-bottom: 20px;
+       }
+       .outer-container{
+           display: table;
+           width: 100%;
+           height: 100%;
+       }
+       .inner-container{
+            color: #fff;
+           display: table-cell;
+           font-family: Gotham-Medium;
+           vertical-align: middle;
+       }
+       .selectPlayers-row{
+           margin-top: 70px;
+       }
+       .selectPlayer-Comment {
+           color: #04235c;
+           font-family: Gotham-Medium;
+           font-size: 15px;
+           margin: 0 auto;
+           max-width: 152px;
+           padding: 8px;
+       }
+       .compare-comment {
+           color: #04235c;
+           font-family: Gotham-Light;
+           font-size: 18px;
+           margin-top: 50px;
+           text-align: center;
+           width: 100%;
+       }
+       
+       .compare-comment-FirstLine{
+           display: block;
+           margin: 10px 0 0;
+       }
+           .ion-search::before {
+             margin-right: 5px;
+           }
+           .item-select select {
+             background-color: transparent;
+             font-family: Gotham-Medium;    
+             color: #fff;
+             max-width: 100% !important;
+             text-align: center !important;
+             width: 100% !important;
+             padding: 14px 22px 12px 10px !important; 
+             overflow:hidden;
+             text-overflow:ellipsis;
+             white-space:nowrap;  
+             text-align-last: center;
+           
+           }
+           .item-select::after {	
+           border-color: transparent !important;
+           color: #fff;
+           content: "";
+           font-family: "Ionicons";
+           font-size: 14px;
+           margin-top:-18px  
+               
+           }
+           .subHeader-selectLable{
+             border-style: none !important;
+           }
+           .item-thumbnail-left .item-content .item-image, .item-thumbnail-left .item-content > img:first-child, .item-thumbnail-left .item-image, .item-thumbnail-left > img:first-child {
+         border-radius: 0 !important;
+       }
+       
+       /*.item-thumbnail-left > img:first-child, .item-thumbnail-left .item-image, .item-thumbnail-left .item-content > img:first-child, .item-thumbnail-left .item-content .item-image {
+         float: left !important;
+         height: 75px !important;
+         left: 0px !important;
+         max-height: 75px !important;
+         max-width: 95px !important;
+         position: relative !important;
+         top: 0 !important;
+         width: 95px !important;
+       }*/
+       
+       .item-thumbnail-left > img:first-child, .item-thumbnail-left.onlyForGoalKicker .item-image, .item-thumbnail-left.onlyForGoalKicker .item-content > img:first-child, .item-thumbnail-left.onlyForGoalKicker .item-content .item-image {
+           float: left !important;
+           height: auto !important;    
+           position: relative !important;
+           top: 0 !important;
+           left: 0px !important;
+       }
+       
+       
+       
+       .item.item-thumbnail-left.newsList-CustomCSS {
+         padding: 0;
+       }
+       
+       .item.item-thumbnail-left.animated.fadeInUp.newsList-CustomCSS.onlyForPostMatch {
+         border-bottom: 1px solid #263049;
+          padding: 18px 11px 11px 24px;
+       }
+       .item.item-thumbnail-left.animated.fadeInUp.newsList-CustomCSS.onlyMatchReport {
+         border-bottom: 1px solid #263049;
+          padding: 18px 11px 11px 24px;
+       }
+       .item.item-thumbnail-left.animated.fadeInUp.newsList-CustomCSS.onlyForNews {
+         border-bottom: 1px solid #263049;
+          padding: 18px 11px 11px 24px;
+       }
+       .item.item-thumbnail-left.newsList-CustomCSS.onlyForAction {
+         padding: 8px 0;
+       }
+       .row + .row {
+         margin-top: 0 !important;
+         padding-top: 0 !important;/*10*/ 
+       }
+       .tabs {
+         border: medium none;
+       }
+       .modalWindow .row.teamStates-List{
+           padding-bottom:10px;
+       }
+       .modalWindow .item.item-thumbnail-left.ONTeam-Select > h2{
+         line-height: 40px;
+       }
+       .titleWithBgStrip {
+           background-color: #16223d;
+           color: #D5D8DC;
+           font-family: Gotham-Medium;
+           font-size: 15px;
+           margin: -3px;    
+           padding: 9px 0;
+           text-align: center;
+       }
+       
+       .TeamFormMidTitle{
+           position:relative;	
+           text-align:center;
+       }
+       /*.nomalFormMidTitle{
+           color: #7d849a;
+           padding: 5px 0 0;
+           font-size:13px;
+           text-align:center;
+           margin:0;
+       }*/
+       
+       .TeamFormMidTitle span {
+           background-color: #101931;
+           color: #7d849a;
+           font-family: Gotham-Medium;
+           font-size: 13px;
+           padding: 0 5px;
+       }
+       
+       
+       .TeamFormMidTitle span::after {
+         background-color: #565e73;
+         border-radius: 50%;
+         content: "";
+         height: 8px;
+         left: -9px;
+         opacity: 0.5;
+         position: absolute;
+         top: 8px;
+         width: 8px;
+       
+       }
+       
+       .TeamFormMidTitle span::before {
+           background-color: #565e73;
+           border-radius: 50%;
+           content: "";
+           height: 8px;			  
+           opacity: 0.5;
+           position: absolute;
+           right: -9px;
+           top: 8px;
+           width: 8px;
+       }
+       
+       
+       
+       *, *::before, *::after {
+           box-sizing: border-box;
+       }
+       *, *::before, *::after {
+           box-sizing: border-box;
+       }
+       html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, i, u, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, fieldset, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+           border: 0 none;
+           font-family: inherit;
+           font-feature-settings: inherit;
+           font-kerning: inherit;
+           font-language-override: inherit;
+           font-size: 100%;
+           font-size-adjust: inherit;
+           font-stretch: inherit;
+           font-style: inherit;
+           font-synthesis: inherit;
+           font-variant: inherit;
+           font-weight: inherit;
+           line-height: inherit;
+           margin: 0;
+           padding: 0;
+           vertical-align: baseline;
+       }
+       * {
+           font-family: RobotoDraft,Roboto,"Helvetica Neue","Segoe UI",sans-serif;
+       }
+       *, *::before, *::after {
+           box-sizing: border-box;
+       }
+       
+       .teamOnlyImgSize
+       {
+           margin-left: 20px;
+           margin-top: 3px;
+           max-width: 54px !important;
+       }
+       
+       
+       .nomalFormMidTitle{
+           color: #7d849a;
+           padding: 5px 0 0;
+           font-family:Gotham-Medium;
+           font-size:13px;
+           text-align:center;
+           margin:0;
+       }
+       
+       
+       .TeamFormMidTitle::after {
+           border: 1px solid #565e73;
+           content: "";
+           left: 0;
+           opacity: 0.5;
+           position: absolute;
+           right: 0;
+           top: 11px;
+           z-index: -1;
+       }
+}

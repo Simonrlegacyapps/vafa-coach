@@ -1,0 +1,241 @@
+<ion-header class="custBar">
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="appicons-menu"></ion-icon>
+    </button>
+    <ion-title text-center>1 on 1</ion-title>
+
+  </ion-navbar>
+</ion-header>
+<ion-header class="bar-subheader text-center" style="text-align:center;top: 43px;">
+  <div direction="x" class="wide-as-needed" style="background-color: #101931;">
+    <a class="button ink" (click)="selectTab(1)" [ngClass]="{'active': teamSelection == true}">Teams</a>
+    <a class="button ink" (click)="selectTab(2)" [ngClass]="{'active': teamSelection == false}">Players</a>
+  </div>
+  <div class="onlyBorderteam"></div>
+</ion-header>
+<ion-content class="has-subheader bgPage-color" no-bounce>
+  <!--For team selection-->
+  <div *ngIf="teamSelection" style="padding-bottom:25px;">
+    <ion-row class="row selectPlayers-row animated fadeInUp ">
+      <div class="Select-Player ink" data-ink-color="#00192f" data-ink-opacity=".7">
+        <img src="{{path}}{{get1on1TeamStatsTeamOne.team_image}}" class="selectPlayerImg img-storke">
+        <p class="selectPlayer-Comment">{{get1on1TeamStatsTeamOne.team_team}}</p>
+      </div>
+      <div class="leftP-VS-rightP">
+        <div class="outer-container">
+          <div class="inner-container">
+            <span style="color:#bfbec5">VS</span>
+          </div>
+        </div>
+
+      </div>
+      <div class="Select-Player ink" data-ink-color="#00192f" data-ink-opacity=".7">
+        <img src="{{path}}{{get1on1TeamStatsTeamTwo.team_image}}" class="selectPlayerImg img-storke">
+        <p class="selectPlayer-Comment">{{get1on1TeamStatsTeamTwo.team_team}}</p>
+      </div>
+    </ion-row>
+
+    <div class="advContainer" style="margin: 0 auto 0 -7px; width: 104%;">
+      <img src="{{path}}{{footerAdv[0].ad_image}}" class="full-image" (click)="goToAddSite(footerAdv[0].ad_url);">
+    </div>
+
+    <h4 class="titleWithBgStrip">FORM</h4>
+
+
+    <ion-row class="text-center MatchFormContainer onlyFor1on1Result" style="margin-top: 22px;padding:10px 0;">
+      <ion-col class="gameResultCircleContainer">
+        <p [innerHTML]="lastmatch"></p>
+
+      </ion-col>
+      <ion-col>
+        <div class="TeamFormMidTitle">
+          <span>Last 5 Games</span>
+        </div>
+      </ion-col>
+      <ion-col class="gameResultCircleContainer">
+        <p [innerHTML]="lastmatch2"></p>
+
+      </ion-col>
+    </ion-row>
+
+    <ion-row class="text-center MatchFormContainer onlyFor1on1Result" style="padding:15px 0;">
+      <ion-col>
+        <p style="color:#04235c;font-family: Gotham-Book;font-size: 22px;">{{ladder.position}}</p>
+      </ion-col>
+      <ion-col>
+        <div class="TeamFormMidTitle">
+          <span>Ladder Position</span>
+        </div>
+      </ion-col>
+      <ion-col>
+        <p style="color: #04235c;font-family: Gotham-Book;font-size: 22px;">{{ladder2.position}}</p>
+      </ion-col>
+    </ion-row>
+    <ion-row class="text-center MatchFormContainer onlyFor1on1Result" style="padding:15px 0;">
+      <div class="col">
+        <p style="font-family: Gotham-Book;font-size: 22px;color: #04235c;">{{ladder.won}}/{{ladder.loss}}/{{ladder.draws}}</p>
+      </div>
+      <ion-col>
+        <div class="TeamFormMidTitle">
+          <span>Win/Loss/Draw</span>
+        </div>
+      </ion-col>
+      <ion-col>
+        <p style="color: #04235c; font-family: Gotham-Book; font-size: 22px;">{{ladder2.won}}/{{ladder2.loss}}/{{ladder2.draws}}</p>
+      </ion-col>
+    </ion-row>
+    <ion-row class="text-center MatchFormContainer onlyFor1on1Result" style="padding:15px 0;">
+      <ion-col>
+        <p style="color: #04235c;font-family: Gotham-Book;font-size: 22px;">{{ladder.avg_ponts_for}}</p>
+
+      </ion-col>
+      <ion-col>
+        <div class="TeamFormMidTitle">
+          <span>Avg. Points For</span>
+        </div>
+      </ion-col>
+      <ion-col>
+        <p style="color: #04235c;font-family: Gotham-Book;font-size: 24px;">{{ladder2.avg_ponts_for}}</p>
+
+      </ion-col>
+    </ion-row>
+    <h4 class="titleWithBgStrip">SEASON AVERAGES</h4>
+
+    <div *ngFor="let value of team1Data; let i=index">
+      <div *ngIf="'Behinds'!=value.stat_name">
+        <p class="nomalFormMidTitle">
+          <span style="font-family: Gotham-Medium;font-size: 14px;" *ngIf="'Rush Behinds'==value.stat_name">Behinds</span>
+          <span style="font-family: Gotham-Medium;font-size: 14px;" *ngIf="'Rush Behinds'!=value.stat_name">{{value.stat_name}}</span>
+        </p>
+
+
+
+        <ion-row class="progressBarstyle" style="margin-top: -5px;">
+          <ion-col>
+            <div class="fillBar greenFill" [style.background-color]="value.homeTeamColor" [style.width]="value.homeTeamWidth" style="font-family:Gotham-Medium;font-size:19px;">
+              {{value[value.stat_name]}}
+            </div>
+          </ion-col>
+          <ion-col>
+            <div class="fillBar" [style.background-color]="value.awayTeamColor" [style.width]="value.awayTeamWidth" style="font-family:Gotham-Medium;font-size:19px;">
+              <span *ngFor="let value1 of team2Data">
+                {{value1[value.stat_name]}}
+              </span>
+
+            </div>
+          </ion-col>
+        </ion-row>
+
+        <div *ngIf="value.stat_name == 'Inside 50s'">
+          <p class="nomalFormMidTitle">
+            <span style="font-family: Gotham-Medium;font-size: 14px;">EFF Inside 50s</span>
+          </p>
+          <ion-row class="progressBarstyle" style="margin-top: 10px;">
+
+            <ion-col col-5>
+              <div class="c100 p{{eff_inside500 | number:0}} {{value.homeTeamOnlyColor}}" style="float:right">
+                <span style="font-family:Gotham-Light;font-size:25px;">{{eff_inside500}}%</span>
+                <div class="slice">
+                  <div class="bar1"></div>
+                  <div class="fill"></div>
+                </div>
+              </div>
+
+            </ion-col>
+            <ion-col col-2>
+              <div class="height-Border"></div>
+            </ion-col>
+
+            <ion-col col-5>
+              <div class="c100 p{{eff_inside50_22 | number:0}} {{value.awayTeamOnlyColor}}">
+                <span style="font-family:Gotham-Light;font-size:25px;">{{eff_inside50_22}}%</span>
+                <div class="slice">
+                  <div class="bar1"></div>
+                  <div class="fill"></div>
+                </div>
+              </div>
+
+            </ion-col>
+
+
+          </ion-row>
+          <ion-row class="progressBarstyle">
+            <ion-col col-4>
+              <div class="nomalFormMidTitle" style="margin-top: -15px;">
+                <p class="eff" style="color: #ffffff;font-family: Gotham-Medium;font-size: 14px;">{{eff_inside50.eff_count}} Scores from</p>
+                <p class="eff" style="color: #ffffff;font-family: Gotham-Medium;font-size: 14px;">{{eff_inside50.inside50}} inside 50s</p>
+              </div>
+            </ion-col>
+            <ion-col col-4>
+              <div class="nomalFormMidTitle" style="margin-top: -15px;">
+                <p class="eff" style="color: #ffffff;font-family: Gotham-Medium;font-size: 14px;">{{eff_inside50_2.eff_count}} Scores from</p>
+                <p class="eff" style="color: #ffffff;font-family: Gotham-Medium;font-size: 14px;">{{eff_inside50_2.inside50}} inside 50s</p>
+              </div>
+            </ion-col>
+          </ion-row>
+
+
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+
+  <!--For player selection-->
+  <div *ngIf="!teamSelection" style="padding-bottom:25px;">
+    <ion-row class="selectPlayers-row animated fadeInUp">
+      <div class="Select-Player ink" data-ink-color="#00192f" data-ink-opacity=".7">
+        <img src="{{path}}{{get1on1PlayerStatsTeamOne.player_image}}" class="selectPlayerImg">
+        <p class="selectPlayer-Comment" *ngIf="get1on1PlayerStatsTeamOne.player_name != null"> {{get1on1PlayerStatsTeamOne.player_name}}</p>
+        <p class="selectPlayer-Comment" *ngIf="get1on1PlayerStatsTeamOne.player_name == null || get1on1PlayerStatsTeamOne.player_name == ' '">
+        Player One</p>
+        <!--<p class="selectPlayer-Comment"><img src="{{path}}{{get1on1PlayerStatsTeamOne.team_team}}" width="45px" style="float:left;">  {{get1on1PlayerStatsTeamOne.player_name}}</p>-->
+      </div>
+      <div class="leftP-VS-rightP">
+        <div class="outer-container">
+          <div class="inner-container">
+            <span style="color:#bfbec5">VS</span>
+          </div>
+        </div>
+
+      </div>
+      <div class="Select-Player ink" data-ink-color="#00192f" data-ink-opacity=".7">
+        <img src="{{path}}{{get1on1PlayerStatsTeamTwo.player_image}}" class="selectPlayerImg">
+        <p class="selectPlayer-Comment" *ngIf="get1on1PlayerStatsTeamTwo.player_name != null"> {{get1on1PlayerStatsTeamTwo.player_name}}</p>
+        <p class="selectPlayer-Comment" *ngIf="get1on1PlayerStatsTeamTwo.player_name == ' '"> Player Two </p>
+        <!--<p class="selectPlayer-Comment"><img src="{{path}}{{get1on1PlayerStatsTeamTwo.team_team}}" width="45px" style="float:left;">  {{get1on1PlayerStatsTeamTwo.player_name}}</p>-->
+      </div>
+    </ion-row>
+
+    <div class="advContainer" style="margin: 0 auto 0 -7px; width: 104%;">
+      <img src="{{path}}{{ftrad}}" class="full-image" (click)="goToAddSite(footerAdv[0].ad_url);">
+    </div>
+
+    <h4 class="titleWithBgStrip">SEASON PROFILE</h4>
+    <div *ngFor="let value of player1Data">
+      <div *ngIf="'Behinds'!=value.stat_name">
+        <p class="nomalFormMidTitle">
+          <span style="font-family: Gotham-Medium;font-size: 14px;" *ngIf="'Rush Behinds'==value.stat_name">Behinds</span>
+          <span style="font-family: Gotham-Medium;font-size: 14px;" *ngIf="'Rush Behinds'!=value.stat_name">{{value.stat_name}}</span>
+        </p>
+        <ion-row class="row progressBarstyle" style="margin-top: -5px;">
+          <ion-col>
+            <div class="fillBar greenFill" [style.background-color]="value.homeTeamColor" [style.width]="value.homeTeamWidth" style="font-family:Gotham-Medium;font-size:19px;">
+              {{value[value.stat_name]}}
+            </div>
+          </ion-col>
+          <ion-col>
+            <div class="fillBar" [style.background-color]="value.awayTeamColor" [style.width]="value.awayTeamWidth" style="font-family:Gotham-Medium;font-size:19px;">
+              <span *ngFor="let value1 of player2Data">
+                {{value1[value.stat_name]}}
+              </span>
+
+            </div>
+          </ion-col>
+        </ion-row>
+      </div>
+    </div>
+  </div>
+</ion-content>

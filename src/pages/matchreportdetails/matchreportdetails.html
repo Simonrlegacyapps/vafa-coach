@@ -1,0 +1,116 @@
+<!--
+  Generated template for the NewsDetailsPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header class="custBar">
+	<ion-navbar>
+		<ion-title text-center>Match Report Details</ion-title>
+	</ion-navbar>
+</ion-header>
+
+<ion-content class="bgPage-color" no-bounce>
+	<div>
+		<img src="{{path1}}{{cutPath(matchreportdetails.pm_cover_image)}}" class="setImgWidth" *ngIf="matchreportdetails.pm_type==2" (click)="openLink();"
+		 style="box-shadow: 5px 0 9px black;" />
+		<img src="{{matchreportdetails.thumbnail_image}}" class="setImgWidth" *ngIf="matchreportdetails.pm_type==1" (click)="openLink();"
+		 style="box-shadow: 5px 0 9px black;" />
+	</div>
+	<div class="MatchReportContainer" *ngIf="reportdetails.length!=0">
+		<div class="row">
+			<div class="col TitleForMatchDetails">
+			</div>
+		</div>
+		<div class="row">
+			<div class="col TitleForMatchDetails">
+				<h1>{{matchreportdetails.pm_title}}</h1>
+				<p class="NewsDetailsTagWeb"> {{createddate}}</p>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col matchDetailsContent">
+				<p><span class="titleForMatchDetails">Reporter:</span><span>{{fixture_user}}</span></p>
+				<p><span class="titleForMatchDetails">Ground:</span><span>{{fixture_ground}}</span></p>
+				<p><span class="titleForMatchDetails">Start:</span><span>{{fixture_planned_time}}</span></p>
+				<p><span class="titleForMatchDetails">Temperature:</span><span>{{matchreportdetails.pm_temprature}}</span></p>
+				<p><span class="titleForMatchDetails">Conditions:</span><span>{{matchreportdetails.pm_condition}}</span></p>
+				<!-- <p>&nbsp;</p> -->
+			</div>
+		</div>
+		<div class=" row matchDetailsSubContent" *ngFor="let value of fixtureReport">
+			<div class="col">
+				<!-- <p>&nbsp;</p> -->
+				<div>
+					<p><span [innerHTML]="value.pm_content"> </span></p>
+					<p class="jb-margin" *ngIf="value.quater==1"><span> {{ matchReportFixtureScore["fixtureQ"+value.quater+"Score"].home_team }}  {{ matchReportFixtureScore["fixtureQ"+value.quater+"Score"].home_team_goal }}.{{ matchReportFixtureScore["fixtureQ"+value.quater+"Score"].home_team_goal_rbb_total }}.{{ matchReportFixtureScore["fixtureQ"+value.quater+"Score"].home_team_total_score }} to  {{ matchReportFixtureScore["fixtureQ"+value.quater+"Score"].away_team }} {{ matchReportFixtureScore["fixtureQ"+value.quater+"Score"].away_team_goal }}.{{ matchReportFixtureScore["fixtureQ"+value.quater+"Score"].away_team_goal_rbb_total }}.{{ matchReportFixtureScore["fixtureQ"+value.quater+"Score"].away_team_total_score }}</span></p>
+					<p class="jb-margin" *ngIf="value.quater==2"><span>
+							  	{{ matchReportFixtureScore["fixtureQ"+value.quater+"Score"].home_team }} {{home_team_goal2}}.{{home_team_goal_rbb_total2}}.{{home_team_total_score2}}
+							  	to
+							  	{{ matchReportFixtureScore["fixtureQ"+value.quater+"Score"].away_team }} {{away_team_goal2}}.{{away_team_goal_rbb_total2}}.{{away_team_total_score2}}
+							  </span></p>
+					<p class="jb-margin" *ngIf="value.quater==3"><span>
+							  	{{ matchReportFixtureScore["fixtureQ"+value.quater+"Score"].home_team }} {{home_team_goal3}}.{{home_team_goal_rbb_total3}}.{{home_team_total_score3}}
+							  	to
+							  	{{ matchReportFixtureScore["fixtureQ"+value.quater+"Score"].away_team }} {{away_team_goal3}}.{{away_team_goal_rbb_total3}}.{{away_team_total_score3}}
+							  </span></p>
+					<div *ngIf="value.quater==4" style="color:white;">
+						<p class="jb-margin"><strong style="font-family: Gotham-Bold;color: #fff; font-size: 15px;">FINAL SCORE </strong> </p>
+						<p class="jb-margin">{{ matchReportFixtureScore.fixtureFinalScore.home_team}} {{ matchReportFixtureScore.fixtureFinalScore.home_team_goal
+							}}.{{ matchReportFixtureScore.fixtureFinalScore.home_team_goal_rbb_total }}.{{ matchReportFixtureScore.fixtureFinalScore.home_team_total_score
+							}} <span>
+							  </span></p>
+						<p class="jb-margin">{{ matchReportFixtureScore.fixtureFinalScore.away_team}} {{ matchReportFixtureScore.fixtureFinalScore.away_team_goal
+							}}.{{ matchReportFixtureScore.fixtureFinalScore.away_team_goal_rbb_total }}.{{ matchReportFixtureScore.fixtureFinalScore.away_team_total_score
+							}} <span>
+							  </span></p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="row matchDetailsSubContent">
+			<div class="col">
+				<p class=" jb-margin titleForMatchDetails">{{home_team}}</p>
+				<p class=" jb-margin jb-etra "><strong>Best Players: </strong></p>
+				<p class="jb-margin"><span>{{matchreportdetails.home_team_best_player}}</span></p>
+				<p class="jb-margin">&nbsp;</p>
+
+				<p class=" jb-margin jb-etra"><strong>Goal Kickers:</strong></p>
+				<div class="some-container">
+					<p class="jb-margin jb-float" *ngFor="let value of matchReportGoalKicker"><span *ngIf="value.team_type=='home' && value.totalGoal >=1 ">{{value.player_name}} {{value.totalGoal}}<span class="list-comma"> | </span></span>
+					</p>
+				</div>
+
+				<p class="jb-margin">&nbsp;</p>
+
+				<p class=" jb-margin titleForMatchDetails">{{away_team}}</p>
+				<p class=" jb-margin jb-etra"><strong>Best Players:</strong></p>
+				<p class="jb-margin"><span>{{matchreportdetails.pm_away_best_player}}</span></p>
+
+				<p class="jb-margin">&nbsp;</p>
+
+				<p class=" jb-margin jb-etra"><strong>Goal Kickers:</strong></p>
+				<div class="some-container">
+					<p class="jb-margin jb-float" *ngFor="let value of matchReportGoalKicker"><span *ngIf="value.team_type=='away' && value.totalGoal >=1 ">{{value.player_name}} {{value.totalGoal}}<span class="list-comma"> | </span></span>
+					</p>
+				</div>
+			</div>
+			<p class="jb-margin">&nbsp;</p>
+
+		</div>
+		<!-- <div class="row shareIconContainer" style="padding-left: 0px;">
+			<a style="padding-right: 5px;" (click)="fbShare(path+matchreportdetails.pm_cover_image,matchreportdetails.pm_title,matchreportdetails.created_at,matchreportdetails.pm_video);"><img src="assets/imgs/facebook_share.png" class="shareImgs" /></a>
+			<a style="padding-right: 5px;"><img src="assets/imgs/twitter_share.png" class="shareImgs" (click)="twitterShare(path+matchreportdetails.pm_cover_image,matchreportdetails.pm_title,matchreportdetails.created_at,matchreportdetails.pm_video);"/></a>
+			<a style="padding-right: 5px;"><img src="assets/imgs/google_plus_share.jpg" class="shareImgs" (click)="gmailShare(path+matchreportdetails.pm_cover_image,matchreportdetails.pm_title,matchreportdetails.created_at,matchreportdetails.pm_video);"/></a>
+		</div> -->
+		<p class="jb-margin">&nbsp;</p>
+	</div>
+
+</ion-content>
+<ion-footer>
+	<ion-toolbar class="jb-toolbar">
+		<div class="jb-adv">
+			<img src="assets/imgs/CSM_-_More_Footy_Less_Admin_(white).gif" class="full-image">
+		</div>
+	</ion-toolbar>
+</ion-footer>

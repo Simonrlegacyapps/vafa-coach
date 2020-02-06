@@ -1,0 +1,54 @@
+<!--
+  Generated template for the NewsDetailsPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header class="custBar">
+  <ion-navbar>
+    <ion-title text-center>News</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="bgPage-color" no-bounce>
+  <div>
+    <img src="{{path1}}{{cutPath(newsdetails.image)}}" class="setImgWidth" *ngIf="newsdetails.pm_type==2" style="box-shadow: 5px 0 9px black;"
+    />
+    <img src="{{newsdetails.thumbnail_image}}" class="setImgWidth" *ngIf="newsdetails.pm_type==1" (click)="youtubepage(newsdetails);"
+      style="box-shadow: 5px 0 9px black;" />
+    <div class="inner-custom jb-inner" (click)="youtubepage(newsdetails);">
+      <ion-icon name="appicons-outube" (click)="youtubepage(newsdetails);" class="jb-icon-inner-red" *ngIf="newsdetails.pm_type==1"></ion-icon>
+    </div>
+  </div>
+  <div class="MatchReportContainer">
+    <div class="row">
+      <div class="col TitleForMatchDetails">
+
+      </div>
+    </div>
+    <div class="row">
+      <div class="col TitleForMatchDetails">
+        <h1>{{newsdetails.title}}</h1>
+        <p class="NewsDetailsTagWeb"> {{newsdetails.pm_date}}</p>
+      </div>
+    </div>
+    <div class="matchDetailsSubContent">
+      <div>
+        <p dir="ltr" class="jb-content" style="margin-top:12px;"><span [innerHTML]="newsdetails.pm_content"> </span></p>
+      </div>
+      <!-- <div class="row shareIconContainer" style="padding-left: 0px;">
+        <a style="padding-right: 5px;" (click)="fbShare(newsdetails.thumbnail_image,newsdetails.title,newsdetails.pm_date);"><img src="assets/imgs/facebook_share.png" class="shareImgs" /></a>
+        <a style="padding-right: 5px;"><img src="assets/imgs/twitter_share.png" class="shareImgs" (click)="twitterShare(newsdetails.thumbnail_image,newsdetails.title,newsdetails.pm_date);"/></a>
+        <a style="padding-right: 5px;"><img src="assets/imgs/google_plus_share.jpg" class="shareImgs" (click)="gmailShare(newsdetails.thumbnail_image,newsdetails.title,newsdetails.pm_date);"/></a>
+      </div> -->
+    </div>
+  </div>
+
+</ion-content>
+<ion-footer>
+  <ion-toolbar class="jb-toolbar">
+    <div class="jb-adv">
+      <img src="assets/imgs/CSM_-_More_Footy_Less_Admin_(white).gif" class="full-image">
+    </div>
+  </ion-toolbar>
+</ion-footer>

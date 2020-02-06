@@ -1,0 +1,152 @@
+
+<ion-header>
+
+	<ion-navbar>
+		<ion-title text-center>Join</ion-title>
+	</ion-navbar>
+
+</ion-header>
+
+<ion-content class="jb-background" no-bounce>
+	<div class="SignUpForm">
+		<div class="SignUpFormTable-Cell">
+			<div class="OnlyForSignUpFormContainer">
+				<form name="myForm">
+
+					<div class="list fromlist ">
+						<ion-label class="item item-input ">
+
+						</ion-label>
+						<div style="position: relative; margin-bottom: 10px;">
+							<img class="setImg1" src="assets/imgs/emailicon.png">
+							<input class="setInputTextForUsername" type="email" name="email" placeholder="Email" [(ngModel)]="user.email">
+							<div class="border-SignUp"></div>
+							<div class="border-SignUp"></div>
+						</div>
+						
+						
+						<ion-label class="item item-input ">
+
+						</ion-label>
+						<div style="position: relative; margin-bottom: 10px;">
+							<img class="setImg1" src="assets/imgs/userIcon.png">
+							<input class="setInputTextForUsername" type="text" name="first_name" placeholder="First name" [(ngModel)]="user.firstname">
+							<div class="border-SignUp"></div>
+						<div class="border-SignUp"></div>
+						</div>
+						
+
+						<ion-label class="item item-input ">
+						</ion-label>
+						<div style="position: relative;margin-bottom: 10px;">
+							<img class="setImg1" src="assets/imgs/userIcon.png">
+							<input class="setInputTextForUsername" type="text" name="last_name" placeholder="Last name" [(ngModel)]="user.lastname">
+							<div class="border-SignUp"></div>
+						<div class="border-SignUp"></div>
+						</div>
+						<div style="margin-bottom: 7px;">
+						<ion-item class="jd-signup-age">
+							<ion-label>
+								<img class="setImg" src="assets/imgs/userIcon.png">
+								<span class='jd-age-span'>Age</span>
+							</ion-label>
+							<ion-select name="age" [(ngModel)]="user.age">
+								<ion-option value="18 or above">18 or above</ion-option>
+								<ion-option value="Under 18">Under 18</ion-option>
+							</ion-select>
+						</ion-item>
+						<div class="border-SignUp"></div>
+					</div>
+						
+						<ion-label class="item item-input ">
+						</ion-label>
+						<div style="position: relative;margin-bottom: 10px;">
+						<img class="setImg1" src="assets/imgs/call.svg">
+							<ion-input class="setInputTextForUsername" type="tel" maxlength="12" (ionChange)='ViewNumber(user.mobile_number)' name="mobile_number"
+							 placeholder="Mobile (optional)" [(ngModel)]="user.mobile_number">
+							</ion-input>
+							<div class="border-SignUp"></div>
+							</div>
+							
+					
+
+						<!-- 
+								<ion-label class="item item-input ">
+							<img class="setImg" src="assets/imgs/userIcon.png">
+							<ion-input class="setInputTextForUsername" type="text" name="Username" placeholder="Username" [(ngModel)]="user.name">
+							</ion-input>
+							<div class="border-SignUp"></div>
+						</ion-label>
+						<div class="border-SignUp"></div>
+						 -->
+						<div class="jb-postion" *ngIf="!showPassword" style="margin-bottom: 10px;">
+							<!-- <div class="border-SignUp"></div> -->
+							<ion-label class="item item-input">
+									<img class="setImg" style="margin-top:10px" src="assets/imgs/passwordIcon.png">
+									<input class="setInputTextForUsername" placeholder="Password" [(ngModel)]="user.password" name="password" type="password"
+									 required="required">
+									
+							</ion-label>
+							<div class="showPasswordonlye-ForSignup" *ngIf="user.password">
+								<img class="showPasswordIcon" (click)="toggleShowPassword();" src="assets/imgs/showPassword.png">
+							</div>
+							<div class="border-SignUp"></div>
+						</div>
+						<div class="jb-postion" *ngIf="showPassword" style="margin-bottom: 10px;">
+							<!-- <div class="border-SignUp"></div> -->
+							<ion-label class="item item-input">
+								
+							</ion-label>
+							<img class="setImg" style="margin-top:10px" src="assets/imgs/passwordIcon.png">
+								<input class="setInputTextForUsername" placeholder="Password" name="password" [(ngModel)]="user.password" type="text"
+								 required="required">
+								
+							<div class="showPasswordonlye-ForSignup" *ngIf="user.password">
+								<img class="showPasswordIcon" (click)="toggleShowPassword();" src="assets/imgs/showPassword.png">
+							</div>
+							<div class="border-SignUp"></div>
+						</div>
+						<div class="jb-postion" *ngIf="!showPassword1" style="margin-bottom: 10px;">
+							<!-- <div class="border-SignUp"></div> -->
+							<ion-label class="item item-input">
+								<img class="setImg" style="margin-top:10px" src="assets/imgs/passwordIcon.png">
+								<input class="setInputTextForUsername" placeholder="Confirm password" [(ngModel)]="user.cpassword" name="confirm password"
+								 type="password" required="required">
+								
+							</ion-label>
+							<div class="showPasswordonlye-ForSignup" *ngIf="user.cpassword">
+								<img class="showPasswordIcon" (click)="toggleShowPassword1();" src="assets/imgs/showPassword.png">
+							</div>
+							<div class="border-SignUp"></div>
+						</div>
+
+
+						<div class="jb-postion" *ngIf="showPassword1" style="margin-bottom: 10px;">
+							<!-- <div class="border-SignUp"></div> -->
+							<ion-label class="item item-input">
+								<img class="setImg" style="margin-top:10px" src="assets/imgs/passwordIcon.png">
+								<input class="setInputTextForUsername" placeholder="Confirm password" name="password" [(ngModel)]="user.cpassword" type="text"
+								 required="required">
+								
+							</ion-label>
+							<div class="showPasswordonlye-ForSignup" *ngIf="user.cpassword">
+								<img class="showPasswordIcon" (click)="toggleShowPassword1();" src="assets/imgs/showPassword.png">
+							</div>
+							<div class="border-SignUp"></div>
+						</div>
+
+						<!-- </div> -->
+						<div class="row buttonContainerLogin" (click)="signUp();">
+							<div class="col">
+								<div class="ink arrow">
+									<img class="img-icon-arrow" src="assets/icon/right-arrow.svg">
+								</div>
+							</div>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+
+	</div>
+</ion-content>

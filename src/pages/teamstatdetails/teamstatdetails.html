@@ -1,0 +1,138 @@
+<ion-header class="custBar">
+
+  <ion-navbar>
+
+    <ion-title>
+		<div>
+			<img src="{{path}}{{teamImage}}" class="Hdrteamimg"/>
+			{{teamName}}
+		</div>
+		</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-header *ngIf="!advDisplay && Hdrimg!=''"  class="bar-sub-subheader"  style="height:41px;position:relative; top:42px; background-color: transparent; border: 0px !important; border-bottom-color: transparent !important; background-image: none !important; border-bottom: none !important;">
+	<div class="advContainer" style="position:fixed;margin: 0 auto 0 -7px; width: 104%;">
+		   <img src="{{path}}{{Hdrimg}}" class="full-image" (click)="goToAddSite(advertisementHeader[0].ad_url);">
+	  </div>
+</ion-header>
+<ion-content (ionScroll)="onScroll($event)">
+  <h4 class="titleWithBgStrip">FORM</h4>
+	<ion-row class="teamStatDetailrow">
+		<ion-col col-33>
+			<p class="nomalFormMidTitle"><span style="white-space: nowrap;">Ladder Position</span></p>
+            <h4 style="font-family:Gotham-Book;font-size:20px;color:#16223d;margin-top: 9px;">{{ladderPosition}}</h4>
+		</ion-col>
+		<ion-col>
+			<p class="nomalFormMidTitle"><span>Win</span></p>
+            <h4 style="font-family:Gotham-Book;font-size:20px;color:#16223d;margin-top: 9px;">{{ladderWon}}</h4>
+		</ion-col>
+		<ion-col>
+			<p class="nomalFormMidTitle"><span>Loss</span></p>
+			<h4 style="font-family:Gotham-Book;font-size:20px;color:#16223d;margin-top: 9px;">{{ladderLoss}}</h4>
+		</ion-col>
+		<ion-col>
+			<p class="nomalFormMidTitle"><span>Draw</span></p>
+			<h4 style="font-family:Gotham-Book;font-size:20px;color:#16223d;margin-top: 9px;">{{ladderDraws}}</h4>
+		</ion-col>
+	</ion-row>
+	<ion-row class="teamStatDetailrow">
+		<ion-col>
+			<p class="nomalFormMidTitle"><span style="font-family:Gotham-Medium;font-size:13px">Last 10 Games</span></p>
+			<div class="col gameResultCircleContainer">
+                <p [innerHTML]="getStatDetailslastmatch"></p>
+				<!--<span class="winMatchBg">W</span>
+				<span>L</span>
+				<span class="winMatchBg">W</span>
+				<span>L</span>
+				<span>L</span>
+				<span class="winMatchBg">W</span>
+				<span>L</span>
+				<span class="winMatchBg">W</span>
+				<span>L</span>
+				<span>L</span>-->
+			</div>
+		</ion-col>
+	</ion-row>
+	<ion-row class="teamStatDetailrow">
+		<ion-col>
+			<p class="nomalFormMidTitle"><span>Avg. Pts. For</span></p>
+            <h4 style="color: #16223d;font-family: Gotham-Book;font-size: 20px; margin-left: -17px; margin-top: 9px;">{{avgPtsFor}}</h4>
+		</ion-col>
+		<ion-col>
+			<p class="nomalFormMidTitle"><span>Avg. Pts. Against</span></p>
+            <h4 style="font-family:Gotham-Book;font-size:20px;color:#16223d; margin-left: -17px;margin-top: 9px;">{{avgPtsAgainst}}</h4>
+		</ion-col>
+	</ion-row>
+	<ion-row class="teamStatDetailrow">
+		<ion-col>
+			<p class="nomalFormMidTitle"><span>Avg. Winning Margin</span></p>
+            <h4 style="font-family:Gotham-Book;font-size:20px;color:#16223d; margin-left: -17px;margin-top: 9px;">{{getStatDetailsavgMargin.winning_margin}}</h4>
+		</ion-col>
+		<ion-col>
+			<p class="nomalFormMidTitle"><span>Avg. Losing Margin</span></p>
+            <h4 style="font-family:Gotham-Book;font-size:20px;color:#16223d; margin-left: -17px;margin-top: 9px;">{{getStatDetailsavgMargin.losing_margin}}</h4>
+		</ion-col>
+	</ion-row>
+    <div class="advContainer" *ngIf="Ftrimg!=''"   style="margin: 0 auto 0 -7px; width: 104%;">
+        <img src="{{path}}{{Ftrimg}}" class="full-image">
+    </div>
+	<h4 class="titleWithBgStrip">Season Averages</h4>
+	<ion-row>
+		<ion-col>
+			<p class="nomalFormMidTitle" style="text-align:left;"><span style="margin-left: 15px;">{{teamAbbrName}}</span></p>
+		</ion-col>
+		<ion-col>
+			<p class="nomalFormMidTitle" style="text-align:right;"><span style="margin-right: 15px;">Comp Avg.</span></p>
+		</ion-col>
+	</ion-row>
+    <div *ngFor="let value of sortedStated">
+	    <p class="nomalFormMidTitle" >
+        <span style="font-family: Gotham-Medium;font-size: 14px;" *ngIf="value.stat_name!='Rush Behinds'">{{value.stat_name}}</span>
+        <span style="font-family: Gotham-Medium;font-size: 14px;" *ngIf="value.stat_name=='Rush Behinds'">Behinds</span>
+		</p>
+		<ion-row class="progressBarstyle" >
+			<ion-col>
+				<div  class="fillBar greenFill" [style.width]="value.homeTeamWidth" [style.background-color]="value.homeTeamColor" style="font-family:Gotham-Medium;font-size:19px;">
+                    {{value[value.stat_name]}}
+				</div>
+			</ion-col>
+			<ion-col>
+				<div class="fillBar" [style.width]="value.awayTeamWidth"  [style.background-color]="value.awayTeamColor" style="font-family:Gotham-Medium;font-size:19px;">
+				 {{value.stat_avg}}
+
+				</div>
+			</ion-col>
+		</ion-row>
+		<div *ngIf="value.stat_name =='Inside 50s'">
+         	<p class="nomalFormMidTitle" style="margin-top: 12px;">
+		    	<span style="font-family: Gotham-Medium;font-size: 14px;">EFF Inside 50s</span>
+		    </p>
+		    <ion-row class="progressBarstyle" style="margin-top: 10px;">
+				<ion-col col-5>
+							<div class="c100 p{{knob | number:0}} {{value.homeTeamOnlyColor}}"   style="float:right">
+									  <span style="font-family:Gotham-Light;font-size:25px;">{{knob}}%</span>
+									  <div class="slice">
+										<div class="bar1"></div>
+										<div class="fill"></div>
+									  </div>
+							</div>
+						</ion-col>
+						<ion-col col-2>
+							<div class="height-Border"></div>
+						</ion-col>
+		            	<ion-col col-5>
+							<div class="c100 p{{knobAvg | number:0}} {{value.awayTeamOnlyColor}}"  style="float:left;">
+									  <span style="font-family:Gotham-Light;font-size:25px;">{{knobAvg}}%</span>
+									  <div class="slice">
+										<div class="bar1"></div>
+										<div class="fill"></div>
+									  </div>
+							</div>
+						</ion-col>
+					</ion-row>
+        </div>
+
+    </div>
+</ion-content>

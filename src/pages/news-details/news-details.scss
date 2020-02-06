@@ -1,0 +1,120 @@
+page-news-details {
+/*Match Report details css*/
+.jb-icon-red
+{
+    font-size: 40px;
+    color: white;
+
+}
+.jb-inner
+{
+    position: absolute;
+    width: 100%;
+    top: 110px;
+}
+.jb-icon-inner-red
+{
+font-size: 40px;
+    color: white;
+}
+.inner-custom{
+	// display: table-cell;
+	// vertical-align: middle;
+	text-align: center;
+}
+.MatchReportContainer
+{
+	padding:0 10px;
+}
+
+.TitleForMatchDetails h1
+{
+	color:#04235C;
+	font-family:Gotham-Medium;
+	font-size:26px;
+}
+.TitleForMatchDetails p{
+    font-family:Gotham-Book;
+	font-size:14px;
+	color:#04235C;
+}
+.TitleForMatchDetails
+{
+	padding: 0px !important;
+}
+.NewsDetailsTagWeb
+{
+	color:#04235C;
+	font-family: Gotham-Book;
+    font-size: 14px;
+	margin-top: 10px;
+}
+.jb-content p
+{
+	line-height: 1.5;
+	font-family: Gotham-Medium !important;
+    font-size: 14px;
+	margin: 0px !important;
+}
+.jb-content
+{
+	font-family: Gotham-Medium !important;
+    font-size: 14px;
+}
+
+.shareImgs
+{
+	width:25px;
+	height:25px;
+}
+.some-container span:last-child .list-comma{
+    display: none;
+}
+.matchDetailsContent p span
+{  
+   font-family: Gotham-Book;
+  font-size:14px;
+  color:#04235C;
+}
+.HeadingForMatchDetails
+{
+	font-family: Gotham-Book;
+	color:#04235C;
+	padding-right:5px;
+	font-size:17px;
+}
+.matchDetailsSubContent p span
+{
+  font-family: Gotham-Book;
+  font-size:14px;
+  color:#04235C;
+}
+
+
+
+
+.matchDetailsSubContent
+{
+	 font-family: Gotham-Medium !important;
+    font-size: 14px;
+	padding-right:5px;
+	
+}
+.setImgWidth{width: 100%; height:40vh;} 
+p strong
+{
+	font-family: Gotham-Medium !important;
+    font-size: 14px;
+}
+/* End CSS */
+.jb-adv{
+	    // height: 40px;
+	text-align: center;
+	img{
+	   height: 100% !important;
+    max-height: 45px;
+    max-width: 100% !important;
+	}
+}
+}
+

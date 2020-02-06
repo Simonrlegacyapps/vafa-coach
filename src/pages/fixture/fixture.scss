@@ -1,0 +1,420 @@
+page-fixture {
+  .weblinkclass{
+    -webkit-overflow-scrolling: touch !important;
+    overflow: scroll !important;
+    width: 100% !important;
+    height: 100% !important;
+    border: none;
+  }
+  .weblinkclass iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+  ion-footer {
+    padding-top: 0px !important;
+    padding-bottom: 0px !important;
+    padding-left: 0px !important;
+    padding-right: 0px !important;
+    bottom: 52px !important;
+}
+
+      ion-header .toolbar
+        {
+            height: 45px !important;
+            .bar-button
+            {
+              top:-3px !important;
+            }
+            .title
+            {
+              top:-8px !important;
+            }
+            .title1
+            {
+              top:22px !important;
+            }
+        }
+
+      .jb-content
+    {
+        padding-top: 92px;
+        ul{
+           padding: 0px !important;
+           margin-top: 0px;
+           margin-bottom: 0px;
+        }
+    }
+    toolbar-background{
+      background-color: #101931 !important;;
+    }
+
+    ion-toolbar{
+     background: transparent !important;
+         position: fixed;
+         border-bottom: 1px solid #bdbdbd;
+         border-top: 1px solid #bdbdbd;
+    }
+        .fixtureList
+        {
+          padding: 5px;
+          margin-top: 1px;
+        }
+        .fixtureList1
+        {
+          padding: 5px;
+        }
+    .jb-segment
+    {
+    position: fixed;
+    z-index: 10;
+    top: 43px !important;
+    background: white;
+    border-bottom: none !important;
+    width: 75%;
+    //  position: fixed;
+    //   z-index: 10;
+    //   top: 45px !important;
+    //   background: white;
+    //   border-bottom:none !important;
+    //    width: 55%;
+    //    left: 23%;
+       ion-segment-button.segment-button {
+	    	display: inline-block;
+        width: auto;
+        padding: 4px;
+        min-height: 46px;
+        color: #bdbdbd;
+        font-family: Gotham-Medium;
+        font-size: 18px;
+        border: none;
+        line-height: 2;
+      }
+      ion-segment-button.segment-button:hover:not(.segment-activated)
+      {
+      //    border-bottom: 3px solid white !important;
+         background: white !important;
+      }
+     .segment-button.segment-activated
+     {border-radius: 0px !important;
+          // border-bottom: 3px solid #04235C !important;
+       background: #04235C !important;
+       color: white;
+       min-height: 46px !important;
+     }
+    }
+  .scrollable-segments {
+    height: 48px;
+    top: 89px;
+    .toolbar-content
+    {
+      height: 45px;
+    }
+    .toolbar-background
+    {
+      // background-color: rgb(145, 152, 170) !important;;
+      background-color: white;
+    }
+	ion-segment {
+	  display: block;
+	  overflow-x: scroll;
+    white-space: nowrap;
+    width: 90%;
+       height: 46px;
+       background-color: white;
+      // background: #101931;
+      // background-color: rgb(145, 152, 170);
+	  ion-segment-button.segment-button {
+		display: inline-block;
+    width: auto;
+    height: 32px;
+    min-width: 32px;
+    max-width: 200px;
+    color: #343434;
+    font-family: Gotham-Medium;
+    text-transform: capitalize !important;
+    font-size: 16px;
+    border-top: none;
+    border-left: none;
+    margin-top: 7px;
+    border-right: none;
+    line-height: 2;
+    background-color: white;
+    border-bottom: none !important;
+    margin-left: 5px;
+    margin-right: 5px;
+      }
+      ion-segment-button.segment-button:hover:not(.segment-activated)
+      {
+        //  border-bottom: 3px solid white !important;
+             background-color: white !important;
+        //  color:white;
+      }
+     .segment-button.segment-activated
+     {
+      //  border-bottom: 3px solid white !important;
+     border-radius: 7px !important;
+    background-color: #04235c;
+    color: white;
+     }
+	}
+}
+
+.segment-ios .segment-button:hover:not(.segment-activated){
+  background-color: white !important;
+}
+.full-image {
+    width: 50px;
+    height: 50px;
+}
+.matchCenterHeight
+{
+  margin-top:-10px;
+}
+.teamCol {
+      text-align: center;
+  img
+  {
+  width: 50px;
+  }
+  p{
+    color: #04235C;
+    font-family: Gotham-Medium;
+    font-size: 12px;
+    margin-top: 4px;
+    margin-bottom: 4px;
+  }
+  h3
+  {
+    color: #04235C;
+    font-family: Gotham-Bold;
+    font-size:  3.7vw;
+     margin-top: 4px;
+    margin-bottom: 4px;
+  }
+}
+.OnlyFixtureContainer{
+      display: block;
+    margin: 15px auto 0;
+    max-width: 100%;
+    text-align: center;
+  p{
+    font-family: Gotham-Bold;
+    color: #04235C;
+    font-size: 12px;
+    text-align: center;
+  }
+}
+.teamCenterDiv h3{
+
+    font-family: Gotham-Medium;
+    font-size: 15px;
+	white-space:normal;
+}
+
+.dispTable{
+	height:100%;
+	width:100%;
+	max-width:100%;
+	display:table;
+	position:relative;
+
+}
+
+.dispTableCell{
+	display: block;
+    margin: 30px auto 0;
+    max-width: 100%;
+    text-align: center;
+    p{
+          font-family:Gotham-Medium;
+          font-size: 3vw;
+           color:#7D8390;
+           padding-top: 12px;
+    }
+
+}
+.matchStatus {
+	font-family:Gotham-Bold;
+  background-color: #86cf85;
+  border-radius: 12px;
+  color: #04235C;
+  display: inline;
+  padding: 3px 15px;
+}
+.class_LIVE{
+	font-family:Gotham-Bold;
+  background-color: #86cf85;
+  border-radius: 12px;
+  color: #04235C;
+  display: inline;
+    font-size: 12px;
+    padding: 6px 15px;
+}
+.class_UPCOMING{
+	font-family:Gotham-Bold;
+  background-color: #667588;
+  border-radius: 12px;
+  color: #04235C;
+  display: inline;
+    font-size: 12px;
+    padding: 6px 15px;
+}
+.class_COMPLETE{
+	font-family:Gotham-Bold;
+  background-color: #667588;
+  border-radius: 12px;
+  color: #04235C;
+  display: inline;
+    font-size: 12px;
+    padding: 6px 15px;
+}
+.jb-club-seg
+{
+  padding-left: 20px !important;
+  padding-right: 20px !important;
+}
+
+.jd_fixtureYear{
+  text-align: center !important;
+  // border-right: 1px solid#bdbdbd;
+}
+
+.jd_seasonTxt{
+  margin: 1px;
+  font-size: 14px;
+  font-family: Gotham-Medium;
+  white-space: nowrap;
+  color: #04235C;
+}
+
+.jd_yr{
+  font-size: 15px;
+  color: #424242;
+  font-family: 'Gotham-Medium' !important;
+    margin: auto 0px 0px -10px;
+    white-space: nowrap;
+}
+
+.jd-down-arrow{
+  position: absolute;
+  bottom: 4px;
+  background-color:white;
+  width: 16%;
+  right: 16%;
+  line-height: 1;
+  font-size: 20px;
+  font-weight: bold;
+  color: #04235C;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.scrollable-segments_jd {
+  height: 48px;
+  top: 89px;
+  .toolbar-content
+  {
+    height: 45px;
+  }
+  .toolbar-background
+  {
+    background-color: white;
+  }
+ion-segment {
+  display: block;
+  overflow-x: scroll;
+  white-space: nowrap;
+  height: 46px;
+  background-color: white;
+  ion-segment-button.segment-button {
+  display: inline-block;
+  width: auto;
+  height: 38px;
+  max-width: 200px;
+  color: #bdbdbd;
+  font-family: Gotham-Medium;
+  text-transform: capitalize;
+  font-size: 16px;
+  border-top: none;
+  border-left: none;
+  margin-top: 7px;
+  border-right: none;
+  line-height: 2;
+  background-color: white;
+  border-bottom: none !important;
+  margin-left: 5px;
+  margin-right: 5px;
+    }
+   .segment-button.segment-activated
+   {
+    //  border-bottom: 3px solid #04235c !important;
+     color: #04235c !important;
+  //  border-radius: 7px !important;
+  background-color: white !important;
+
+  .jd_CurveborderDiv{
+    display: block;
+    width: 80px;
+    text-align: center;
+    background-color: #04235c;
+    height: 4px;
+    margin: 2px auto;
+    border-radius: 10px;
+}
+   }
+}
+}
+
+.dateOFMATCHES_jd1{
+  color: #04235c;
+  background: #f4f4f4;
+  font-family: 'Gotham-Medium';
+  text-align: center;
+  width: 100%;
+  padding: 7px 10px 7px;
+  font-size: 13px;
+}
+
+
+.dateOFMATCHES_jd{
+  color: #111;
+  background: #f4f4f4;
+  font-family: 'Gotham-Medium';
+  text-align: left;
+  width: 100%;
+  padding: 7px 10px 7px;
+  font-size: 13px;
+}
+
+.dateOFMATCHES_jd span{
+  position: absolute;
+  top: 2px;
+  left: 15px;
+  font-family: Gotham-Light !important;
+}
+
+.advContainer{
+  border-bottom:  0.55px solid #dedede;
+  border-top:  0.55px solid #dedede;
+  margin: 3px auto 0 -7px !important;
+}
+
+.advContainer1{
+  border-bottom:none !important;
+  border-top:  0.55px solid #dedede !important;
+  text-align: center;
+  background: white;
+img{
+  padding-top: 5px;
+  max-height: 45px;
+  max-width: 100% !important;
+}
+}
+
+
+
+
+
+//
+}

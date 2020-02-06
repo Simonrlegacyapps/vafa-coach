@@ -1,0 +1,472 @@
+page-emaillogin {
+    
+    // background-image: url("../assets/imgs/loginBg.png");
+    background-image: url("../assets/imgs/landingbackground.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position:center;
+    ion-label{
+        margin: 0px !important;
+    }
+ .jb-background
+ {
+    background-color:transparent !important;
+ }
+.toolbar-background
+{
+    background: transparent !important;
+    border: none !important;
+}
+.img-set
+{
+	margin:0 auto;
+}
+.forgot-Password
+{
+    position: relative;
+}
+.borderOfor
+{
+	color: #fff;
+    font-family: Gotham-Medium;    
+    margin: 0 auto;
+    opacity: 0.4;
+    position: relative;
+    text-align: center;    
+    width: 17%;
+    top: 22px;
+   
+}
+
+
+
+.borderOfor::after {
+	border: 1px solid #fff;
+    bottom: 8px;
+    content: "";    
+    opacity: 0.5;
+    position: absolute;
+    right: -52px;
+    width: 55px;
+    z-index: -1;;
+}
+
+.borderOfor::before {
+	border: 1px solid #fff;
+    bottom: 8px;
+    content: "";
+    left: -53px;
+    margin-right: -125px;
+    opacity: 0.5;
+    position: absolute;
+    width: 55px;
+    z-index: -1
+}
+ /*border for signUp page*/
+.border-SignUp
+{
+	position:relative;
+	color:#fff;
+}
+
+.border-SignUp::after
+{
+	border: 1px solid #fff;
+    content: "";
+    left: 6%;
+    opacity: 0.3;
+    position: absolute;
+    top: 0px;
+    width: 85%;
+}
+
+.imgSize
+{
+	height: 84px;
+    width: 65px;	
+}
+
+.buttonContainerLogin
+{
+	position:relative;
+}
+       .SignUpForm
+{
+	display: table;
+    height: 100%;
+    max-width: 100%;
+    position: relative;
+    width: 100%
+}
+.SignUpFormTable-Cell
+{
+	display: table-cell;
+    max-width: 100%;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.fromContainer
+{
+	padding:35px 0;
+	
+}
+.text-container-login p
+{
+	color: #fff;
+    font-family: Gotham-Medium;
+    font-size: 16px;
+    margin-top: 25px;
+	
+}
+
+.text-container-login.or p :after
+{
+	content:"";
+	border-bottom: 2px solid #fff;
+    left: 203px;
+    opacity: 0.22;
+    position: absolute;
+    top: 293px;
+    width: 16%;
+}
+
+.OnlyForSignUpFormContainer
+{
+
+	width:100%;
+	max-width:300px;
+	height:auto;
+	background-color:transparent;	
+	margin:0 auto;
+	text-align:center;
+	vertical-align:middle;
+}
+
+.jd-form{
+    width:100%;
+	max-width:300px;
+	height:auto;
+	background-color:transparent;	
+	margin:0 auto;
+	text-align:center;
+	vertical-align:middle;
+}
+
+
+
+
+.forgotPasswordText p
+{
+	color: #fff;
+    font-family: Gotham-Book;
+    font-size: 14px;
+    padding-top: 42px;
+}
+
+.fromlist .item-input  
+{
+    left: 23px;
+    position: absolute;
+    top: 16px;
+    width: 19px
+}
+.setImg{
+    left: 23px;
+    position: absolute;
+    top: 11px;
+    width: 19px;
+}
+
+.setImgForShowPassword
+{
+	left: 252px;
+    position: absolute;
+    top: 7px;
+    width: 19px
+	
+}
+
+.bar.transparentBar {
+    background-color: transparent;    
+}
+
+.transparent-Title
+{
+	font-family:Gotham-Medium;
+	font-size:15px;
+	color:#fff;
+}
+
+
+
+.buttonContainerLogin .col > div.facebook {
+    background-color: #5c6dc7;
+    color: #fff;
+    height: 50px;
+    padding: 5px 16px;
+	margin-top: 50px;
+    
+}
+
+.buttonContainerLogin .col > div.email {
+    background-color: #18a0a1;
+    color: #fff;
+    height: 50px;    
+    padding: 9px 0 18px;
+    margin-top: 40px;
+   
+}
+
+
+.buttonContainerLogin .col > div.paybal {
+    background-color: #18a0a1;
+    color: #fff;
+	max-height: 50px;
+    padding: 14px 0; 
+    text-align: center; 
+    width: 100%;	
+    
+}
+
+.buttonContainerLogin .col > div.ForgotPassword {
+	// background-color: #18a0a1;
+    // color: #fff;
+    // max-height: 50px;
+    // padding: 14px 0;
+    // text-align: center;
+    // width: 100%;
+    
+    // background-color:#04235C;
+
+    
+    background-color: #ffffff;
+    color: #000;
+    max-height: 50px;
+    padding: 14px 0;
+    text-align: center;
+    width: 100%;
+    border-radius: 7px;
+}
+
+.buttonContainerLogin .col > div.arrow {
+	background-color: #18a0a1;
+    color: #fff;
+    height: 50px;
+    left: 17px;
+    padding: 9px 0 18px;
+    position: absolute;
+    top: 5px;
+    width: 86%;
+}
+
+
+.img-icon-facebook
+{
+	left: -7px;
+    position: relative;
+    top: 6px;
+    width: 25px;
+}
+
+.img-icon-email {
+    left: -7px;
+    position: relative;
+    top: 6px;
+    width: 25px;
+}
+
+.img-icon-arrow
+{
+	left: 0;
+    position: relative;
+    top: -9px;
+    width: 70px;
+}
+.input-container
+{
+	position:relative
+}
+
+.input-containerOne
+{
+	position:relative;
+}
+
+
+
+.input-container img
+{
+	
+    width: 20px;	
+}
+
+.input-container .setImgForUsername
+{
+	position:absolute;
+	top:170px;
+	left: 14%;
+}
+
+.input-container .setImgForshowPassword
+{
+	position:absolute;
+	top:174px;
+	left: 82%;
+}
+
+.fromlist {
+    margin-bottom: 20px;
+input
+{
+	background-color: transparent;
+    box-shadow: none;
+    color: #fff;
+    font-family: Gotham-Medium; 
+    padding-left: 25px;   
+    width: 75%;
+	line-height:40px;	
+    margin: 0px !important;
+    border:none;
+}
+}
+
+
+.border-text-left
+{	   
+    position: relative;    
+    width: 16%;
+    
+}
+.loginBg
+{
+	background-image: url("../img/loginBg.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+	background-position:center;
+}
+.border-text-left
+{
+	content:"";
+	position:absolute;
+	top:50px;
+	left:50px;
+	border:2px solid red;
+	
+}
+.item-input-padding
+{
+	padding-top:10px;
+}
+
+// 
+.loginDiv{
+    margin: auto;
+    text-align: center;
+    width: 80%;
+    height: 100%;
+    max-height: 100%;
+}
+
+.jd-formfield{
+    margin-bottom: 20px;
+    position: relative;
+
+    input{
+        background-color: transparent;
+    box-shadow: none;
+    color: #fff;
+    font-family: Gotham-Medium; 
+    padding-left: 25px;   
+    width: 75%;
+    }
+}
+
+.jd-cust-ui{
+    margin-top: 30vh;
+}
+
+.jd-custom-email{
+    background: transparent;
+    color: white;
+    border-top: none;
+    width: 88%;
+    margin: auto;
+    border-top:none !important;
+    border-bottom: 1.5px solid #767d87 !important;
+    input{
+        background: transparent;
+        color: white;
+        box-shadow: none;
+        color: #fff;
+        margin: 0;
+        width: 75%;
+        font-size: 13px;
+        font-family: Gotham-Medium; 
+    }
+
+    .input-md{
+        padding-left: 15px;
+    }
+
+    img{
+        width: 19px;
+        // margin-left: 20px;
+    }
+    .item-block .item-inner{
+        border-bottom: none !important;
+        border: none !important;
+    }
+    
+}
+
+// .jd-custom-list{
+   
+// }
+
+.jd-custom-border{
+    border: 1px solid #fff;
+}
+
+
+.jd-button-sub{
+    background-color: #ffffff;
+    color: #000;
+    width: 90%;
+    margin: auto;
+}
+
+.list-md .item-input.ng-valid.item-input-has-value:not(.input-has-focus):not(.item-input-has-focus):last-child, .list-md .item-input.ng-valid.input-has-value:not(.input-has-focus):not(.item-input-has-focus):last-child{
+    box-shadow: none !important;
+}
+
+.item-md.item-block .item-inner,
+.item-md.item-input.input-has-focus .item-inner,
+.item-md.item-input.ng-valid.input-has-value:not(.input-has-focus) .item-inner,
+.item-md.item-input.ng-invalid.ng-touched:not(.input-has-focus) .item-inner,
+.list-md .item-input.input-has-focus:last-child,
+.list-md .item-input.ng-valid.input-has-value:not(.input-has-focus):last-child,
+.list-md .item-input.ng-invalid.ng-touched:not(.input-has-focus):last-child {
+    border-bottom: none;
+    box-shadow: none;
+}
+.list-md .item-input.input-has-focus:last-child .item-inner,
+.list-md .item-input.ng-valid.input-has-value:not(.input-has-focus):last-child .item-inner,
+.list-md .item-input.ng-invalid.ng-touched:not(.input-has-focus):last-child .item-inner {
+    box-shadow: none; 
+}
+
+.item-md.item-input.ng-valid.item-input-has-value:not(.input-has-focus):not(.item-input-has-focus) .item-inner, .item-md.item-input.ng-valid.input-has-value:not(.input-has-focus):not(.item-input-has-focus) .item-inner{
+    box-shadow: none !important;
+} 
+
+.list-md .item-input.ng-valid.item-input-has-value:not(.input-has-focus):not(.item-input-has-focus):last-child, .list-md .item-input.ng-valid.input-has-value:not(.input-has-focus):not(.item-input-has-focus):last-child{
+    box-shadow: none !important;
+}
+
+
+.button.activated{
+    background-color: #fff;
+}
+
+}

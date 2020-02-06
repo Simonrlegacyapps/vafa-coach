@@ -1,0 +1,106 @@
+<ion-header class="custBar">
+	<ion-navbar>
+		<button ion-button menuToggle>
+			<ion-icon name="appicons-menu"></ion-icon>
+		</button>
+		<ion-title text-center>1 on 1</ion-title>
+
+	</ion-navbar>
+</ion-header>
+<ion-header class="bar-subheader text-center" style="text-align:center;top: 43px;">
+	<div direction="x" class="wide-as-needed" style="background-color: #101931;">
+		<a class="button ink" (click)="selectTab(1)" [ngClass]="{'active': teamMtach.teamSelection == true}">Teams</a>
+		<a class="button ink" (click)="selectTab(2)" [ngClass]="{'active': teamMtach.teamSelection == false}">Players</a>
+	</div>
+	<div class="onlyBorderteam"></div>
+</ion-header>
+<ion-content class="has-subheader bgPage-color" no-bounce>
+
+	<!--For team selection-->
+	<div *ngIf="teamMtach.teamSelection">
+		<ion-row class="selectPlayers-row animated fadeInUp">
+			<ion-col class="jd-teamone" data-ink-color="#00192f" data-ink-opacity=".7">
+
+				<img src="assets/imgs/selectTeam.png" class="selectPlayerImg" (click)="openTeamSelectionModal()" *ngIf="teamImg == '' || teamImg ==null"
+				/>
+
+				<img src="{{path}}{{teamImg}}" class="selectPlayerImg img-storke" (click)="openTeamSelectionModal()" *ngIf="teamImg != null && teamImg !=''"
+				/>
+
+				<p class="selectPlayer-Comment" *ngIf="teamName == null || teamName==''">Team One</p>
+
+				<p class="selectPlayer-Comment" *ngIf="teamName != null && teamName!=''">{{teamName}}</p>
+			</ion-col>
+			<ion-col class="leftP-VS-rightP">
+				<div class="outer-container">
+					<div class="inner-container">
+						<span style="color:#04235c;font-family:Gotham-Medium;font-size:16px;">VS</span>
+					</div>
+				</div>
+
+			</ion-col>
+			<ion-col class="jd-teamtwo" data-ink-color="#00192f" data-ink-opacity=".7">
+
+				<img src="assets/imgs/selectTeam.png" class="selectPlayerImg " (click)="openTeamSelectionModalTwo()" *ngIf="teamImg2 == null || teamImg2 ==''">
+
+				<img src="{{path}}{{teamImg2}}" class="selectPlayerImg img-storke " (click)="openTeamSelectionModalTwo()" *ngIf="teamImg2 != null && teamImg2 !=''">
+
+				<p class="selectPlayer-Comment" *ngIf="teamName2 == null || teamName2 ==''">Team Two</p>
+
+				<p class="selectPlayer-Comment" *ngIf="teamName2 != null || teamName2 !=''">{{teamName2}}</p>
+			</ion-col>
+		</ion-row>
+		<div class="row animated fadeInUp">
+			<div class="compare-comment">
+				<span class="compare-comment-FirstLine">Select Any Two Teams</span>
+				<span class="compare-comment-FirstLine">to Compare</span>
+			</div>
+		</div>
+	</div>
+	<!--For team selection-->
+	<div *ngIf="!teamMtach.teamSelection">
+		<ion-row class="selectPlayers-row animated fadeInUp">
+			<ion-col class="Select-Player ink" data-ink-color="#00192f" data-ink-opacity=".7">
+				<img src="assets/icon/default_player.png" (click)="openPlayerSelectionModal()" class="selectPlayerImg" *ngIf="imagePlayer == null || imagePlayer ==''">
+
+				<img src="{{path}}{{playerImage1}}" class="selectPlayerImg" (click)="openPlayerSelectionModal()" *ngIf="imagePlayer != null && imagePlayer !=''">
+
+				<!--<img src="img/PlayerStatsIcon.png" class="selectPlayerImg  " (click)="openPlayerSelectionModal()" *ngIf="playerImage1 == 'null' ">-->
+
+				<p class="selectPlayer-Comment" *ngIf="playerName1 == null || playerName1 ==''">Player One</p>
+
+				<p class="selectPlayer-Comment" *ngIf="playerName1 != null && playerName1 !=''">{{playerName1}}</p>
+			</ion-col>
+			<ion-col class="leftP-VS-rightP">
+				<div class="outer-container">
+					<div class="inner-container">
+						<span style="color:#04235c;font-family:Gotham-Medium;font-size:16px;">VS</span>
+					</div>
+				</div>
+			</ion-col>
+			<ion-col class="Select-Player ink" data-ink-color="#00192f" data-ink-opacity=".7">
+				<img src="{{path}}{{playerImage2}}" class="selectPlayerImg" (click)="openPlayerSelectionModalTwo()" *ngIf="imagePlayer2 != null && imagePlayer2!=''">
+
+				<img src="assets/icon/default_player.png" (click)="openPlayerSelectionModalTwo()" class="selectPlayerImg" *ngIf="imagePlayer2 == null || imagePlayer2==''">
+
+				<!-- <img src="img/PlayerStatsIcon.png" class="selectPlayerImg" (click)="openPlayerSelectionModalTwo()"  *ngIf="playerImage2 == 'null'">-->
+
+				<p class="selectPlayer-Comment" *ngIf="playerName2 == null || playerName2==''">Player Two</p>
+
+				<p class="selectPlayer-Comment" *ngIf="playerName2 != null && playerName2 !=''">{{playerName2}}</p>
+			</ion-col>
+		</ion-row>
+		<div class="row animated fadeInUp">
+			<div class="compare-comment">
+				<span class="compare-comment-FirstLine">Select Any Two Payers</span>
+				<span class="compare-comment-FirstLine">to Compare</span>
+			</div>
+		</div>
+	</div>
+
+
+	<div *ngIf="ftrimage!=''" class="advContainer" style="margin: 0 auto 0 -7px; width: 104%; position:fixed; bottom:0;">
+		<img src="{{path}}{{ftrimage}}" (click)="goToAddSite(advertisementFooter[0].ad_url)" class="full-image">
+	</div>
+
+</ion-content>

@@ -1,0 +1,45 @@
+<ion-header class="custBar">
+  <ion-navbar>
+    <ion-title center>Purchase History</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content>
+<div class="jd_page_class">
+  <!-- <ion-grid>
+
+    <ion-row class="jd_custom_row" *ngFor="let purchase of PurchaseDetails" >
+
+      <ion-col col-6><p *ngIf="purchase.fixture_id == 0" class="jd_label_text">Competition</p></ion-col>
+      <ion-col col-6><p *ngIf="purchase.fixture_id == 0" class="jd_text">{{purchase.competition}}</p></ion-col>
+
+      <ion-col col-6><p *ngIf="purchase.fixture_id == 0" class="jd_label_text">Team</p></ion-col>
+      <ion-col col-6><p *ngIf="purchase.fixture_id == 0" class="jd_text">{{purchase.team}}</p></ion-col>
+
+      <ion-col col-6><p class="jd_label_text">Premium Pass</p></ion-col>
+      <ion-col col-6>
+        <p class="jd_text" *ngIf="(purchase.product !=null && purchase.product !='' && purchase.fixture_id == 0)" [innerHTML]="ProductType(purchase)"></p>
+        <p class="jd_text" *ngIf="(purchase.product !=null && purchase.product !='' && purchase.fixture_id != 0)" [innerHTML]="purchase.gamepass"></p>
+      </ion-col>
+
+      <ion-col col-6><p class="jd_label_text">Amount</p></ion-col>
+      <ion-col col-6>
+        <p class="jd_text" *ngIf="prolist.GetProductType(purchase.product) == 'Premium'">$27.99 AUD</p>
+        <p class="jd_text" *ngIf="prolist.GetProductType(purchase.product) == '2019 Team Pass'">$29.99 AUD</p>
+        <p class="jd_text" *ngIf="prolist.GetProductType(purchase.product) == '2019 Competition Pass'">$49.99 AUD</p>
+        <p class="jd_text" *ngIf="prolist.GetProductType(purchase.product) == 'Premium Plus'"> $49.99 AUD</p>
+        <p class="jd_text" *ngIf="prolist.GetProductType(purchase.product) == '2019 VAFA Pass'"> $89.99 AUD</p>
+        <p class="jd_text" *ngIf="prolist.GetProductType(purchase.product) == '2019 Game Pass'"> $2.99 AUD</p>
+      </ion-col>
+
+      <ion-col col-6><p class="jd_label_text">Purchase Date</p></ion-col>
+      <ion-col col-6><p class="jd_text">{{purchase.purchase_date}}</p></ion-col>
+
+      <ion-col col-6><p class="jd_label_text">Transaction ID</p></ion-col>
+      <ion-col col-6><p class="jd_text">{{purchase.transactionid}}</p></ion-col>
+    </ion-row>
+
+  </ion-grid> -->
+</div>
+</ion-content>

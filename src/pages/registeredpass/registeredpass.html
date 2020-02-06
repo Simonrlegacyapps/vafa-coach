@@ -1,0 +1,68 @@
+<!--
+  Generated template for the RegisteredpassPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header no-border>
+
+		<ion-navbar style="background:transparent !important">
+		  <ion-title></ion-title>
+		</ion-navbar>
+	  
+	  </ion-header>
+
+
+<ion-content class="jb-background" no-bounce>
+	<div class="SignUpForm">
+		<div class="SignUpFormTable-Cell">
+			<div class="OnlyForSignUpFormContainer">
+				<div class="list fromlist ">
+					<div>
+
+
+						<div class="forgot-Password" *ngIf="!showPassword">
+							<ion-label class="item item-input">
+								<img class="setImg" style="margin-top:3px" src="assets/imgs/passwordIcon.png">
+								<ion-input class="setInputTextForUsername" type="password" placeholder="Password" [(ngModel)]="getPassword1.user_password"
+								 required="required">
+								</ion-input>
+							</ion-label>
+							<div class="showPasswordonlye" *ngIf="getPassword1.user_password">
+								<img class="showPasswordIcon" (click)="toggleShowPassword();" src="assets/imgs/showPassword.png" style="cursor: pointer; pointer-events: all;">
+							</div>
+							<div class="border-SignUp"></div>
+						</div>
+
+						<div class="forgot-Password" *ngIf="showPassword">
+
+							<ion-label class="item item-input">
+								
+							</ion-label>
+							<img class="setImg" style="margin-top:3px" src="assets/imgs/passwordIcon.png">
+								<input class="setInputTextForUsername" type="text" placeholder="Password" [(ngModel)]="getPassword1.user_password" required="required">
+								
+							<div class="showPasswordonlye" *ngIf="getPassword1.user_password">
+								<img class="showPasswordIcon" (click)="toggleShowPassword();" src="assets/imgs/showPassword.png" style="cursor: pointer; pointer-events: all;">
+							</div>
+							<div class="border-SignUp"></div>
+						</div>
+
+
+						<ion-label class="forgotPasswordText" (click)="forgotpass()">
+							<p>Forgot Password</p>
+						</ion-label>
+
+					</div>
+				</div>
+				<div class="row buttonContainerLogin">
+					<div class="col">
+						<div class="ink ForgotPassword" (click)="goToAccountTab();">
+							<span style="font-family:Gotham-Bold;font-size: 16px;letter-spacing: 2px;">CONTINUE</span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</ion-content>

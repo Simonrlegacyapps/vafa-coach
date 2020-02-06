@@ -1,0 +1,52 @@
+<ion-header class="custBar">
+    <ion-navbar>
+      <ion-title *ngIf="!toggled" text-center>Select Team</ion-title>
+      <!-- Search Bar -->
+      <form (submit)="submitSearch()">
+      <ion-searchbar class="searchbar" #searchbar *ngIf="toggled" [(ngModel)]="searchTerm" placeholder='' [showCancelButton]="true" (ionCancel)="toggleSearchcancel()"
+        (ionInput)="triggerInput($event)" [ngModelOptions]="{standalone: true}" name="search"></ion-searchbar>
+      <!-- Search Icon -->
+      </form>
+      <ion-buttons end *ngIf="!toggled">
+        <button style="color: white !important;" ion-button icon-only (click)="toggleSearch()"><ion-icon name="search"></ion-icon></button>
+      </ion-buttons>
+    </ion-navbar>
+  </ion-header>
+  <ion-segment [(ngModel)]="type" class="jb-segment">
+      <ion-segment-button class=".jb-segment-right" (click)="selectedType(type); " value="competion">
+        <p style="    margin: 0px;
+        height: 25px;
+        font-size: 14px;
+        font-family: 'Gotham-Bold';">COMPETITIONS</p>
+       <p style="margin: 0px;
+        height: 25px;
+        width: 80%;
+        overflow: hidden;font-family: 'Gotham-Medium';
+        "> {{selectables}}</p>
+        <ion-icon style="position: absolute;
+        top: 35px;
+        right: 8px;line-height: 1;" class="downarrow" name="ios-arrow-down"></ion-icon>
+      </ion-segment-button>
+      <ion-segment-button class="jb-segment-left" (click)="selectedType(type); " value="team">
+        <p style="    margin: 0px;
+        height: 25px;
+        font-size: 14px;
+        font-family: 'Gotham-Bold';">TEAM</p>
+        <p style="margin: 0px;
+        height: 25px;
+        width: 80%;
+        overflow: hidden;font-family: 'Gotham-Medium';
+        "> {{items[0].team_name}}</p>
+        <ion-icon style="position: absolute;
+        top: 35px;
+        right: 8px;line-height: 1;" class="downarrow" name="ios-arrow-down"></ion-icon>
+      </ion-segment-button>
+    </ion-segment>
+  <ion-content class="has-subheader">
+      <ion-list inset >
+        <div *ngFor="let value of items">
+          <ion-item *ngIf="value.team_name!='All'"  (click)="teamSelection(value.team_id,value.team_name,value.image_value);">
+            <img  class="jb-img-ver" src="{{path}}{{value.image_value}}" width="30" />{{value.team_name}}</ion-item>
+          </div>
+        </ion-list> 
+  </ion-content>

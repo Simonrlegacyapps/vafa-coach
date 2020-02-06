@@ -1,0 +1,149 @@
+<!--
+  Generated template for the LivestatsPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header class="custBar">
+	<ion-navbar>
+		<button ion-button menuToggle>
+      <ion-icon name="appicons-menu"></ion-icon>
+    </button>
+		<ion-title text-center>Stats Pass</ion-title>
+	</ion-navbar>
+</ion-header>
+
+<ion-content class="bgPage-color">
+	<ion-slides pager="true" autoplay="4000" (ionSlideDidChange)="slideChanged()" loop="true" speed="300">
+		<ion-slide class="sliderBG">
+			<div class="postMatchSlide-Custom">
+				<div class="playButton-overlay">
+					<div class="outer-custom">
+						<div class="inner-custom">
+							<!--<i class="icon ion-social-youtube-outline"></i> class="icon ion-social-youtube-outline customPlaySymbol"-->
+						</div>
+					</div>
+				</div>
+				<img src="assets/imgs/LiveStats.png" class="setImgWidth" />
+			</div>
+		</ion-slide>
+		<ion-slide class="sliderBG">
+			<div class="postMatchSlide-Custom">
+				<img src="assets/imgs/TeamvTeam.png" class="setImgWidth" />
+			</div>
+		</ion-slide>
+		<ion-slide class="sliderBG">
+			<div class="postMatchSlide-Custom">
+
+				<div class="playButton-overlay">
+					<div class="outer-custom">
+						<div class="inner-custom">
+							<!--<i class="icon ion-social-youtube-outline"></i><!--class="icon ion-social-youtube-outline customPlaySymbol"-->
+						</div>
+					</div>
+				</div>
+				<img src="assets/imgs/EveryPlayer.png" class="setImgWidth" />
+			</div>
+		</ion-slide>
+	</ion-slides>
+
+	<div class="liveStatsTitle">
+		<h1>UPGRADE YOUR EXPERIENCE</h1>
+	</div>
+	<!--<div class="liveStatsSub-Title">
+			<p>include free bonus upgrade*</p>
+		</div>-->
+
+	<div class="row buttonContainerLive" *ngIf="isLogin==0" (click)="gotologin();">
+		<div class="col col-offset-20" style="font-family:Gotham-Bold">
+			<div class="custGreenGradiantBtn ink" style="height:64px;">
+				<!--<div class="ValueContainer"><sup style="font-size:15px;margin-right:-5px;">$</sup> 19.99 <sup style="font-size:11px;">Per Season</sup></div>-->
+				<p style="font-size:18px;margin-top:12px;">Upgrade Now</p>
+			</div>
+		</div>
+	</div>
+
+
+	<div class="row buttonContainerLiveUpgraded" *ngIf="isLogin==1">
+		<div class="col col-offset-20" style="font-family:Gotham-Bold">
+			<div class="custGreenGradiantBtn ink" style="height:64px;">
+				<p style="font-size:18px;margin-top:12px;">Upgraded</p>
+			</div>
+		</div>
+	</div>
+	<!--<div class="row buttonContainerLive buttonContainerPurchased" ng-if="isLogin==1" >
+			<div class="col col-offset-20" style="font-family:Gotham-Bold">
+				<div class="custGreenGradiantBtn ink" style="height:64px;" >					
+					<p>Purchased</p>
+				</div>
+			</div>
+		</div>-->
+
+	<div class="row rowpadding" *ngIf="disableLogin==0">
+		<div class="col">
+			<button class="button button-small custOutLineBtn LogInButton" (click)="gotologin();">Log In</button>
+		</div>
+	</div>
+
+
+	<div class="dateOFMatches-OnlyForLiveStats">
+		<span style="color:#fff;">Features include</span>
+	</div>
+	<ion-list class="livePassFeatureList">
+		<ion-item class="jb-last-item ">
+			<ion-avatar item-start>
+				<img src="assets/imgs/TeamStatsIconWhiteBg.png">
+			</ion-avatar>
+			<h2>Team Stats</h2>
+			<p>LIVE Match Stats</p>
+		</ion-item>
+		<ion-item class="jb-last-item">
+			<ion-avatar item-start>
+				<img src="assets/imgs/PlayerStatsIconWhiteBg.png">
+			</ion-avatar>
+			<h2>Player Stats</h2>
+			<p>Every Players Stats</p>
+		</ion-item>
+	</ion-list>
+	<!-- <div class="list livePassFeatureList">
+			<a class="item item-avatar" href="">
+			  <img src="assets/imgs/menuIcon/TeamStatsIconWhiteBg.png">
+			  <h2>Team Stats</h2>
+			  <p>LIVE Match Stats</p>
+			</a>
+			<a class="item item-avatar"  href="">
+			  <h2>Player Stats</h2>
+			  <p>Every Players Stats</p>
+			</a>			 -->
+
+	<!--<a class="item item-avatar" href="" ng-click="logout();">
+			  <h2>Logout</h2> 
+			</a>-->
+
+
+	<!-- <a> -->
+	<div class="row rowpadding" style="margin-top: 15px;">
+		<div class="col" *ngIf="disableLogin==1">
+			<button class="button button-small custOutLineBtn LogInButton" (click)="logout();">Logout</button>
+		</div>
+	</div>
+	<!-- 				
+			</a>
+		</div> -->
+
+</ion-content>
+<ion-footer style="background-color:#212D45;">
+	<ion-toolbar class="jb-toolbar">
+		<div class="tandc-Container">
+			<div class="row">
+				<!--<div class="spanStarTwo">*</div>-->
+				<!--<p class="termsCondition">Includes all available team & player stats across selected competitions. </p>-->
+				<!--<p>BONUS offer includes Team & Player Stats for all 3 competitions for the price of 1.</p>-->
+				<p style="margin-top:7px;margin-left:-13px;">*all premium content is available for free in season 2017</p>
+			</div>
+			<!--<div class="row">					
+					<div class="spanStarTwo">*</div><p class="termsCondition">Does not include all matches,teams or players.See T&C' for full details. </p>			
+				</div>-->
+		</div>
+	</ion-toolbar>
+</ion-footer>

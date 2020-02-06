@@ -1,0 +1,93 @@
+<!--
+  Generated template for the GoalkickersPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+
+<ion-header class="custBar">
+  <ion-navbar>
+    <button *ngIf="!toggled" ion-button menuToggle>
+      <ion-icon name="appicons-menu"></ion-icon>
+    </button>
+    <ion-title *ngIf="!toggled" text-center>Goal Kickers</ion-title>
+    <button *ngIf="!toggled" class="title1" text-center (click)="selectedType('competion')">{{selectables.length > 20 ? selectables.substring(0,20)+'..' : selectables}}<ion-icon class="downarrow" name="ios-arrow-down"></ion-icon></button>
+    <!-- Search Bar -->
+    <form (submit)="submitSearch()">
+    <ion-searchbar #searchbar *ngIf="toggled" [(ngModel)]="searchTerm" placeholder='' [showCancelButton]="true" (ionCancel)="toggleSearchcancel()"
+      (ionInput)="triggerInput($event)" [ngModelOptions]="{standalone: true}" name="search"></ion-searchbar>
+    <!-- Search Icon -->
+    </form>
+    <ion-buttons end *ngIf="!toggled && !weblink">
+      <button ion-button icon-only (click)="toggleSearch()"><ion-icon name="search"></ion-icon></button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+<ion-segment *ngIf="!weblink"  [(ngModel)]="type" class="jb-segment">
+    <ion-segment-button class="jd-segment-first .jb-segment-right" (click)="selectedType(type); " value="year">
+        <p  class="jd-year-p1">SEASON</p>
+       <p class="jd-year-p2">{{selectd_yr}}</p>
+        <ion-icon class="downarrow jd-darrow" name="ios-arrow-down"></ion-icon>
+      </ion-segment-button>
+  <ion-segment-button class="jb-segment-left" (click)="selectedType(type);" value="teams">
+    <p class="jd-t">TEAMS</p>
+    <p style="margin: 0px;
+    text-align: left;
+    height: 25px;
+    overflow: hidden;
+    font-family: 'Gotham-Medium';
+    margin-left: 10px;
+    margin-top: -9px;
+    ">{{selectablesTeam}}</p>
+    <ion-icon class="downarrow jd-d2" name="ios-arrow-down"></ion-icon>
+  </ion-segment-button>
+</ion-segment>
+<ion-header *ngIf="headerAdv.length && !weblink" [style.display]="advDisplay=='hide' ? 'block' : 'none'" class="bar-sub-subheader" style="height: 50px;position:relative; top:113px; background-color: transparent; border: 0px !important; border-bottom-color: transparent !important; background-image: none !important; border-bottom: none !important; ">
+  <div class="advContainer" style="position:fixed;margin: -9px auto 0 -7px; width: 104%;">
+    <img src="{{path}}{{cutPath(headerAdv[0].ad_image)}}"  (click)="goToAddSite(headerAdv[0].ad_url);">
+  </div>
+</ion-header>
+<ion-content class="bgPage-color" no-bounce (ionScroll)="onScroll($event)">
+   <!--  [virtualScroll]="items" [virtualTrackBy]="identify" *virtualItem="let value ; let i= index"  [virtualScroll]="goalKickers" *ngFor="let value of items; let i=index" -->
+  <div class="jb-topalign"  *ngIf="!weblink" >
+    <div *ngFor="let value of items; let i=index"  >
+      <div class="list" *ngIf="value.goal>0">
+        <ion-row class="row teamStates-List animated fadeInUp ink" (click)="goToGoalKickerDetailsPage(value.player_id,value.team_id,'value.player_name',value.player_number,'value.team_team','value.player_image',value.goal) ">
+          <ion-col col-8>
+            <div class="item item-thumbnail-left onlyForGoalKicker newsList-CustomCSS ONTeam-Select">
+            <img *ngIf="value.player_image == '/web/images/default_player.png'"   src="{{path1}}{{value.player_image}}" class="newsList-SideImage-CSS" style="width: 60px !important;">
+					  <img *ngIf="value.player_image != '/web/images/default_player.png'"   src="{{path}}{{cutPath(value.player_image)}}" class="newsList-SideImage-CSS" style="width: 60px !important;">
+					 <div class="jb-inner-goals">
+            <p class="jb-goal-p">{{value.player_name}}</p>
+            <p class="jb-goal-p1 jb-margin"><span style="font-size: 15px;font-family: Gotham-Book;color:#04235c;">{{value.team_team}}</span></p>
+					  <!-- <p class="jb-goal-p1 jb-margin">{{value.player_number}}&nbsp; <span style="font-family: Gotham-Bold;color:#04235c;">{{value.team_team}}</span></p> -->
+					 </div>
+				  </div>
+          </ion-col>
+          <ion-col col-4>
+            <div class="score-Average-stats-goalKicker">
+              <p class="stats-Score text-center">{{value.goal}}</p>
+              <span class="greenbg">GOALS</span>
+            </div>
+          </ion-col>
+        </ion-row>
+      </div>
+      <div class="advContainer" *ngIf="i==1" class="jb-adv">
+        <img  src="assets/imgs/CSM_-_More_Footy_Less_Admin_(white).gif"  (click)="goToAddSite(headerAdv[0].ad_url);">
+      </div>
+    </div>
+  </div>
+  <!-- weblink -->
+      <div *ngIf="weblink" class="weblinkclass" [innerHTML]="safeURL">
+         <!-- <iframe height="100%" width="100%" [src]="safeURL" seamless allowfullscreen></iframe> -->
+      </div>
+  <!--  -->
+</ion-content>
+<ion-footer *ngIf="weblink">
+  <ion-toolbar class="jb-toolbar">
+      <div class="jb-adv">
+        <img *ngIf="WeblinkAd == undefined" class="full-image" src="assets/imgs/CSM_-_More_Footy_Less_Admin_(white).gif">
+        <img *ngIf="WeblinkAd != undefined" [src]="WeblinkAd">
+    </div>
+  </ion-toolbar>
+</ion-footer>

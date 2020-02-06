@@ -1,0 +1,559 @@
+
+<ion-header class="custBar">
+    <ion-navbar>
+        <button ion-button menuToggle>
+            <ion-icon name="appicons-menu"></ion-icon>
+          </button>
+      <ion-title *ngIf="type=='SCORE'" text-center>Score</ion-title>
+      <ion-title *ngIf="type=='ACTION' " class="newtitleHeader">
+        <div class="wide-as-needed text-center scorePageCss" style="background-color:transparent">
+          <div class="button newHeaderText">
+            <img src="{{path}}{{homeTeamData.team_image}}" class="img-storke titleHeaderImg" align="center" />{{homeTeamData.team_abbrevation}}</div>
+          <div class="button newHeaderText-Middle">{{newTotalHomeTeamScore}} - {{newTotalAwayTeamScore}}</div>
+          <div class="button newHeaderText">
+            <img src="{{path}}{{awayTeamData.team_image}}" class="img-storke titleHeaderImg" />{{awayTeamData.team_abbrevation}}</div>
+        </div>
+      </ion-title>
+      <ion-title *ngIf="type=='stats'" class="newtitleHeader">
+        <div class="wide-as-needed text-center scorePageCss" style="background-color:transparent">
+          <div class="button newHeaderText">
+            <img src="{{path}}{{homeTeam.team_image}}" class="img-storke titleHeaderImg" align="center" />{{homeTeam.team_abbrevation}}</div>
+          <div class="button newHeaderText-Middle">{{newTotalHomeTeamScore}} - {{newTotalAwayTeamScore}}</div>
+          <div class="button newHeaderText">
+            <img src="{{path}}{{awayTeam.team_image}}" class="img-storke titleHeaderImg" />{{awayTeam.team_abbrevation}}</div>
+        </div>
+      </ion-title>
+    </ion-navbar>
+  </ion-header>
+  <ion-segment [(ngModel)]="type" class="jb-segment">
+    <ion-segment-button (click)="goToActionPage(type); " value="SCORE">
+      SCORE
+    </ion-segment-button>
+    <ion-segment-button (click)="goToActionPage(type); " value="ACTION">
+      ACTION
+    </ion-segment-button>
+    <ion-segment-button (click)="goTostats(type); " value="stats">
+      <span class="premium">PREMIUM</span> STATS
+    </ion-segment-button>
+  </ion-segment>
+  <ion-header class="jb-grapheader" *ngIf="showcontent=='show' && type=='ACTION'">
+    <div id="scoreChartminh" class="bar-subheader" style="height:105px; width:100% !important; background: white;  border: 0px !important; border-bottom-color: transparent !important; background-image: none !important; border-bottom: none !important;">
+      <div [style.display]="shortAdvhideshow==0 ? 'block' : 'none'">
+        <div class="graphTextContainerawayHeader">
+          <img class="graphImgHeader  img-storke" src="{{path}}{{homeTeamData.team_image}}">
+        </div>
+        <div class="Grapgh-BorderHeader"></div>
+        <div class="graphTextContainerHomeHeader">
+          <img class="graphImgHeader  img-storke" src="{{path}}{{awayTeamData.team_image}}">
+        </div>
+      </div>
+      <div class="jb-class-back-top">
+        <div class='graph' id="scoreChartmin" style="height:100px;width:100% !important; margin-left:35px;   vertical-align: middle;font-size:14px;"></div>
+      </div>
+      <div [style.display]="shortAdvhideshow==0 ? 'block' : 'none'" class="advContainer" style="position:absolute; margin: 5px auto 0 0px; width: 104%;">
+        <img src="{{path}}{{advertisementHeader[0].ad_image}}"  (click)="goToAddSite(advertisementHeader[0].ad_url);">
+      </div>
+    </div>
+  </ion-header>
+  <ion-toolbar ion-scroll no-border class="scrollable-segments " *ngIf=" type=='stats' && pamentshow==1">
+    <ion-segment [(ngModel)]="statschoose">
+      <ion-segment-button class="jb-club-seg" (click)="selectstats('team'); " value="team">
+        Teams
+      </ion-segment-button>
+      <ion-segment-button class="jb-club-seg" (click)="selectstats('Player'); " value="Player">
+        Players
+      </ion-segment-button>
+    </ion-segment>
+  </ion-toolbar>
+  <ion-header *ngIf="headerimage!='' && type=='stats'  && pamentshow==1" [style.display]="advDisplay=='hide' ? 'block' : 'none'"
+    class="bar-sub-subheader" style="height: 50px;position:relative; top:85px; background-color: transparent; border: 0px !important; border-bottom-color: transparent !important; background-image: none !important; border-bottom: none !important; ">
+    <div class="advContainer" style="position:fixed;margin: 0 auto 0 -7px; width: 104%;">
+      <!-- <img src="{{path}}{{headerimage}}" class="full-image" (click)="goToAddSite(headerurl);"> -->
+      <img src="{{path}}{{adv[0].ad_image}}" (click)="goToAddSite(adv[0].ad_url);">
+    </div>
+  </ion-header>
+  <ion-content class="bgPage-color" (ionScroll)="onScroll($event)">
+  
+    <div *ngIf="showcontent=='show' && type=='SCORE'">
+      <ul class="list compitationList">
+        <li class="item ink">
+          <div class="row text-center">
+            <ion-col col-3 class="col teamCol onlyScore">
+              <div  class="jb-inner-img"><span class="helper"></span>
+              <img src="{{path}}{{homeTeamAbbr.team_image}}" class="full-image img-storke"></div>
+              <p style="margin:auto;"> {{homeTeamAbbr.team_name}}</p>
+  
+              <h4 *ngIf="HomeTeamScore == ''">0.0</h4>
+              <h4 *ngIf="HomeTeamScore != ''">{{totalHomeQuarerScore}}</h4>
+  
+              <h3 class="jd-custom-scoretxt">{{newTotalHomeTeamScore}}</h3>
+            </ion-col>
+            <ion-col col-6 class="col teamCenterDiv">
+              <div class="dispTable">
+                <div class="dispTableCell">
+                  <div class="teamScoreContainer">
+                    <!--<h3 style="margin-top:-10px"><b>{{winTeamStatus}} </b> <br/><span style="font-family:Gotham-Book;"  [innerHTML]=-html="changeWinning(winTeamScore)"> </span></h3>-->
+  
+                    <h3 style="padding:5px 0;">
+                      <b style="font-family: Gotham-Bold;">{{winTeamStatus}} </b>
+                      <br/>
+                      <span style="font-family:Gotham-Book;"> {{winTeamScore}}</span>
+                    </h3>
+  
+                    <div class="qtrTimingContainer" *ngIf="teamStatus == 10">
+                      <div class="qtrNo" style="font-family:Gotham-Bold;">Q{{ lastScore.quater_new }}</div>
+                      <div class="qtrNoTime" style="font-family:Gotham-Medium;">{{ lastScore.act_time_new }}</div>
+                    </div>
+                    <div class="qtrTimingContainer" *ngIf="teamStatus == 1">
+                      <div class="qtrNo" style="font-family:Gotham-Bold;">Q{{ lastScore.quater_new }}</div>
+                      <div class="qtrfinished" style="font-family:Gotham-Medium;font-size:14px;">{{ lastScore.act_time_new }}</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </ion-col>
+            <ion-col col-3 class="col teamCol onlyScore">
+              <div class="jb-inner-img"><span class="helper"></span>
+              <img src="{{path}}{{awayTeamAbbr.team_image}}" class="full-image img-storke"></div>
+              <p style="margin:auto;">{{awayTeamAbbr.team_name}}</p>
+              <h4 *ngIf="awayTeamScore == ''">0.0</h4>
+              <h4 *ngIf="awayTeamScore != ''">{{totalAwayQuarerScore}}</h4>
+  
+              <h3 class="jd-custom-scoretxt">{{newTotalAwayTeamScore}}</h3>
+              <!--*ngIf="newTotalAwayTeamScore != ''"-->
+            </ion-col>
+          </div>
+        </li>
+      </ul>
+      <div class="forSetColorContainer" style="padding-bottom:10px;">
+        <!-- style="position:absolute;width: 100%; top:220px" -->
+        <div class="qtrScoreContainerRow clearfix">
+          <div class="qtrScoreTeam">
+            <div class="colorContainer" *ngIf="HomeTeamScore == ''">0.0</div>
+            <div class="colorContainer" *ngIf="HomeTeamScore != ''">{{q1HomeScore}}</div>
+  
+          </div>
+  
+          <div class="circularMidQtr" [ngClass]="{'bgColorGreen': lastScore.quater_new == 1, 'bgColorWhite ': lastScore.quater_new != 1}"
+            *ngIf="statusName != 'COMPLETE' ">
+            Q1
+          </div>
+          <div class="circularMidQtr"   *ngIf="statusName == 'COMPLETE' ">
+            Q1
+          </div>
+  
+          <div class="qtrScoreTeam text-right">
+            <div class="colorContainer" *ngIf="awayTeamScore == ''">0.0</div>
+            <div class="colorContainer" *ngIf="awayTeamScore != ''">{{q1AwayScore}}</div>
+  
+          </div>
+        </div>
+        <div class="qtrScoreContainerRow clearfix">
+          <div class="qtrScoreTeam">
+            <div class="colorContainer" *ngIf="lastScore.quater_new < 2">-</div>
+            <div class="colorContainer" *ngIf="HomeTeamScore != ''  && lastScore.quater_new>=2">{{q2HomeScore}}</div>
+            <div class="colorContainer" *ngIf="HomeTeamScore == ''  && lastScore.quater_new>=2">0.0</div>
+  
+          </div>
+  
+          <div class="circularMidQtr1" [ngClass]="{'bgColorGreen': lastScore.quater_new == 2, 'bgColorWhite': lastScore.quater_new != 2}"
+            *ngIf="statusName != 'COMPLETE' ">
+            Q2
+          </div>
+          <div class="circularMidQtr1" *ngIf="statusName == 'COMPLETE' ">
+            Q2
+          </div>
+  
+          <div class="qtrScoreTeam text-right">
+            <div class="colorContainer" *ngIf="lastScore.quater_new < 2">-</div>
+            <div class="colorContainer" *ngIf="awayTeamScore != ''  && lastScore.quater_new>=2">{{q2AwayScore}}</div>
+            <div class="colorContainer" *ngIf="awayTeamScore == ''  && lastScore.quater_new>=2">0.0</div>
+  
+          </div>
+        </div>
+        <div class="qtrScoreContainerRow clearfix">
+          <div class="qtrScoreTeam">
+            <div class="colorContainer" *ngIf="lastScore.quater_new  < 3">-</div>
+            <div class="colorContainer" *ngIf="HomeTeamScore != '' &&  lastScore.quater_new >=3">{{q3HomeScore}}</div>
+            <div class="colorContainer" *ngIf="HomeTeamScore == ''  && lastScore.quater_new>=3">0.0</div>
+  
+          </div>
+  
+          <div class="circularMidQtr" [ngClass]="{'bgColorGreen': lastScore.quater_new == 3, 'bgColorWhite': lastScore.quater_new != 3}"
+            *ngIf="statusName != 'COMPLETE' ">
+            Q3
+          </div>
+          <div class="circularMidQtr"  *ngIf="statusName == 'COMPLETE' ">
+            Q3
+          </div>
+  
+          <div class="qtrScoreTeam text-right">
+            <div class="colorContainer" *ngIf="lastScore.quater_new  < 3">-</div>
+            <div class="colorContainer" *ngIf="awayTeamScore != ''  && lastScore.quater_new>=3">{{q3AwayScore}}</div>
+            <div class="colorContainer" *ngIf="awayTeamScore == ''  && lastScore.quater_new>=3">0.0</div>
+  
+          </div>
+        </div>
+        <div class="qtrScoreContainerRow clearfix">
+          <div class="qtrScoreTeam">
+  
+            <div class="colorContainer" *ngIf="lastScore.quater_new  < 4">-</div>
+            <div class="colorContainer" *ngIf="HomeTeamScore != '' &&  lastScore.quater_new >=4">{{q4HomeScore}}</div>
+            <div class="colorContainer" *ngIf="HomeTeamScore == '' &&  lastScore.quater_new >=4">0.0</div>
+  
+          </div>
+  
+          <div class="circularMidQtr1" [ngClass]="{'bgColorGreen': lastScore.quater_new == 4, 'bgColorWhite': lastScore.quater_new != 4}"
+            *ngIf="statusName != 'COMPLETE' ">
+            Q4
+          </div>
+          <div class="circularMidQtr1"
+            *ngIf="statusName == 'COMPLETE' ">
+            Q4
+          </div>
+  
+          <div class="qtrScoreTeam text-right">
+            <div class="colorContainer" *ngIf="lastScore.quater_new  < 4">-</div>
+            <div class="colorContainer" *ngIf="awayTeamScore != ''  && lastScore.quater_new>=4">{{q4AwayScore}}</div>
+            <div class="colorContainer" *ngIf="awayTeamScore == ''  && lastScore.quater_new>=4">0.0</div>
+  
+          </div>
+        </div>
+      </div>
+      <!-- ad section -->
+      <div class="jb-adv jd-ad">
+        <img src="{{path}}{{advertisementFooter.ad_image}}" (click)="goToAddSite(advertisementFooter.ad_url);">
+     </div>
+      <!-- Goalkickers list  -->
+      <div>
+          <div class="jd_gk_head">
+            <p class="jd_gk_txt">GOAL KICKERS</p>
+          </div>
+          <ion-row>
+            <!-- home team -->
+            <ion-col>
+                  <p *ngFor="let plyr of Bestplayers" class="jd_home_bstplyr">{{plyr}}</p>
+            </ion-col>
+            <!-- away team -->
+            <ion-col>
+                  <p *ngFor="let plyr of Bestplayers" class="jd_away_bstplyr">{{plyr}}</p>
+            </ion-col>
+          </ion-row>
+      </div>
+       <!-- Best players list  -->
+       <div>
+          <div class="jd_gk_head">
+            <p class="jd_gk_txt">BEST PLAYERS</p>
+          </div>
+          <ion-row>
+            <!-- home team -->
+            <ion-col>
+                  <p *ngFor="let plyr of Bestplayers" class="jd_home_bstplyr">{{plyr}}</p>
+            </ion-col>
+            <!-- away team -->
+            <ion-col>
+                  <p *ngFor="let plyr of Bestplayers" class="jd_away_bstplyr">{{plyr}}</p>
+            </ion-col>
+          </ion-row>
+      </div>
+    </div>
+    <div *ngIf="showcontent=='show' && type=='ACTION'">
+      <div *ngIf="graphImgShowHide==1">
+        <div class="MobAppawayTeam">
+          <img class="graphImg graphTextContaineraway img-storke" src="{{path}}{{homeTeamData.team_image}}">
+        </div>
+        <div class="MobApphomeTeam">
+          <img class="graphImg graphTextContainerhome img-storke" src="{{path}}{{awayTeamData.team_image}}">
+        </div>
+        <div class="Grapgh-Border"></div>
+        <div class="Grapgh-Border-Ends"></div>
+      </div>
+      <div class="jb-class-back">
+        <div class='graph' id="scoreChart" style="height:200px; width:inherit !important;  margin-left:35px; vertical-align: middle;font-size:17px;margin-top: 43px;"></div>
+      </div>
+      <div class="advContainer " *ngIf="graphImgShowHide==1">
+        <img src="{{path}}{{advertisementHeader[0].ad_image}}"  (click)="goToAddSite(advertisementHeader[0].ad_url);">
+      </div>
+      <ion-row class="row teamStates-List animated fadeInUp onlyForAction ink" *ngFor="let data of actionScoreFeed1; let i=index">
+        <ion-col class="col">
+          <div class="list jb-list">
+            <a class="item item-thumbnail-left newsList-CustomCSS ONTeam-Select onlyForAction">
+              <img src="img/team1.png" class=" ActionLogoImg newsList-SideImage-CSS img-storke " *ngIf="data.team_type=='null'" style="max-width:50px">
+  
+              <img src="{{path}}{{homeTeamData.team_image}}" class="ActionLogoImg newsList-SideImage-CSS img-storke" *ngIf="data.team_type=='home'"
+                style="max-width:50px">
+  
+              <img src="{{path}}{{awayTeamData.team_image}}" class="ActionLogoImg newsList-SideImage-CSS img-storke" *ngIf="data.team_type=='away'"
+                style="max-width:50px">
+              <h2>{{data.stat_title}}
+                <span style="font-family:Gotham-Medium;color:#76797f;" *ngIf="data.player_name"> {{data.player_name}}</span>
+                <!-- <span style="font-family:Gotham-Medium;color: #c3c6cc;" *ngIf="data.player_name.length > 14"> {{data.player_name }}</span>    -->
+              </h2>
+              <p style="padding-top:5px;">Q{{data.quater}} {{data.act_time}}</p>
+            </a>
+  
+          </div>
+        </ion-col>
+  
+      </ion-row>
+    </div>
+  
+    <!-- stats -->
+  
+  
+    <div class="jb-stats" *ngIf=" type=='stats' && pamentshow==1" style="background-color: transparent;">
+      <div *ngIf="statschoose=='team'">
+        <ul class="list compitationList">
+          <li class="item">
+            <ion-row class="row text-center" style="padding: 17px 0;">
+              <ion-col col-4 class="col teamCol">
+                 <div class="jb-inner-img"><span class="helper"></span>
+                <img src="{{path}}{{homeTeam.team_image}}" class="full-image img-storke "></div>
+                <p style="margin-top: 10px;">{{homeTeam.team_abbrevation}}</p>
+                <h3>{{newTotalHomeTeamScore}}</h3>
+              </ion-col>
+              <ion-col col-4 class="col teamCenterDiv">
+                <div class="dispTable">
+                  <div class="dispTableCell" style="margin-top: 60px;">
+                    <h3>
+                      <b>VS</b>
+                    </h3>
+                  </div>
+                </div>
+              </ion-col>
+              <ion-col col-4 class="col teamCol">
+                 <div class="jb-inner-img"><span class="helper"></span>
+                <img src="{{path}}{{awayTeam.team_image}}" class="full-image img-storke"></div>
+                <p style="margin-top: 10px;">{{awayTeam.team_abbrevation}}</p>
+                <h3>{{newTotalAwayTeamScore}}</h3>
+              </ion-col>
+            </ion-row>
+          </li>
+        </ul>
+        <div class="advContainer">
+          <img src="{{path}}{{adv[0].ad_image}}" (click)="goToAddSite(adv[0].ad_url);">
+        </div>
+  
+        <!-- sort with quater functions -->
+        <div class="jd_sort_btns">
+          <ion-row class="jd_sort_rw">
+           <ion-col [ngClass]="{'jd_selectedOptn': selectedOption == 'all'}"  (click)="SelectedSort('all')" col-3 class="jd_btn_border me"><p class="jd_sort_btn">All</p></ion-col>
+            <ion-col  [ngClass]="{'jd_selectedOptn': selectedOption == 'Q1'}" (click)="SelectedSort('Q1')" class="jd_btn_border"><p class="jd_sort_btn">Q1</p></ion-col>
+            <ion-col  [ngClass]="{'jd_selectedOptn': selectedOption == 'Q2'}" (click)="SelectedSort('Q2')"  class="jd_btn_border"><p class="jd_sort_btn">Q2</p></ion-col>
+            <ion-col  [ngClass]="{'jd_selectedOptn': selectedOption == 'Q3'}" (click)="SelectedSort('Q3')"  class="jd_btn_border"><p class="jd_sort_btn">Q3</p></ion-col>
+            <ion-col  [ngClass]="{'jd_selectedOptn': selectedOption == 'Q4'}" (click)="SelectedSort('Q4')" class="me2"><p class="jd_sort_btn">Q4</p></ion-col>
+          </ion-row>
+        </div>
+        <!--  -->
+        <!-- Toggle switch -->
+        <div>
+            <ion-row>
+                <ion-col col-5 style="text-align: right;">
+                  <img src="{{path}}{{homeTeam.team_image}}" class="sortTeamImg">
+                </ion-col>
+                <ion-col>
+                    <ion-toggle  [(ngModel)]="isToggled" (ionChange)="notify()" class="jd_toggle_switch"></ion-toggle>
+                </ion-col>
+                <ion-col col-5  style="text-align: left;">
+                  <img src="{{path}}{{awayTeam.team_image}}" class="sortTeamImg">
+                </ion-col>
+              </ion-row>
+        </div>
+        <!--  -->
+  
+        <div *ngFor="let value of modifiedStateSeq;let key=index;">
+          <div *ngIf="value.stat_abbrevation!='RB'">
+            <div class="">
+              <p class="nomalFormMidTitle ">
+                <span>{{value.stat_name}}</span>
+              </p>
+  
+              <ion-row class="row progressBarstyle">
+                <ion-col class="col col-40">
+                  <div class="fillBar greenFill" [style.background-color]="value.homeTeamColor" [style.width]="value.homeTeamWidth" style="font-size:19px; font-family:Gotham-Medium;">
+                    {{homeTeamScoreStat[value.stat_abbrevation]}}
+                  </div>
+                </ion-col>
+                <ion-col col-2>
+                    <div class="jd_circle p{{homeEFFWidth}} {{hColor}}" style="float:right;margin-right: 7px;">
+                        <span> {{ homeEFF }}%</span>
+                        <div class="slice">
+                          <div class="bar1"></div>
+                          <div class="fill"></div>
+                        </div>
+                      </div>
+                </ion-col>
+                <ion-col class="col col-40">
+                  <div class="fillBar" [style.background-color]="value.awayTeamColor" [style.width]="value.awayTeamWidth" style="font-size:19px; font-family:Gotham-Medium;">
+                    {{awayTeamScoreStat[value.stat_abbrevation]}}
+                  </div>
+                </ion-col>
+              </ion-row>
+  
+            </div>
+            <div class="" *ngIf="value.stat_abbrevation =='I50'">
+              <p class="nomalFormMidTitle ">
+                <span>Efficiency Inside 50s</span>
+              </p>
+              <ion-row class="row progressBarstyle">
+                <ion-col col-5 class="col col-40">
+                  <div class="c100 p{{homeEFFWidth}} {{hColor}}" style="float:right;margin-right: 7px;">
+                    <!-- <span> {{ EFFCalculattion(homeTeamScoreStat[value.stat_abbrevation],homeTeamScoreStat['G'], homeTeamScoreStat['B'], homeTeamScoreStat['RB'], homeTeamScoreStat['I50'], 'home')| number:0}}%</span>		 -->
+                    <span> {{ homeEFF }}%</span>
+                    <div class="slice">
+                      <div class="bar1"></div>
+                      <div class="fill"></div>
+                    </div>
+                  </div>
+                </ion-col>
+  
+                <ion-col col-2 class="col col-10">
+                  <div class="height-Border"></div>
+                </ion-col>
+                <ion-col col-5 class="col col-40">
+                  <div class="c100 p{{awayEFFWidth}} {{aColor}}" style=" margin-left: 9px;">
+                    <span>{{ awayEFF }}%</span>
+                    <div class="slice">
+                      <div class="bar1"></div>
+                      <div class="fill"></div>
+                    </div>
+                  </div>
+                </ion-col>
+  
+              </ion-row>
+  
+            </div>
+          </div>
+        </div>
+      </div>
+      <div *ngIf="statschoose=='Player'" class="jb-plaer">
+        <table [id]="playerStatsTable0" class="stripe row-border order-column playerStatsTable " width="100%" cellspacing="0" *ngIf="showDataTable==true">
+          <thead>
+            <tr>
+              <th class="jb-sorting">
+                <button [id]="btn10" class="button button-clear playerStatLeftTeam homeTeam activated1" (click)="sortBYType('home')">
+                  <img src="{{path}}{{homeTeam.team_image}}" class="img-storke" />
+                </button>
+  
+                <button [id]="btn20" class="button button-clear playerStatRightTeam awayTeam1 activated1 " (click)="sortBYType('away')">
+                  <img src="{{path}}{{awayTeam.team_image}}" class="img-storke" />
+                </button>
+              </th>
+              <th class="jb-sorting-gb">
+                <button (click)="sortBY('GB')" [id]="GB0" class="button button-clear tableColumSortStyle gbClass ">
+                  G.B
+                </button>
+              </th>
+              <th [id]="buttonId0">
+                <button class="button button-clear tableColumSortStyle">
+                  D
+                </button>
+              </th>
+              <th>
+                <button (click)="sortBY('K')" class="button button-clear tableColumSortStyle">
+                  K
+                </button>
+              </th>
+              <th (click)="sortBY('H')">
+                <button class="button button-clear tableColumSortStyle">
+                  H
+                </button>
+              </th>
+              <th (click)="sortBY('M')">
+                <button class="button button-clear tableColumSortStyle">
+                  M
+                </button>
+              </th>
+              <th (click)="sortBY('T')">
+                <button class="button button-clear tableColumSortStyle">
+                  T
+                </button>
+              </th>
+              <th (click)="sortBY('HO')">
+                <button class="button button-clear tableColumSortStyle">
+                  HO
+                </button>
+              </th>
+            </tr>
+  
+          </thead>
+          <tbody class=''>
+            <tr *ngFor="let obj of homeTeamPlayers1;let key=index">
+              <td [attr.data-t]="obj.type" style="text-align:left !important;">
+                <div class="ladderTableLeftSide" *ngIf="obj.type=='home'">
+                  <img src="{{path}}{{baseUrl}}{{homeTeamImages[0].image_value}}" class="laderTeamIcon" />
+                  <div class="Player_number">
+                    <span>{{obj.player_number}}</span>
+                  </div>
+                  <span class="teamName" style="line-height:3 !important;">{{ obj.playerFName}}</span>
+                </div>
+  
+                <div class="ladderTableLeftSide" *ngIf="obj.type=='away'">
+                  <img  src="{{path}}{{baseUrl}}{{awayTeamImages[0].image_value}}" class="laderTeamIcon"
+                  />
+                  <div class="Player_number">
+                    <span>{{obj.player_number}}</span>
+                  </div>
+                  <span class="teamName" style="line-height:3 !important;">{{obj.playerFName}}</span>
+                </div>
+  
+              </td>
+              <td class="jb-sorting-gb">{{ getGBData(obj.G,obj.B,obj.RB,key,obj, obj.K, obj.H) }}</td>
+              <td [innerHTML]="obj.D"> </td>
+              <td [innerHTML]="obj.K"> </td>
+              <td [innerHTML]="obj.H"> </td>
+              <td [innerHTML]="obj.M"> </td>
+              <td [innerHTML]="obj.T"> </td>
+              <td [innerHTML]="obj.HO"> </td>
+  
+            </tr>
+  
+          </tbody>
+          <!-- <tbody class='' style="visibility: hidden;">
+                          <tr *ngFor="let obj of homeTeamPlayers1;let key=index">
+                           <td [attr.data-t]="obj.type" *ngIf="key<2" style="text-align:left !important;">
+                              <div class="ladderTableLeftSide" *ngIf="obj.type=='home'"> -->
+          <!-- <tr  ng-repeat="(key,obj) in homeTeamPlayers1 | limitTo:2" >
+                    <td data-t="{{obj.type}}" style="text-align:left !important;">
+                        <div class="ladderTableLeftSide" ng-if="obj.type=='home'">  -->
+          <!-- <img src="" class="laderTeamIcon"/>
+                             <div class="Player_number">
+                                   <span>5656</span>
+                            </div>
+                            <span class="teamName" style="line-height:34px !important;">ffgfgf</span>
+                        </div>
+  
+                          <div class="ladderTableLeftSide" ng-if="obj.type=='away'">
+                            <img src="" class="laderTeamIcon"/>
+                             <div class="Player_number">
+                                   <span>555</span>
+                            </div>
+                            <span class="teamName" style="line-height:34px !important;">aaaa</span>
+                        </div>
+  
+                    </td>
+                    <td >56</td>
+                    <td >56</td>
+                    <td >56</td>
+                    <td >56</td>
+                    <td >56</td>
+                    <td >56</td>
+                    <td >56</td>
+  
+                </tr>
+  
+          </tbody>   -->
+        </table>
+      </div>
+  
+    </div>
+  </ion-content>
+   <!-- && -->
+  <!-- <ion-footer *ngIf="advertisementFooter && type!='ACTION'  && statschoose2!='team' ">
+    <ion-toolbar class="jb-toolbar">
+      <div class="jb-adv">
+         <img src="{{path}}{{advertisementFooter.ad_image}}" (click)="goToAddSite(advertisementFooter.ad_url);">
+      </div>
+    </ion-toolbar>
+  </ion-footer> -->
+  

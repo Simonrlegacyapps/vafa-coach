@@ -1,0 +1,81 @@
+<!--
+  Generated template for the GoalkickerdetailsPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header class="jb-back">
+	<ion-navbar>
+		<div class="playerHeroSection" *ngIf="showhide==0">
+			<ion-row class=" displayImgContent">
+				<ion-col class="text-center">
+          <img *ngIf="goalKickersimage =='/web/images/default_player.png'" src="{{path1}}{{goalKickersimage}}">
+					<img *ngIf="goalKickersimage !='/web/images/default_player.png'"  src="{{path}}{{cutPath(goalKickersimage)}}">
+				</ion-col>
+				<ion-col class="col">
+					<!--<h4>{{playerDetail.player_name}}</h4>-->
+					<p class="jb-p">{{firstName}}</p>
+					<p class="jb-p">{{lastName}}</p>
+					<p class="jb-p1">{{goalKickersTeamName}}
+					</p>
+					<p class="jb-p3">No. {{goalKickersNumber}}</p>
+
+					<button ion-button class="goalbtn">
+						<p 	class="greenSubTitle" *ngIf="teamGoal !== ''">Goals: {{playerTotalGoal}}</p>
+					  </button>
+
+				</ion-col>
+			</ion-row>
+		</div>
+	</ion-navbar>
+
+</ion-header>
+
+<ion-content class="bgPage-color" no-bounce>
+
+<ion-grid class="gridcomp">
+	<!-- <ion-row>
+		<ion-col>
+			<p 	class="greenSubTitle" *ngIf="teamGoal !== ''">Total Goals: {{playerTotalGoal}}</p>
+		</ion-col>
+	</ion-row> -->
+	<ion-row>
+		<ion-col col-6>
+			<p class="coltxt1">Opponents</p>
+		</ion-col>
+		<ion-col col-3>
+			<p class="coltxt2">Round</p>
+		</ion-col>
+		<ion-col col-3>
+			<p class="coltxt3">Goals</p>
+		</ion-col>
+	</ion-row>
+</ion-grid>
+
+	<!--repeate  this div-->
+	<div class="jb-color" *ngFor="let value of teamGoal; let i = index">
+		<ion-row class=" goalkickersItemRow">
+			<ion-col col-6 class="col text-left col-50">
+
+				<h4>{{value.opponent}}</h4>
+			</ion-col>
+
+			<ion-col col-3 class="col text-center">
+
+				<h4 *ngIf="value.round!='25' && value.round!='26' && value.round!='27'">{{value.round}}</h4>
+				<h4 *ngIf="value.round=='25'">Semi Final - 2</h4>
+				<h4 *ngIf="value.round=='26'">Prelim Final</h4>
+				<h4 *ngIf="value.round=='27'">Grand Final</h4>
+			</ion-col>
+			<ion-col col-3 class="col text-center">
+				<div class="score-Average-stats">
+					<h3 class="stats-Score jb-margin text-center">{{value.goal}}</h3>
+
+				</div>
+			</ion-col>
+		</ion-row>
+		<div class="advContainer" *ngIf="i==1">
+			<img src="{{path}}{{cutPath(headerAdv[0].ad_image)}}"  (click)="goToAddSite(headerAdv[0].ad_url);">
+		</div>
+	</div>
+</ion-content>

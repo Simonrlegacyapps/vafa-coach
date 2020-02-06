@@ -1,0 +1,231 @@
+page-livestats {
+        ion-slides {
+    display: block;
+    width: 100%;
+    height: 68vw !important;
+}
+.livePassHerp.hero img{
+	max-width:170px;
+}
+.livePassHerp.hero{
+	box-shadow:none;
+	height: 115px;
+}
+.livePassHerp.hero h5{
+	font-size:17px;
+}
+
+.buttonContainerLive .col > div {
+    background-image: url("../assets/imgs/liveBonus.png");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    border-radius: 4px;
+    color: #fff;
+    padding: 10px 3px;
+    text-align: center;
+    width: 55%;
+    margin: 10px auto;
+}
+.buttonContainerLive .col  > div  .ValueContainer sup:nth-child(2) {
+  display: inline-block;
+  font-size: 12px;
+  line-height: 12px;
+  opacity: 0.71;
+  text-align: left;
+  top: -0.3em;
+  width: 40px;
+}
+.custGreenGradiantBtn{
+    border-radius: 4px;
+    color: #fff;
+    margin-left: 3%;
+    margin-top: 10px;
+    padding: 10px 3px;
+    text-align: center;
+    width: 55%;
+    background: #41c473;
+    margin: 10px auto;
+}
+.buttonContainerLive .col  > div  .ValueContainer{
+	font-size:22px;
+}
+.buttonContainerLive .col  > div p{
+  font-size: 16px;  
+  margin: 6px 0 0;
+}
+.buttonContainerPurchased .col > div p {
+    font-family: Gotham-Medium;
+    font-size: 21px;
+    margin: 13px 0 0;
+}
+
+
+.livePassFeatureList .item h2 {
+    font-size: 15px;
+	font-family:Gotham-Book;
+	color:#04235c;
+   
+}
+
+.liveStatsTitle
+{
+	
+    padding-top: 19px;
+    text-align: center;
+    h1
+    {
+    color: #04235c;
+    font-family: Gotham-Medium;
+    font-size: 18px;
+    margin: 0px;
+    }
+}
+.livePassFeatureList .item.item-avatar p {
+    color: #989ca6;
+    font-family: Gotham-Medium;
+    font-size: 11px;
+    letter-spacing: -0.2px;
+    line-height: 14px;
+    opacity: 1;
+    width: 100%;
+}
+.liveStatsSub-Title
+{
+	color:#989ca6;
+    font-family: Gotham-Medium;
+    font-size: 14px;
+    padding-top: 6px;
+    text-align: center;
+}
+
+
+/* .buttonContainerLive .col  > div.custGreenGradiantBtn{background: rgb(61,195,117); 
+	background: -moz-linear-gradient(45deg, rgba(61,195,117,1) 0%, rgba(139,214,93,1) 100%); 
+	background: -webkit-linear-gradient(45deg, rgba(61,195,117,1) 0%,rgba(139,214,93,1) 100%); 
+	background: linear-gradient(45deg, rgba(61,195,117,1) 0%,rgba(139,214,93,1) 100%); 
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3dc375', endColorstr='#8bd65d',GradientType=1 ); 
+} */
+.custOutLineBtn {
+    background-color: #2AB2BF;
+    border: 1px solid #bcbcbc;
+    border-radius: 4px;
+    color: white !important;
+    font-size: 15px;
+    margin: 0 0 0 5%;
+    padding: 0;
+    text-align: center;
+    text-transform: capitalize;
+    width: 90%;
+}
+.custOutLineBtn:hover, .custOutLineBtn:active, .custOutLineBtn:focus{
+	background-color: #2AB2BF !important;
+	border: 1px solid #2AB2BF !important;
+	color: white !important;
+}
+.livePassFeatureList{
+	padding:10px 0;
+}
+.livePassFeatureList .item.item-avatar {
+  padding: 8px 0 9px 55px;
+}
+.livePassFeatureList .item.item-avatar img{
+  border-radius: 0;
+  height: 29px;
+  left: 20px;
+  top: 13px;
+  width: auto;
+}
+  .jb-last-item
+   {
+     border-bottom: 1px solid rgba(255, 255, 255, 0.1411764705882353) !important;
+     background: transparent !important;
+     border-top: none !important;
+     .item-inner
+     {
+         border: none !important;
+     }
+   }
+
+.livePassFeatureList p{
+  color: #04235c;
+  font-size: 12px;
+  line-height: 14px;
+  opacity: 0.5;
+}
+.livePassFeatureList h2{
+  color: #04235c;
+  font-size: 15px;
+  line-height: 14px;
+}
+.livePassFeatureList .item.item-avatar::after {
+    border: 1px solid #ebebeb;
+    bottom: -1px;
+    content: "";
+    left: 20px;
+    opacity: 0.12;
+    position: absolute;
+    width: 100%;
+}
+
+.bar-subheader.bar.bar-header.disable-user-behavior, .wide-as-needed.text-center, .bar-sub-subheader .wide-as-needed-round {
+    border-bottom: 1px solid #565e73;
+    box-shadow: none;
+}
+.livePassFeatureList .item.item-avatar img {
+    border-radius: 0;
+    height: 29px;
+    left: 18px;
+    top: 13px;
+    width: auto;
+}
+
+.LogInButton
+{
+	font-family:Gotham-Medium;
+	color:#fff;
+	font-size:14px;
+     min-height: 40px;
+}
+    .dateOFMatches-OnlyForLiveStats
+ {
+    color: #7d849a;
+    padding: 0 15px;
+    position: relative;
+    text-align: center;
+    width: 100%;  
+    margin-top:10px;
+}
+.dateOFMatches-OnlyForLiveStats span {
+    background-color: #101931;
+    font-family: Gotham-Book;
+    font-size: 14px;
+    padding: 5px 10px;
+}
+ion-avatar img {
+    border-radius: 0px !important;
+    
+}
+.tandc-Container {
+    background:#212D45;
+    color: #989ca6;
+    font-family: Gotham-Medium;
+    font-size: 11px;
+    height: 100%;
+    padding: 5px 10px 5px 30px;   
+    width: 100%;
+    z-index: 1;
+}
+
+.dateOFMatches-OnlyForLiveStats::after {
+    border: 1px solid #565e73;
+    bottom: 8px;
+    content: "";
+    margin-right: -125px;
+    opacity: 0.5;
+    position: absolute;
+    right: 50%;
+    width: 250px;
+    z-index: -1;
+}
+
+}

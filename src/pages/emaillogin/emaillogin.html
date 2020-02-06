@@ -1,0 +1,28 @@
+<ion-header>
+	<ion-navbar>
+		<ion-title></ion-title>
+	</ion-navbar>
+</ion-header>
+
+<ion-content class="jb-background" no-bounce>
+	<div class="SignUpForm">
+		<div class="SignUpFormTable-Cell">
+			<form (ngSubmit)="registerdEmailCheck()">
+				<div class="OnlyForSignUpFormContainer">
+					<ion-list class="jd-custom-list">
+						<ion-item class="jd-custom-email">
+							<ion-label>
+								<img class="PImg" src="assets/imgs/emailIcon1.png">
+							</ion-label>
+							<ion-input class="setInputTextForUsername" name="input" type="text" placeholder="Email" [(ngModel)]="user.email">
+							</ion-input>
+						</ion-item>
+					</ion-list>
+					<button class="jd-button-sub" ion-button block type="submit">
+						<span style="font-family:Gotham-Bold;font-size: 16px;letter-spacing: 2px;">CONTINUE</span>
+					</button>
+				</div>
+			</form>
+		</div>
+	</div>
+</ion-content>

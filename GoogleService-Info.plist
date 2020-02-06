@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>1027699644897-khe8tb4tarf4c98e3kiltggfkorgtgdv.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.1027699644897-khe8tb4tarf4c98e3kiltggfkorgtgdv</string>
+	<key>API_KEY</key>
+	<string>AIzaSyBu7X8vZwq1eX9ESXuAURBP9K-VfYQJij8</string>
+	<key>GCM_SENDER_ID</key>
+	<string>1027699644897</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.support.vafalive</string>
+	<key>PROJECT_ID</key>
+	<string>vafa-app-live</string>
+	<key>STORAGE_BUCKET</key>
+	<string>vafa-app-live.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:1027699644897:ios:0d54abacc52b7aea07daa0</string>
+	<key>DATABASE_URL</key>
+	<string>https://vafa-app-live.firebaseio.com</string>
+</dict>
+</plist>

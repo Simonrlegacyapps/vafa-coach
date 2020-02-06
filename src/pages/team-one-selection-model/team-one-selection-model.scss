@@ -1,0 +1,93 @@
+page-team-one-selection-model {
+    .jb-img-ver
+    {
+        vertical-align: middle;
+        margin-right: 10px;
+
+    }
+   
+    ion-item{
+        background: transparent !important;
+    }
+
+    .has-subheader{
+        top: 46px;
+    }
+
+    .jb-segment
+    {
+     position: fixed;
+      z-index: 10;
+      background: #f0f0f0;
+      top:54px;
+    //   border-bottom: 1px solid rgba(80, 80, 80, 0.92);
+        
+       ion-segment-button.segment-button {
+           opacity: .8;
+        text-transform: none;
+		display: inline-block;
+        width: auto;
+        padding: 5px;
+        min-height: 60px;
+        font-size: 15px;
+        // min-width: 25vw;
+        border:none;
+        font-weight: 900;
+        border-bottom: none;
+        line-height: 2.4;
+        color: #04235C !important;
+      }
+    }
+
+    .jb-segment-left
+    {
+        border-left: 1px solid rgba(80, 80, 80, 0.92) !important;
+    }
+    .jb-topalign
+    {
+        margin-top:65px;
+    }
+    .jb-segment-right
+    {
+        border-right: none !important;
+    }
+    .segment-button.segment-activated
+    {
+         background-color: #f0f0f0 !important; 
+         color: #04235C ;
+          opacity: .8 !important;
+    }
+   .segment-button
+   {
+       font-family: Gotham-Medium;
+    font-size: 17px;
+   }
+.button-clear{
+    color: white !important;
+}
+ 
+.toolbar {
+     min-height: 55px !important;
+ }
+ .searchbar-input-search-icon-color
+{
+color: white !important
+}
+.searchbar .searchbar-input
+{
+    background: transparent !important;
+border-bottom: 2px solid white;
+color: white !important;
+border-radius: 0px !important;
+    font-family: 'Gotham-Medium';
+        box-shadow: none;
+}
+.searchbar-search-icon{
+    background-image: url("../assets/icon/magnifying-glass.svg") !important;
+}
+.searchbar-clear-icon{
+      background-image: url("../assets/icon/clear-button.svg") !important;
+      background-size: 8px !important;
+ }
+    
+}

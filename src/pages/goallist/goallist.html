@@ -1,0 +1,24 @@
+<!--
+  Generated template for the GoallistPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header class="custBar">
+
+  <ion-navbar>
+    <ion-title>Choose Stat</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content class="bgPage-color">
+  <ion-list>
+    <div *ngFor="let item of items"  >
+    <button ion-item *ngIf="item.stat_name !='Behinds' && item.stat_name !='Rush Behinds'" (click)="itemSelected(item)">
+    {{ item.stat_name }}
+  </button>
+</div>
+  </ion-list>
+</ion-content>

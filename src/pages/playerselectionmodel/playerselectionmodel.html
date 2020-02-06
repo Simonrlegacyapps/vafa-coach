@@ -1,0 +1,59 @@
+<ion-header class="custBar">
+        <ion-navbar>
+          <ion-title *ngIf="!toggled" text-center>Select Player</ion-title>
+          <!-- Search Bar -->
+          <form (submit)="submitSearch()">
+          <ion-searchbar class="searchbar" #searchbar *ngIf="toggled" [(ngModel)]="searchTerm" placeholder='' [showCancelButton]="true" (ionCancel)="toggleSearchcancel()"
+            (ionInput)="triggerInput($event)" [ngModelOptions]="{standalone: true}" name="search"></ion-searchbar>
+          <!-- Search Icon -->
+          </form>
+          <ion-buttons end *ngIf="!toggled">
+            <button style="color: white !important;" ion-button icon-only (click)="toggleSearch()"><ion-icon name="search"></ion-icon></button>
+          </ion-buttons>
+        </ion-navbar>
+      </ion-header>
+      <ion-segment [(ngModel)]="type" class="jb-segment">
+            <ion-segment-button class=".jb-segment-right" (click)="selectedType(type); " value="competion">
+              <p style="    margin: 0px;
+              height: 25px;
+              font-size: 14px;
+              font-family: 'Gotham-Bold';">COMPETITIONS</p>
+             <p style="margin: 0px;
+              height: 25px;
+              width: 80%;
+              overflow: hidden;font-family: 'Gotham-Medium';
+              "> {{selectables}}</p>
+              <ion-icon style="position: absolute;
+              top: 35px;
+              right: 8px;line-height: 1;" class="downarrow" name="ios-arrow-down"></ion-icon>
+            </ion-segment-button>
+            <ion-segment-button class="jb-segment-left" (click)="selectedType(type); " value="team">
+              <p style="    margin: 0px;
+              height: 25px;
+              font-size: 14px;
+              font-family: 'Gotham-Bold';">TEAM</p>
+              <p style="margin: 0px;
+              height: 25px;
+              width: 80%;
+              overflow: hidden;font-family: 'Gotham-Medium';
+              "> {{selectablesTeam}}</p>
+              <ion-icon style="position: absolute;
+              top: 35px;
+              right: 8px;line-height: 1;" class="downarrow" name="ios-arrow-down"></ion-icon>
+            </ion-segment-button>
+          </ion-segment>
+<ion-content class="has-subheader">
+        <ion-row  (click)="playerSelection(value.player_id,value.player_name,value.player_image)" data-ink-color="#00192f" data-ink-opacity=".7" *ngFor="let value of items">
+                <ion-col>
+                    <ion-list style="margin: auto !important;">
+                        <ion-item class="item-thumbnail-left newsList-CustomCSS onlyFor1on1 ONTeam-Select"  style="animation-delay:0.3s;" href="#" data-ink-color="transparent" data-ink-opacity=".7">
+                          <img src="{{path}}{{value.player_image}}" class="jd-player-img" *ngIf="value.player_image != null && value.player_image != '/web' && value.player_image == '/web/images/default_player.png'" style="max-width:55px;width:55px;">
+                          <img src="{{path1}}{{cutPath(value.player_image)}}" class="jd-player-img" *ngIf="value.player_image != null && value.player_image != '/web' && value.player_image != '/web/images/default_player.png'" style="max-width:55px;width:55px;">
+                          <img src="assets/icon/default_player.png" class="newsList-SideImage-CSS " *ngIf="value.player_image == null || value.player_image == '/web'" style="max-width:55px;width:55px;">
+                          <h2>{{value.player_name}}</h2>
+                          <p style="font-family:Gotham-Bold;font-size:12px;color:#04235c;">{{value.player_number}}&nbsp;<span style="font-family:Gotham-Bold;font-size:13px;color:#989CA6;">{{value.team_name}}</span></p>
+                        </ion-item>
+                    </ion-list>
+                </ion-col>
+            </ion-row>
+</ion-content>

@@ -1,0 +1,236 @@
+page-goalkickerdetails {
+  /*Goal Kickers detail page css*/
+  .gridcomp{
+      background-color: #efefef !important;
+     height: 50px;
+  }
+
+.coltxt1{
+    position: relative;
+    bottom: 10px;
+    font-family: Gotham-Bold;
+    font-size: 20px;
+    color: #bab8b6;
+}
+.coltxt2{
+    position: relative;
+    bottom: 10px;
+    font-family: Gotham-Bold;
+    font-size: 20px;
+    color: #bab8b6;
+    text-align: center
+}
+.coltxt3{
+    position: relative;
+    bottom: 10px;
+    font-family: Gotham-Bold;
+    font-size: 20px;
+    color: #bab8b6;
+    text-align: center
+
+}
+
+
+.greenSubTitle{
+    text-align: center;
+    color: white;
+    position: relative;
+    bottom: 0px;
+    right: 0px;
+    left: -12px;
+    top: 1px;
+    font-family: Gotham-Bold;
+    font-size: 13px;
+    /* border: 1px; */
+    border-radius: -2px;
+    border-radius: 20px;
+    padding: 5px 0;
+
+
+}
+.goalbtn{
+    background-color: #6ce00d;
+    width: 84px;
+    height: 22px;
+    bottom: 4px;
+    position: relative;
+    left: 11px;
+    border-radius: 13px;
+}
+.greenSubTitle::after {
+    background-color: #fff;
+    bottom: -7px;
+    content: "";
+    height: 3px;
+    left: 50%;
+    margin-left: -25px;
+    position: unset;
+    width: 50px;
+    border-radius: 2px;
+}
+
+.goalkickersItemRow .nomalFormMidTitle {
+    font-family: Gotham-Bold;
+    font-size: 13px;
+    margin-top: 5px;
+    text-align: left;
+    color: rgba(4, 35, 92, 0.6);
+}
+.jb-margin{
+        margin: 10px;
+}
+.goalkickersItemRow .text-center .nomalFormMidTitle {
+  text-align: center;
+}
+.goalkickersItemRow .score-Average-stats{
+	border:none;
+	margin:0;
+}
+.row.goalkickersItemRow .col:nth-child(1){
+	border-right: 1px solid rgba(197, 197, 199, 0.8705882352941177);
+}
+.row.goalkickersItemRow .col:nth-child(2){
+	border-right: 1px solid rgba(197, 197, 199, 0.8705882352941177);
+}
+.row.goalkickersItemRow {
+	border-bottom: 1px solid rgba(197, 197, 199, 0.8705882352941177);
+	padding:6px 6px;
+}
+.row.goalkickersItemRow h4 {
+    font-family: Gotham-Medium;
+    font-size: 15px;
+    margin-top: 10px;
+    color:#04235C;
+    text-align: left;
+}
+/*.scorePage .button.custBackBtn{
+	max-width: 86px;
+	width: 86px;
+	text-transform:capitalize;
+}*/
+.scorePage .button.custBackBtn {
+    font-family: Gotham-Medium;
+    font-size: 14px;
+    max-width: 100px;
+    text-transform: capitalize;
+    width: 100px;
+	text-align:left;
+}
+
+.col.teamCol h4 {
+    font-family: Gotham-Book;
+    font-size: 16px !important;
+    font-weight: bold;
+    margin-bottom: 0 !important;
+    margin-left: -12px;
+    margin-right: 0 !important;
+    margin-top: 0 !important;
+    // text-align: center;
+    // color:#04235C;
+}
+.text-center
+{
+    h4{
+        text-align: center !important;
+    }
+}
+/*Goal kicker details dropdown arrow control css */
+
+.bar.OnlyTransparent {
+    box-shadow: none;
+	background-image: none !important;
+	}
+
+.displayImgContent
+{
+	padding-top: 20px;
+}
+.playerHeroSection .row, .playerHeroSection .col{
+	padding-bottom:0;
+}
+.playerHeroSection .col > img {
+     height: 144px;
+    margin-top: 1px;
+    max-width: 100px;
+    vertical-align: bottom;
+    width: 100px;
+}
+
+.back-button
+{
+    position: absolute;
+    top:10px;
+}
+
+.playerHeroSection >.col{
+	text-align:center;
+}
+.playerHeroSection{
+//   background: url('../assets/imgs/PlayerDetailsBG.png');
+//   -webkit-background-size: cover;
+//   -moz-background-size: cover;
+//   -o-background-size: cover;
+//   background-size: cover;
+//   background-repeat:no-repeat;
+//   background-position:center;
+      height: 180px;
+    padding-top: 15px;
+}
+.jb-textalign
+{
+    text-align: center;color: #04235C; font-family: Gotham-Book; font-size: 22px; margin-bottom: 4px; margin-top: 18px;
+}
+.jb-p
+{
+font-family: Gotham-Medium;font-size:24px;color:white;margin: 8px 17px -3px;
+}
+.jb-p1
+{
+    font-family: Gotham-Medium;text-align:left; font-size:12px;margin-top: -5px; color:rgba(255, 255, 255, 0.75);margin: 10px 17px -8px;
+}
+.text-left h4{
+    text-align: left;
+}
+.jb-p3
+{
+    color:#04235C;font-family: Gotham-Bold; margin-top: -4px; color:white;margin: 14px 17px 10px;
+}
+.jb-color
+{
+    color: #04235C;
+}
+.text-center
+{
+    text-align: center;
+    font-family: Gotham-Medium;
+    font-size: 15px;
+}
+.greenbg {
+    background-color: #52bb52;
+    border-radius: 10px;
+    color: #fff;
+    display: inline-block;
+    font-family: Gotham-Bold;
+    font-size: 11px;
+    line-height: normal;
+    margin: 0 auto 2px;
+    padding: 2px 8px;
+    text-align: center;
+
+}
+.toolbar-background
+{
+    background-color: #04235C;
+    border: none !important;
+}
+.advContainer{
+    text-align: center;
+    border-top: 1px solid #dedede;
+    border-bottom: 1px solid #dedede;
+	img{
+	   height: 100% !important;
+    max-height: 45px;
+    max-width: 100% !important;
+	}
+}
+}

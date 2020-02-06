@@ -1,0 +1,308 @@
+page-landingpage {
+
+    ion-content{
+        // background-image: url()landingbackground.png
+        background-image: url("../assets/imgs/landingbackground.png");
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+    //   background-color: map-get($background-color, primary) !important;
+    }
+    .jb-terms
+    {
+            color: #f4f4f4;
+    text-decoration: underline;
+    font-family: Gotham-Book;
+    }
+    .jd-restore{
+        background-color: #0c2853 !important;
+    border: 1px solid #0070c0 !important;
+    }
+
+    .colorwhite
+    {
+        background: white;
+    }
+    .colorgreen{
+        background: #92d050;
+    }
+    .jb-card{
+        border-radius: 20px;
+     .jb-card-header
+        {
+            text-align: center;
+            color: white;
+            font-family: Gotham-Bold;
+             font-size: 20px;
+            padding:10px !important;
+            span{
+            font-size: 14px;
+            vertical-align: text-top;
+            }
+            p{
+             color: white;
+             font-family: Gotham-Bold;
+              font-size: 16px;
+              margin-top: 10px;
+            }
+        }
+        .jb-card-content{
+                text-align: center;
+            color: white;
+            font-family: 'Gotham-Book';
+                font-size: 13px;
+        }
+    }
+        .firstcard
+        {
+            background: #00B0F0;
+            // height: 100px;
+        }
+         .secondcard
+        {
+            background: #0070C0;
+            // height: 100px;
+        }
+         .thirdcard
+        {
+            background: #2F5597;
+            // height: 100px;
+        }
+    button{
+            border-radius: 5px;
+        span{
+        font-family: 'Gotham-Medium';}
+    }
+    .jb-main
+    {
+        width: 100%;
+        height: 105px;
+        text-align: center;
+        padding-top: 5px;
+        img
+        {
+            height: 100%;
+        }
+    }
+    .jb-scroll-text
+    {
+        text-align: center;
+        height: 25px;
+        padding: 5px;
+        width: 165px;
+        margin: auto;
+        position:relative;
+        p{
+            font-size: 15px;
+            color: white;
+            margin: 2px;
+            font-family: 'Gotham-Medium';
+        }
+    }
+    .jb-scroll
+    {
+        text-align: center;
+        height: 25px;
+        padding: 5px;
+        width: 100px;
+        margin: auto;
+        position:relative;
+        div
+        {
+            width: 15px;
+            height: 15px;
+            border: 2px solid white;
+            border-radius: 50%;
+            position: absolute;
+        }
+
+        .jb-first-scroll
+        {
+          left:10px
+        }
+        .jb-second-scroll
+        {
+          left: 42px;
+        }
+        .jb-third-scroll
+        {
+           right: 10px
+        }
+    }
+    .jb-content-text
+    {
+         text-align: center;
+
+         .jb-first-p{
+            font-size:16px;
+            color: white;
+                width: 90%;
+          margin: auto;
+            margin-top: 5px;
+            margin-bottom: 10px;
+            font-family: 'Gotham-Medium';
+        }
+        .jb-second-p{
+            font-size: 11px !important;
+            color: white;
+            margin-bottom: 10px;
+            font-family: 'Gotham-Book';
+        }
+          .jb-first-p1{
+            font-size:17px;
+            color: white;
+                margin: 0px;
+            font-family: 'Gotham-Medium';
+
+        }
+        .jb-second-p1{
+            font-size: 13px !important;
+            color: white;
+                margin: 5px;
+                  width: 78%;
+            margin: 5px auto;
+            font-family: 'Gotham-Book';
+            span{
+                font-family: 'gotham-Medium';
+            }
+        }
+
+         .jb-second-p2{
+               font-size: 15px !important;
+                color: white;
+                margin: 5px;
+                width: 90%;
+                margin: 9px auto;
+                font-family: 'Gotham-Light';
+            span{
+                font-family: 'gotham-Medium';
+            }
+        }
+    }
+    .jb-button-main
+    {
+        text-align: center;
+        .button{
+            width: 77%;
+            font-size: 3.2vw;
+            border-radius: 5px;
+            background: #00B0F0;
+        }
+
+    }
+    .jb-button-bu
+    {
+        text-align: center;
+        .button{
+            width: 75%;
+            font-size: 3.6vw;
+            border-radius: 5px;
+            background: white;
+        }
+         .jb-color-change
+        {
+            background-color: #92d050;
+            color: white;
+        }
+
+    }
+    .jb-tick-icon
+    {
+        right: 8px;
+        position: absolute;
+        font-size: 7vw;
+        font-weight: 900;
+    }
+    .jb-tick1-icon
+    {
+        right: 8px;
+        position: absolute;
+        font-size: 4vw;
+    }
+   .jb-last-item
+   {
+     border-top: 1px solid #ffffff !important;
+     background: transparent !important;
+     border-bottom: none !important;
+     .item-inner
+     {
+         border: none !important;
+     }
+   }
+    h2,h3
+    {
+       color: white;
+    }
+    .jb-button
+    {
+       font-size: 13px !important;
+
+    }
+    .jb-button-color
+    {
+        background-color: #058aba !important;
+    }
+    .jb-font-size
+    {
+        font-size: 15px !important;
+    }
+    .jb-img-ver
+    {
+     position: absolute;
+    left: 10px;
+    margin-right: 5px;
+    }
+    .jb-landing-bottom
+    {
+         text-align: center;
+    width: 100%;
+    bottom: 0px;
+    position: absolute;
+    z-index: 10;
+    background: #0c2853;
+    padding: 5px;
+    height: 80px;
+    // border-top: 1px solid #3f9393;
+    img{
+      width: 60%;
+    }
+    }
+    .jb-content-bottom{
+        margin-bottom: 20px !important;
+    }
+    .jb-main-padding{
+         padding-top: 15px;
+         padding-bottom: 70px;
+
+    }
+    .jb-skip-button{
+        position: absolute;
+        width: 92%;
+        text-align: right;
+        button{
+            background: transparent !important;
+        font-size: 16px;
+        color: white;
+         font-family: 'Gotham-Medium';
+         height: 30px;
+         span{
+             font-family: 'Gotham-Medium';
+         }
+        }
+    }
+    sup {
+    top: -0.3em !important;
+        font-family: 'Gotham-Medium';
+}
+    .jb-text{
+              font-size: 16px !important;
+            color: white;
+                margin: 5px;
+                  width: 90%;
+                  text-align: center;
+            margin: 5px auto;
+            font-family: 'Gotham-Book';
+            span{
+                font-family: 'gotham-Medium';
+            }
+        }
+}

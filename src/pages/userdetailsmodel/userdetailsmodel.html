@@ -1,0 +1,50 @@
+<ion-header class="custBar">
+  <ion-navbar>
+    <ion-title text-center>Personal Details</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content padding>
+<div class="UserDetails-div">
+  <div *ngIf="userimage==null || userimage==undefined || userimage==''" (click)="ActionSheet()"  class="UserIcon">
+    <img src="assets/user.svg">
+  </div>
+   <div *ngIf="userimage!=null && userimage!=undefined && userimage!=''" (click)="ActionSheet()" class="UserImg">
+    <img class="UserImage" src="{{path}}{{userimage}}" >
+  </div>
+  <form (ngSubmit)="UserSubmit()" style="padding-top: 40px;">
+  <ion-list class='Cust-jd-lst'>
+    <!-- <ion-row>
+      <ion-col col-6>
+        <ion-item>
+          <ion-input type="text" name='firstname' [(ngModel)]="User.first_name" placeholder="First Name (Optional)"></ion-input>
+        </ion-item>
+      </ion-col>
+      <ion-col col-6>
+        <ion-item>
+          <ion-input type="text" name='lastname' [(ngModel)]="User.last_name" placeholder="Last Name"></ion-input>
+        </ion-item>
+      </ion-col>
+    </ion-row> -->
+    <ion-item class='Cust-Itm'>
+      <ion-input type="text" name='firstname' [(ngModel)]="User.first_name" placeholder="First Name (optional)"></ion-input>
+    </ion-item>
+
+    <ion-item class='Cust-Itm' style="margin-top: 14px !important;">
+      <ion-input type="text" name='lastname' [(ngModel)]="User.last_name" placeholder="Last Name (optional)"></ion-input>
+    </ion-item>
+
+    <ion-item class='Cust-Itm' style="margin-top: 14px !important;">
+      <ion-label><ion-icon class='Cust-Itm-icn' name="appicons-yjfl-phone-receiver"></ion-icon></ion-label>
+      <ion-input type="tel" name='mobile' maxlength="12" [(ngModel)]="User.mobile_number" (ionChange)='ViewNumber(User.mobile_number)' placeholder="Mobile Number (optional)"></ion-input>
+    </ion-item>
+    <ion-item class='Cust-Itm'>
+      <ion-label><ion-icon class='Cust-Itm-icn' name="appicons-yjfl-envelope"></ion-icon></ion-label>
+     <ion-input  type="email" name='email' [(ngModel)]="User.email" placeholder="Email"></ion-input>
+    </ion-item>
+    <!-- <span class="jd-required">required</span> -->
+   <p class="Short-description">Email is used to ensure identification of user making In-App Purchase.</p>
+  </ion-list>
+  <button class="UserDetails-save" type="submit" ion-button block>Continue</button>
+</form>
+</div>
+</ion-content>

@@ -1,0 +1,49 @@
+<ion-header class="custBar">
+	<ion-navbar>
+		<button ion-button menuToggle>
+      <ion-icon name="appicons-menu"></ion-icon>
+    </button>
+		<ion-title text-center>Match Report</ion-title>
+		<button class="title1" text-center (click)="gotomodel()">{{selectables.length > 20 ? selectables.substring(0,20)+'..' : selectables}}<ion-icon  class="downarrow" name="ios-arrow-down"></ion-icon></button>
+	</ion-navbar>
+</ion-header>
+<ion-header *ngIf="headerimage!=''" [style.display]="advDisplay=='hide' ? 'block' : 'none'" class="bar-sub-subheader" style="height: 50px;position:relative; top:44px; background-color: transparent; border: 0px !important; border-bottom-color: transparent !important; background-image: none !important; border-bottom: none !important; ">
+	<div class="advContainer" style="position:fixed;margin: 0 auto 0 -7px; width: 104%;">
+		<img src="{{path}}{{cutPath(headerimage)}}" (click)="goToAddSite(headerurl);">
+	</div>
+</ion-header>
+<ion-content class="bgPage-color" no-bounce (ionScroll)="onScroll($event)">
+	<ion-slides *ngIf="MatchreportData.match_report && MatchreportData.match_report.length"  class="slideroption" (ionSlideDidChange)="slideChanged()"
+	 pager="true" autoplay="4000" loop="true">
+		<ion-slide class="sliderBG" (click)="goToMatchReportDetail(value.pm_id)" *ngFor="let value of MatchreportData.match_report | slice:0:4; let i=index">
+			<div class="postMatchSlide-Custom" >
+				<div class="playButton-overlay">
+					<div class="outer-custom">
+						<div class="inner-custom" >
+							<i class="icon ion-social-youtube-outline customPlaySymbol" *ngIf="value.pm_type==1"></i>
+						</div>
+					</div>
+				</div>
+				<img src="{{value.thumbnail_image}}" class="setImgWidth" *ngIf="value.pm_type==1" />
+				<img src="{{path}}{{cutPath(value.pm_cover_image)}}" class="setImgWidth" *ngIf="value.pm_type==2" />
+			</div>
+			<div class="sliderCaptionText">{{value.pm_title}}</div>
+		</ion-slide>
+	</ion-slides>
+
+	<div class="custom-SubHeaderBar" *ngIf="headerimage!=''">
+		<img src="{{path}}{{cutPath(headerimage)}}" class="advrImgHeight" (click)="goToAddSite(headerurl);">
+	</div>
+
+	<ion-list class="jb-list-margin">
+		<ion-item class="bgPage-color" *ngFor="let value of MatchreportData.match_report | slice:4; let i=index" (click)="goToMatchReportDetail(value.pm_id)">
+			<ion-thumbnail item-start>
+				<img src="{{value.thumbnail_image}}" *ngIf="value.pm_type==1" />
+				<img src="{{path}}{{cutPath(value.pm_cover_image)}}" *ngIf="value.pm_type==2" />
+			</ion-thumbnail>
+			<h2 class="jb-margin-bottom">{{value.pm_title}}</h2>
+			<p class="jb-cut-stle">{{value.pm_date}}</p>
+			<!-- <button ion-button clear item-end>View</button> -->
+		</ion-item>
+	</ion-list>
+</ion-content>

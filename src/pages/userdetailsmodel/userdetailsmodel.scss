@@ -1,0 +1,96 @@
+page-userdetailsmodel {
+  
+  .item-block{
+  border-bottom:none !important;
+  }
+  .jd-required{
+    position: absolute;
+    right: 22px;
+    color: #04235c;
+  }
+  .label-ios + ion-input .text-input,
+  .label-ios + ion-textarea .text-input,
+  .label-ios + .input + .cloned-input {
+    margin-left: 16px;
+    width: 100% !important;
+  }
+  
+  .Short-description{
+    text-align: center;
+    color: #04235c;
+    width: 90%;
+    margin: 12px auto;
+  }
+
+  .list-ios > .item-block:first-child{
+      border-top:none !important;
+  }
+
+  .item-block .item-inner {
+    border-bottom: 0.55px solid #c8c7cc !important;
+    }
+
+    .UserDetails-save{
+           background-color: #0c2850 !important;
+    width: 90% !important;
+    margin: auto !important;
+    }
+
+    .Cust-Itm{
+        margin-top: 11px !important;
+    }
+
+    .Cust-Itm-icn{
+        background-color: #0c2851 !important;
+    }
+
+    .UserDetails-div{
+        padding-top: 40px;
+    }
+
+    .UserIcon{
+        width: 10vh;
+    height: 10vh;
+    margin: auto;
+    }
+    .Cust-jd-lst{
+    margin-bottom: 70px !important;
+    }
+
+
+    .item-md.item-block .item-inner,
+.item-md.item-input.input-has-focus .item-inner,
+.item-md.item-input.ng-valid.input-has-value:not(.input-has-focus) .item-inner,
+.item-md.item-input.ng-invalid.ng-touched:not(.input-has-focus) .item-inner,
+.list-md .item-input.input-has-focus:last-child,
+.list-md .item-input.ng-valid.input-has-value:not(.input-has-focus):last-child,
+.list-md .item-input.ng-invalid.ng-touched:not(.input-has-focus):last-child {
+    border-bottom: none;
+    box-shadow: none;
+}
+.list-md .item-input.input-has-focus:last-child .item-inner,
+.list-md .item-input.ng-valid.input-has-value:not(.input-has-focus):last-child .item-inner,
+.list-md .item-input.ng-invalid.ng-touched:not(.input-has-focus):last-child .item-inner {
+    box-shadow: none; 
+}
+
+.item-md.item-input.ng-valid.item-input-has-value:not(.input-has-focus):not(.item-input-has-focus) .item-inner, .item-md.item-input.ng-valid.input-has-value:not(.input-has-focus):not(.item-input-has-focus) .item-inner{
+    box-shadow:inset 0 -1px 0 0 #f4f4f4 !important;
+}
+.list-md .item-input.ng-valid.item-input-has-value:not(.input-has-focus):not(.item-input-has-focus):last-child, .list-md .item-input.ng-valid.input-has-value:not(.input-has-focus):not(.item-input-has-focus):last-child{
+      box-shadow:inset 0 -1px 0 0 #f4f4f4 !important;
+}
+
+.UserImg{
+    height: 100px;
+    width: 100px;
+    margin: auto;
+}
+
+.UserImage{
+    border-radius: 50%;
+    width: 100%;
+    height: 100%;
+}
+
+}

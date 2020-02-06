@@ -1,0 +1,7 @@
+{
+  "name": "vafa",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic-angular"
+}

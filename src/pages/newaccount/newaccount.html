@@ -1,0 +1,79 @@
+
+<ion-header class="custBar">
+	<ion-navbar>
+		<button ion-button menuToggle>
+      <ion-icon name="appicons-menu"></ion-icon>
+    </button>
+		<ion-title text-center>My Account</ion-title>
+	</ion-navbar>
+</ion-header>
+
+<ion-content no-bounce>
+<div class="jd-Ac-page">
+    <div class="jd-profile-div">
+      <!-- <div class="jd-dp-div1"> -->
+
+      <div *ngIf="imageURI!=''" [style.background-image]="'url('+imageURI+')'" class="jd-dp-div" (click)="ActionSheet()"></div>
+      <div *ngIf="(userdata.user_image==null || userdata.user_image==undefined || userdata.user_image=='') && imageURI==''" class="jd-dp-div" (click)="ActionSheet()">
+          <img src="assets/user.svg" />
+      </div>
+     <div  [style.background-image]="'url('+userdata.user_image+')'" *ngIf="(userdata.user_image!=null && userdata.user_image!='' && userdata.user_image!=undefined) && imageURI==''"  (click)="ActionSheet()"  class="jd-dp-div">
+
+  </div>
+<!-- </div> -->
+   <button class="jd-logout-btn" (click)='Continue()' *ngIf="state==true"  ion-button block>CONTINUE</button>
+   <button class="jd-logout-btn" (click)='Aclogin()' *ngIf="isLogin==false" ion-button block>LOGIN</button>
+      <button class="jd-logout-btn" (click)='Aclogout()' *ngIf="isLogin==true" ion-button block>LOGOUT</button>
+    </div>
+    <ion-list>
+      <button ion-item>
+        <p class="jd-item-block">PREMIUM PASS: <span>2019 VAFA Pass</span></p>
+      </button>
+      <button (click)="gotocheckcompetitionteam('competitions')" ion-item>
+        <p class="jd-item-block">My Competition: <span>{{MyTeam.competition}}</span></p>
+      </button>
+      <button (click)="gotocheckcompetitionteam('team')" ion-item>
+        <p class="jd-item-block">My Team: <span>{{MyTeam.team}}</span></p>
+      </button>
+      <button  (click)="EditUserDetails(userdata.first_name,'first_name')" ion-item>
+        <p class="jd-item-block">First Name: <span>{{userdata.first_name}}</span></p>
+      </button>
+       <button  (click)="EditUserDetails(userdata.last_name,'last_name')" ion-item>
+        <p class="jd-item-block">Last Name: <span>{{userdata.last_name}}</span></p>
+      </button>
+      <button  ion-item (click)="EditAge(userdata.age,'age')">
+          <p class="jd-item-block">Age: <span>{{userdata.user_age}}</span></p>
+      </button>
+      <button ion-item (click)="EditUserDetails(userdata.user_email,'user_email')">
+        <ion-icon class="jd-custom-icon" item-left name="appicons-yjfl-email"></ion-icon>
+        <p class="jd-item-block1">Email: <span>{{userdata.user_email}}</span></p>
+      </button>
+      <button ion-item (click)="EditUserDetails(userdata.mobile_number,'mobile_number')">
+        <ion-icon class="jd-custom-icon" item-left name="appicons-yjfl-mobile"></ion-icon>
+        <p class="jd-item-block1">Mobile: <span>{{userdata.mobile_number}}</span></p>
+      </button>
+      <button ion-item (click)='Support()'>
+         <ion-icon class="jd-custom-icon" item-left name="appicons-yjfl-support"></ion-icon>
+        <p  class="jd-item-block1">Support</p>
+      </button>
+      <button ion-item (click)='Privacy()'>
+          <p  class="jd-Terms">Privacy Policy</p>
+        </button>
+      <button ion-item (click)='Terms()'>
+          <p  class="jd-Terms">Terms & Conditions</p>
+        </button>
+        <button ion-item (click)='Purchasehistory()'>
+          <p  class="jd-Terms">Purchase History</p>
+        </button>
+     <!--  <button ion-item>
+        <ion-icon class="jd-custom-icon" item-left name="appicons-yjfl-notification"></ion-icon>
+        <p class="jd-item-block1">Notification Settings</p>
+      </button>
+      <button ion-item>
+        <ion-icon class="jd-custom-icon" item-left name="appicons-yjfl-social"></ion-icon>
+        <p class="jd-item-block1">Social</p>
+      </button>-->
+    </ion-list>
+
+  </div>
+</ion-content>

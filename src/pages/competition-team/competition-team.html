@@ -1,0 +1,17 @@
+<!--
+  Generated template for the CompetitionTeamPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+
+<div class="jb-backdrops" (click)="close()"></div>
+<ion-content padding>
+  <ion-list inset *ngIf="type=='competitions'">
+    <ion-item *ngFor="let item of list" (click)="itemSelected(item)"> {{ item.competitions_name}}</ion-item>
+  </ion-list>
+  <ion-list inset *ngIf="type=='teams'">
+    <ion-item *ngFor="let item of list" (click)="itemSelected(item)">
+      <img class="jb-img-ver" src="{{path}}{{cutPath(item.image_value)}}" width="30" />{{item.team_name}}</ion-item>
+  </ion-list>
+</ion-content>

@@ -1,0 +1,376 @@
+page-login {
+
+/*login screen css */
+background-image: url("../assets/imgs/landingbackground.png");
+// background-repeat: no-repeat;
+// background-size: 100% 100%;
+    // background-image: url("../assets/imgs/loginBg.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+	background-position:center;
+ .jb-background
+ {
+    background-color:transparent !important;
+ }
+.toolbar-background
+{
+    background: transparent !important;
+    border: none !important;
+}
+.jd-email{
+    background-color: #18a0a1;
+    color: #fff;
+    height: 50px;
+    /* padding: 9px 0 18px !important; */
+    margin-top: 40px;
+    padding: 15px 0 !important;
+}
+.img-set
+{
+	margin:0 auto;
+}
+.jb-skip-button{
+    // position: absolute;
+    // width: 97%;
+    // text-align: right;
+    // button{
+        background: transparent !important;
+    font-size: 16px;
+    color: white;
+     font-family: 'Gotham-Medium';
+     height: 30px;
+    //  span{
+    //      font-family: 'Gotham-Medium';
+    //  }
+    // }
+}
+
+.borderOfor
+{
+	color: #fff;
+    font-family: Gotham-Medium;
+    margin: 0 auto;
+    opacity: 0.4;
+    position: relative;
+    text-align: center;
+    width: 17%;
+    top: 22px;
+
+}
+
+
+
+.borderOfor::after {
+	border: 1px solid #fff;
+    bottom: 8px;
+    content: "";
+    opacity: 0.5;
+    position: absolute;
+    right: -52px;
+    width: 55px;
+    z-index: -1;;
+}
+
+.borderOfor::before {
+	border: 1px solid #fff;
+    bottom: 8px;
+    content: "";
+    left: -53px;
+    margin-right: -125px;
+    opacity: 0.5;
+    position: absolute;
+    width: 55px;
+    z-index: -1
+}
+ /*border for signUp page*/
+.border-SignUp
+{
+	position:relative;
+	color:#fff;
+}
+
+.border-SignUp::after
+{
+	border: 1px solid #fff;
+    content: "";
+    left: 6%;
+    opacity: 0.3;
+    position: absolute;
+    top: 0px;
+    width: 85%;
+}
+
+.imgSize
+{
+	height: 90px;
+    width:auto;
+}
+
+.buttonContainerLogin
+{
+	position:relative;
+}
+       .SignUpForm
+{
+	display: table;
+    height: 100%;
+    max-width: 100%;
+    position: relative;
+    width: 100%
+}
+.SignUpFormTable-Cell
+{
+	display: table-cell;
+    max-width: 100%;
+    text-align: center;
+    padding-top: 10vh;
+    // vertical-align: middle;
+}
+
+.fromContainer
+{
+	padding:35px 0;
+
+}
+.text-container-login p
+{
+	color: #fff;
+    font-family: Gotham-Medium;
+    font-size: 16px;
+    margin-top: 25px;
+
+}
+
+.text-container-login.or p :after
+{
+	content:"";
+	border-bottom: 2px solid #fff;
+    left: 203px;
+    opacity: 0.22;
+    position: absolute;
+    top: 293px;
+    width: 16%;
+}
+
+.OnlyForSignUpFormContainer
+{
+
+	width:100%;
+	max-width:300px;
+	height:auto;
+	background-color:transparent;
+	margin:0 auto;
+	text-align:center;
+	vertical-align:middle;
+}
+
+
+
+
+.forgotPasswordText p
+{
+	color: #fff;
+    font-family: Gotham-Book;
+    font-size: 14px;
+    padding-top: 42px;
+}
+
+.fromlist .item-input .setImg
+{
+    left: 23px;
+    position: absolute;
+    top: 18px;
+    width: 19px
+}
+
+.setImgForShowPassword
+{
+	left: 252px;
+    position: absolute;
+    top: 7px;
+    width: 19px
+
+}
+
+.back-button.show-back-button {
+    display: inline-block !important;
+}
+
+
+
+.bar.transparentBar {
+    background-color: transparent;
+}
+
+.transparent-Title
+{
+	font-family:Gotham-Medium;
+	font-size:15px;
+	color:#fff;
+}
+
+
+
+.buttonContainerLogin .col > div.facebook {
+    background-color: #5c6dc7;
+    color: #fff;
+    height: 50px;
+    padding: 5px 16px;
+	margin-top: 50px;
+
+}
+
+.buttonContainerLogin .col > div.email {
+    background-color: #04235C;
+    color: #fff;
+    height: 50px;
+    padding: 9px 0 18px;
+    margin-top: 40px;
+
+    background-color: #ffffff;
+    color: #000;
+    border-radius: 7px;
+
+
+
+}
+
+
+.buttonContainerLogin .col > div.paybal {
+    background-color: #18a0a1;
+    color: #fff;
+	max-height: 50px;
+    padding: 14px 0;
+    text-align: center;
+    width: 100%;
+}
+
+.buttonContainerLogin .col > div.ForgotPassword {
+    // background-color: #04235C;
+
+    // color: #fff;
+    // max-height: 50px;
+    // padding: 14px 0;
+    // text-align: center;
+    // width: 100%;
+
+    background-color: #ffffff;
+    color: #000;
+    max-height: 50px;
+    padding: 14px 0;
+    text-align: center;
+    width: 100%;
+    border-radius: 7px;
+}
+
+.buttonContainerLogin .col > div.arrow {
+	background-color: #18a0a1;
+    color: #fff;
+    height: 50px;
+    left: 17px;
+    padding: 9px 0 18px;
+    position: absolute;
+    top: 5px;
+    width: 86%;
+}
+
+
+.img-icon-facebook
+{
+	left: -7px;
+    position: relative;
+    top: 6px;
+    width: 25px;
+}
+
+.img-icon-email {
+    // left: -7px;
+    // position: relative;
+    // top: 6px;
+    // width: 25px;
+    left: -7px;
+    position: relative;
+    top: 5px;
+    width: 22px;
+}
+
+.img-icon-arrow
+{
+	left: 0;
+    position: relative;
+    top: -9px;
+    width: 70px;
+}
+.input-container
+{
+	position:relative
+}
+
+.input-containerOne
+{
+	position:relative;
+}
+
+
+
+.input-container img
+{
+
+    width: 20px;
+}
+
+.input-container .setImgForUsername
+{
+	position:absolute;
+	top:170px;
+	left: 14%;
+}
+
+.input-container .setImgForshowPassword
+{
+	position:absolute;
+	top:174px;
+	left: 82%;
+}
+
+.fromlist input
+{
+	background-color: transparent;
+    box-shadow: none;
+    color: #fff;
+    font-family: Gotham-Medium;
+    padding-left: 43px;
+    width: 75%;
+	line-height:40px;
+
+}
+
+
+.border-text-left
+{
+    position: relative;
+    width: 16%;
+
+}
+.loginBg
+{
+	background-image: url("../img/loginBg.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+	background-position:center;
+}
+.border-text-left
+{
+	content:"";
+	position:absolute;
+	top:50px;
+	left:50px;
+	border:2px solid red;
+
+}
+.item-input-padding
+{
+	padding-top:10px;
+}
+
+}

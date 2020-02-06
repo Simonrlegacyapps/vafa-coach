@@ -1,0 +1,360 @@
+page-playerstatindividual {
+    .greenSubTitle{
+        text-align:center;
+        color:#60c465;
+        position: relative;
+        font-family: Gotham-Book;font-size: 13px;padding: 5px 0;
+    }
+    .greenSubTitle::after {
+      background-color: #fff;
+      bottom: -7px;
+      content: "";
+      height: 3px;
+      left: 50%;
+      margin-left: -25px;
+      position: absolute;
+      width: 50px;
+      border-radius:2px;
+    }
+    .goalkickersItemRow .nomalFormMidTitle {
+        font-family: Gotham-Bold;
+        font-size: 13px;
+        margin-top: 5px;
+        text-align: left;
+        color: rgba(4, 35, 92, 0.6);
+    }
+    .jb-margin{
+            margin: 0px;
+    }
+    .text-center{
+      text-align: center;
+    }
+    .goalkickersItemRow .score-Average-stats{
+        border:none;
+        margin:0;
+    }
+    .row.goalkickersItemRow .col:nth-child(1){
+        border-right: 1px solid rgba(197, 197, 199, 0.8705882352941177);
+    }
+    .row.goalkickersItemRow .col:nth-child(2){
+        border-right: 1px solid rgba(197, 197, 199, 0.8705882352941177);
+    }
+    .row.goalkickersItemRow {
+        border-bottom: 1px solid rgba(197, 197, 199, 0.8705882352941177);
+        padding:6px 6px;
+    }
+    .row.goalkickersItemRow h4 {
+        font-family: Gotham-Medium;
+        font-size: 15px;
+        margin-top: 10px;
+        color:#04235C;
+        text-align: left;
+    }
+    /*.scorePage .button.custBackBtn{
+        max-width: 86px;
+        width: 86px;
+        text-transform:capitalize;
+    }*/
+    .scorePage .button.custBackBtn {
+        font-family: Gotham-Medium;
+        font-size: 14px;
+        max-width: 100px;
+        text-transform: capitalize;
+        width: 100px;
+        text-align:left;
+    }
+
+    .col.teamCol h4 {
+        font-family: Gotham-Book;
+        font-size: 16px !important;
+        font-weight: bold;
+        margin-bottom: 0 !important;
+        margin-left: -12px;
+        margin-right: 0 !important;
+        margin-top: 0 !important;
+        // text-align: center;
+        // color:#04235C;
+    }
+    .text-center
+    {
+        h4{
+            text-align: center !important;
+        }
+    }
+    /*Goal kicker details dropdown arrow control css */
+
+    .bar.OnlyTransparent {
+        box-shadow: none;
+        background-image: none !important;
+        }
+
+    .displayImgContent
+    {
+        padding-top: 20px;
+    }
+    .playerHeroSection .row, .playerHeroSection .col{
+        padding-bottom:0;
+    }
+    .playerHeroSection .col > img {
+      height: 145px;
+      margin-top: 1px;
+      max-width: 145px;
+      vertical-align: bottom;
+      width: 145px
+    }
+
+    .back-button
+    {
+        position: absolute;
+        top:10px;
+    }
+
+    .playerHeroSection >.col{
+        text-align:center;
+    }
+    .playerHeroSection{
+    //   background: url('../assets/imgs/PlayerDetailsBG.png');
+    //   -webkit-background-size: cover;
+    //   -moz-background-size: cover;
+    //   -o-background-size: cover;
+    //   background-size: cover;
+    //   background-repeat:no-repeat;
+    //   background-position:center;
+          height: 180px;
+        padding-top: 15px;
+    }
+    .jb-textalign
+    {
+        text-align: center;color: #04235C; font-family: Gotham-Book; font-size: 22px; margin-bottom: 4px; margin-top: 18px;
+    }
+    .jb-p
+    {
+    font-family: Gotham-Medium;font-size:24px;color:white;margin: 8px 17px -3px;
+    }
+    .jb-p1
+    {
+        font-family: Gotham-Medium;text-align:left; font-size:16px;margin-top: -5px; color: white;;margin: 10px 17px -8px;
+    }
+    .text-left h4{
+        text-align: left;
+    }
+    .jb-p3
+    {
+       font-family: Gotham-Bold; margin-top: -4px; color:white;margin: 14px 17px 10px;
+    }
+    .jb-color
+    {
+        color: #04235C;
+    }
+    .text-center
+    {
+        text-align: center;
+    }
+    .greenbg {
+        background-color: #52bb52;
+        border-radius: 10px;
+        color: #fff;
+        display: inline-block;
+        font-family: Gotham-Bold;
+        font-size: 11px;
+        line-height: normal;
+        margin: 0 auto 2px;
+        padding: 2px 8px;
+        text-align: center;
+
+    }
+    .toolbar-background
+    {
+        background-color: #04235C;
+        border: none !important;
+        //      background: url('../assets/imgs/PlayerDetailsBG.png');
+        // background-position: center;
+        // background-size: cover;
+    }
+    .jd_subtitiles{
+      // background-color: #e0e0e0;
+      // margin-bottom: 20px;
+      // height: 30px;
+      background-color: #e0e0e0;
+      height: 30px;
+      margin: 5px -4px -4px -6px;
+    }
+
+    .jdstat{
+        margin: auto !important;
+        vertical-align: sub;
+        padding-top: 0px !important;
+        font-size: 16px !important;
+        color: #7d849a !important;
+        font-family: Gotham-Medium !important;
+    }
+
+    .jd_scorediv{
+      margin-bottom: 25px;
+    }
+
+    .jd_teamSpan{
+      font-size: 16px;
+      font-family: Gotham-Bold;
+      color: #424242;
+      white-space: nowrap;
+    }
+    .jd_playerSpan{
+      font-size: 15px;
+      font-family: Gotham-Book;
+      color: #424242;
+      white-space: nowrap;
+    }
+    .advContainer{
+        text-align: center;
+        border-top: 1px solid #dedede;
+        border-bottom: 1px solid #dedede;
+        img{
+           height: 100% !important;
+        max-height: 45px;
+        max-width: 100% !important;
+        }
+    }
+
+    .TeamFormMidTitle{
+        position:relative;
+        text-align:center;
+    }
+    /*.nomalFormMidTitle{
+        color: #7d849a;
+        padding: 5px 0 0;
+        font-size:13px;
+        text-align:center;
+        margin:0;
+    }*/
+
+    .TeamFormMidTitle span {
+        // background-color: #101931;
+        color: #7d849a;
+        font-family: Gotham-Medium;
+        font-size: 16px;
+        padding: 0 5px;
+        vertical-align: sub;
+    }
+
+    .jd_circle{
+      display: inline-block;
+      vertical-align: middle;
+      width: 9px;
+      height: 9px;
+      background-color: #04235c;
+      border: solid 1px #04235c;
+      border-radius: 50%;
+      position: absolute;
+      top: 12px;
+      right: 25px;
+    }
+
+    .jd_circle::after{
+      content: " ";
+      display: block;
+      position: absolute;
+      height: 2px;
+      background: #dedede;
+      width: 44px;
+      left: 108%;
+      top: 3px;
+    }
+
+
+    .jd2_circle{
+      display: inline-block;
+      vertical-align: middle;
+      width: 9px;
+      height: 9px;
+      background-color: #04235c;
+      border: solid 1px #04235c;
+      border-radius: 50%;
+      position: absolute;
+      top: 12px;
+      left: 25px;
+    }
+
+    .jd2_circle::before{
+      content: " ";
+      display: block;
+      position: absolute;
+      height: 2px;
+      background: #dedede;
+      width: 44px;
+      right: 108%;
+      top: 3px;
+    }
+
+    // .TeamFormMidTitle span::after {
+    //   background-color: #565e73;
+    //   border-radius: 50%;
+    //   content: "";
+    //   height: 8px;
+    //   left: -9px;
+    //   opacity: 0.5;
+    //   position: absolute;
+    //   top: 8px;
+    //   width: 8px;
+
+    // }
+
+    // .TeamFormMidTitle span::before {
+    //     background-color: #565e73;
+    //     border-radius: 50%;
+    //     content: "";
+    //     height: 8px;
+    //     opacity: 0.5;
+    //     position: absolute;
+    //     right: -9px;
+    //     top: 8px;
+    //     width: 8px;
+    // }
+
+    .MatchFormContainer h4{
+        margin:0;
+    }
+
+
+    .jd_sort_btns{
+      margin: 10px 45px 10px;
+      height: 40px;
+      border: 1px solid #bdbdbd;
+      border-radius: 10px;
+    }
+
+    .jd_sort_rw{
+      height: 38px;
+      text-align: center;
+    }
+
+    .jd_sort_btn{
+      margin: auto;
+      font-size: 13px;
+      font-family: 'Gotham-Medium';
+      padding-top: 6px;
+    }
+
+    .jd_btn_border{
+      border-right: 1px solid #bdbdbd;
+      color: #04235c;
+    }
+
+    .me{
+      border-top-left-radius: 10px;
+      border-bottom-left-radius: 10px;
+    }
+
+    .me2{
+      color: #04235c;
+      border-top-right-radius: 10px;
+      border-bottom-right-radius: 10px;
+    }
+
+    .jd_selectedOptn{
+      background: #04235c;
+      color: white !important;
+    }
+}
+
+

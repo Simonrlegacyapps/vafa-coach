@@ -1,0 +1,130 @@
+page-home {
+//   .android{
+//         .toolbar-md {
+//             min-height: 44px !important;
+//         }
+//   }
+.jb-icon-red
+{
+    font-size: 40px;
+    color: white;
+
+}
+.jb-inner
+{
+    position: absolute;
+    min-width: 30vw !important;
+    top: 38%;
+}
+.jb-icon-inner-red
+{
+font-size: 25px;
+    color: white;
+}
+.inner-custom{
+	display: table-cell;
+	vertical-align: middle;
+	text-align: center;
+}
+.custom-SubHeaderBar
+{
+    text-align: center;
+    // height: 45px;
+    // border-bottom: 1px solid grey !important;
+        // bordervbottom: .55px solid grey !important;
+}
+    ion-item{
+        border-top:  none !important;
+        border-bottom: .55px solid grey !important;
+        padding: 10px !important;
+    }
+    ion-thumbnail{
+        min-width: 30vw !important;
+        min-height: 20vw !important;
+        }
+     ion-thumbnail img{
+        width: 30vw !important;
+        height: 20vw !important;
+     }
+    ion-slides {
+    display: block;
+    width: 100%;
+    height: 72vw !important;
+}
+     .playButton-overlay {
+/*  background-color: rgba(0, 0, 0, 0.6);*/
+  height: 99%;
+  position: absolute;
+  width: 100%;
+  z-index: 11;
+}
+.playButton-overlayList {
+  background-color: rgba(0, 0, 0, 0);
+  height: 96%;
+  position: absolute;
+  width: 100%;
+  z-index: 11;
+}
+.postMatchSlide-Custom{position: relative;}
+.sliderBG {background-color: #7f7f7f; padding-bottom:15px}
+
+/*.sliderCaptionText {
+  color: #fff;
+  font-size: 18px;
+  padding: 5px 15px 15px;
+  text-align:center;
+}*/
+
+.sliderCaptionText {
+    color: #fff;
+    font-family: Gotham-Book;
+    font-size: 15px;
+    overflow: hidden;
+    text-align: center;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    padding-top: 5px;
+}
+
+
+.outer-custom{
+	display:table;
+	height: 100%;
+	width: 100%
+}
+.inner-custom{
+	display: table-cell;
+	vertical-align: middle;
+	text-align: center;
+}
+.customPlaySymbol{
+	font-size: 34px;
+	color: #fff;
+	font-weight: bold;
+}
+.setImgWidth{width: 100%; height:64vw;} 
+h2{
+    color: #04235C !important;
+    white-space: normal !important;
+    font-family: Gotham-Medium;
+    font-size: 16px !important;
+}
+p{
+    color: #04235C !important;
+    font-family: Gotham-Medium;
+    font-size: 13px !important;
+}
+.item-inner
+{
+    border-bottom:none !important; 
+}
+.advrImgHeight{   height: 100% !important;
+    max-height: 45px;
+    max-width: 100% !important;}
+.jb-list-margin
+{
+//  margin-top: -4px;
+ border-top: 0.55px solid #c8c7cc;
+}
+
+}

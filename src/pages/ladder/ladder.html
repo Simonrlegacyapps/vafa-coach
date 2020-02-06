@@ -1,0 +1,115 @@
+<!--
+  Generated template for the LadderPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+
+<ion-header class="custBar">
+    <ion-navbar>
+        <button ion-button menuToggle>
+      <ion-icon name="appicons-menu"></ion-icon>
+    </button>
+        <ion-title text-center>Ladder</ion-title>
+        <button class="title1" text-center (click)="gotomodel()">{{selectables.length > 20 ? selectables.substring(0,20)+'..' : selectables}}<ion-icon  class="downarrow" name="ios-arrow-down"></ion-icon></button>
+    </ion-navbar>
+</ion-header>
+
+<ion-content class="bgPage-color" no-bounce style="padding-top:15px;">
+<div *ngIf="!weblink">
+      <div class="yeardropdown" (click)="presentPopover($event)">
+        <p class="seasontxt">SEASON</p>
+        <p class="yrtxt">{{selectd_yr}}</p>
+        <ion-icon class="downarrow jd-down-arrow" name="ios-arrow-down"></ion-icon>
+      </div>
+    <table *ngIf="ladderDataa.length!=0" id="LadderTable" class="stripe row-border order-column" width="100%" cellspacing="0">
+        <thead>
+            <tr style="height: 45px;">
+                  <!-- <th  style="display: none;"></th>  -->
+                <th></th>
+                <th class="jd_custom_th"></th>
+                <th></th>
+                <th>P</th>
+                <th>PTS</th>
+                <th>%</th>
+                <th>W</th>
+                <th>L</th>
+                <th>D</th>
+                <th>B</th>
+                <th>PF</th>
+                <th>PA</th>
+                <th>FF</th>
+                <th>FA</th>
+                <th>% WON</th>
+                <th>FORM</th>
+                <th>NEXT</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- <tr ng-repeat="(key,value) in ladderDataa | orderBy:-percentage  | orderBy: -points ">-->
+            <tr *ngFor="let value of ladderDataa; let i=index">
+                <!-- <td style="display: none;"></td>-->
+                <td style="text-align:center !important;">
+                    <div class="ladderTableLeftSide">
+                        <span style="text-align:center;">{{i+1}}</span>
+                        <!-- <span class="teamName">{{value.team_name}}</span>-->
+                    </div>
+                </td>
+                <td><!--img-storke-->
+                    <div class="ladderTableLeftSide">
+                        <img src="{{path}}{{cutPath(value.team_image)}}" class="laderTeamIcon" />
+                        <!-- <span class="teamName">{{value.team_name}}</span>-->
+                    </div>
+                </td>
+                <td >{{value.team_name}}</td>
+                <td>{{value.played}}</td>
+                <td>{{value.points}}</td>
+                <td>{{value.percentage}}</td>
+                <td>{{value.won}}</td>
+                <td>{{value.loss}}</td>
+                <td>{{value.draws}}</td>
+                <td>{{value.bye}}</td>
+                <td>{{value.points_for}}</td>
+                <td>{{value.points_againgst}}</td>
+                <td>{{value.forfeitsFor}}</td>
+                <td>{{value.forfeits_againgst}}</td>
+                <td>{{value.percentage_won}}</td>
+                <td>
+                    <div class="gameResultCircleContainer">
+                        <!--<span class="" ng-class="'latsMatchStatus===1' ? 'winMatchBg' : ''">W</span>
+                        <span>L</span>
+                        <span class="winMatchBg">W</span>
+                        <span>L</span>
+                        <span>L</span>-->
+                        <p [innerHTML]="value.lastmatch"></p>
+
+                    </div>
+                </td>
+                <td>
+                    <!-- <p ng-bind-html="value.nextmatch"></p>-->
+                    <div class="ladderTableLeftSide" *ngIf="value.nextmatch != '-'">
+                        <img src="{{path}}{{cutPath(value.nextmatch)}}" class="laderTeamIcon img-storke" />
+                    </div>
+
+                    <div class="ladderTableLeftSide" *ngIf="value.nextmatch == '-'">
+                        <p [innerHTML]="value.nextmatch"></p>
+                    </div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+</div>
+    <!-- <div id="placeholder" style="width:600px;height:300px"></div>  -->
+    <div *ngIf="weblink" class="weblinkclass" [innerHTML] = "safeURL">
+            <!-- <iframe height="100%" width="100%" [src]="safeURL" seamless allowfullscreen></iframe> -->
+        </div>
+</ion-content>
+<ion-footer>
+    <ion-toolbar class="jb-toolbar">
+        <div class="jb-adv">
+          <img *ngIf="WeblinkAd == undefined" class="full-image" src="assets/imgs/CSM_-_More_Footy_Less_Admin_(white).gif">
+          <img *ngIf="WeblinkAd != undefined" [src]="WeblinkAd">
+      </div>
+    </ion-toolbar>
+</ion-footer>

@@ -1,0 +1,106 @@
+<ion-header class="jb-back">
+  <ion-navbar>
+    <div class="playerHeroSection" *ngIf="showhide==0">
+      <ion-row class=" displayImgContent">
+        <ion-col class="text-center">
+          <img *ngIf="playerDetail.player_image == '/web/images/default_player.png'"  src="{{path}}{{playerDetail.player_image}}">
+          <img *ngIf="playerDetail.player_image != '/web/images/default_player.png'" src="{{path1}}{{cutPath(playerDetail.player_image)}}">
+        </ion-col>
+        <ion-col class="col">
+          <p class="jb-p">{{firstName}}</p>
+          <p class="jb-p">{{lastName}}</p>
+          <p class="jb-p1">{{playerDetail.team_team}}</p>
+          <p class="jb-p3">No. {{playerDetail.player_number}}</p>
+        </ion-col>
+      </ion-row>
+    </div>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content (ionScroll)="onScroll($event)"  no-bounce>
+    <!-- <div class="playerHeroSection" *ngIf="showhide==0">
+        <ion-row class=" displayImgContent">
+          <ion-col class="text-center">
+            <img src="{{path}}{{playerDetail.player_image}}">
+          </ion-col>
+          <ion-col class="col">
+            <p class="jb-p">{{firstName}}</p>
+            <p class="jb-p">{{lastName}}</p>
+            <p class="jb-p1">{{playerDetail.team_team}}</p>
+            <p class="jb-p3">No. {{playerDetail.player_number}}</p>
+          </ion-col>
+        </ion-row>
+      </div> -->
+      <div class="jd_subtitiles">
+          <ion-row class="text-center ">
+              <ion-col>
+                  <span class="jd_teamSpan">Season Total</span>
+              </ion-col>
+              <ion-col>
+
+              </ion-col>
+              <ion-col>
+                  <span class="jd_teamSpan">Avg. Game</span>
+                  <!-- <span class="jd_playerSpan">{{firstName}} {{lastName}}</span> -->
+              </ion-col>
+            </ion-row>
+      </div>
+  <!-- <h4 class="titleWithBgStrip" style=" font-family: Gotham-Medium;font-size: 15px;color: #04235c;">GAMES: {{playerDetail.totalPlayed}}</h4> -->
+  <!-- <ion-row>
+    <ion-col style="text-align:center;">
+      <p style="color:#04235c;font-family: Gotham-Light;font-size: 22px;margin-left: 0; margin-top: 22px;">Season</p>
+    </ion-col>
+    <ion-col></ion-col>
+
+    <ion-col style="text-align:center;">
+      <p style="color: #04235c;font-family: Gotham-Light;font-size: 22px;margin-left: 0; margin-top: 22px;">Average</p>
+    </ion-col>
+  </ion-row> -->
+
+
+
+   <!-- sort with quater functions -->
+   <!-- <div class="jd_sort_btns" *ngIf="Coach">
+      <ion-row class="jd_sort_rw">
+        <ion-col [ngClass]="{'jd_selectedOptn': selectedOption.indexOf('all') > -1 }" (click)="SelectedSort('all')" col-3 class="jd_btn_border me">
+          <p class="jd_sort_btn">All</p>
+        </ion-col>
+        <ion-col [ngClass]="{'jd_selectedOptn': selectedOption.indexOf(1) > -1}" (click)="SelectedSort(1)" class="jd_btn_border">
+          <p class="jd_sort_btn">Q1</p>
+        </ion-col>
+        <ion-col [ngClass]="{'jd_selectedOptn': selectedOption.indexOf(2) > -1}" (click)="SelectedSort(2)" class="jd_btn_border">
+          <p class="jd_sort_btn">Q2</p>
+        </ion-col>
+        <ion-col [ngClass]="{'jd_selectedOptn': selectedOption.indexOf(3) > -1}" (click)="SelectedSort(3)" class="jd_btn_border">
+          <p class="jd_sort_btn">Q3</p>
+        </ion-col>
+        <ion-col [ngClass]="{'jd_selectedOptn': selectedOption.indexOf(4) > -1}" (click)="SelectedSort(4)" class="me2">
+          <p class="jd_sort_btn">Q4</p>
+        </ion-col>
+      </ion-row>
+    </div> -->
+    <!--  -->
+
+  <div *ngFor="let value of playerStatDetailsData; let i = index" class="jd_hitdiv">
+    <ion-row class="text-center MatchFormContainer adjstHeight jd_scorediv">
+      <ion-col>
+        <h4 class="jd_h4" style="font-family: Gotham-Medium;font-size: 26px; color:#04235c;margin-left: -18px; margin-top: 3px;"> {{ value[value.stat_name] }}</h4>
+        <div class="jd_circle"></div>
+      </ion-col>
+      <ion-col col-4>
+        <div class="TeamFormMidTitle">
+          <span *ngIf="value.stat_name != 'inside50'">{{value.stat_name}}</span>
+          <span *ngIf="value.stat_name == 'inside50'">Inside 50</span>
+        </div>
+      </ion-col>
+      <ion-col>
+          <div class="jd2_circle"></div>
+        <h4  class="jd2_h4" style="color: #04235c;font-family: Gotham-Medium;font-size: 26px;margin-left: 8px; margin-top: 3px;">{{value.avg}} </h4>
+      </ion-col>
+    </ion-row>
+    <div class="advContainer" *ngIf="i==1" style="margin: 0 auto 25px -7px; width: 104%;">
+      <img src="{{path}}{{advertisementHeader[0].ad_image}}" class="full-image" (click)="goToAddSite(advertisementHeader[0].ad_url);">
+    </div>
+  </div>
+</ion-content>

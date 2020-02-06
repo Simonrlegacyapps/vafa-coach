@@ -1,0 +1,45 @@
+page-competition-team {
+        ion-content {
+                    min-height: 70vh;
+                    max-height: 95vh;
+                    position: relative !important;
+                    width: 90%;
+                    left: 50%;
+                    -webkit-transform: translate(-50%, -50%);
+                    transform: translate(-50%, -50%);
+                    top: 50%;
+                    border-radius: 60px;
+                    background-color: white !important;
+           }
+                .jb-img-ver
+                {
+                    vertical-align: middle;
+                    margin-right: 10px;
+
+                }
+           .jb-backdrops
+            {
+                left: 0;
+                right: 0;
+                top: 0;
+                bottom: 0;
+                position: absolute;
+                display: block;
+                background: rgba(0, 0, 0, 0.16);
+            }
+            ion-item{
+                background: transparent !important;
+                text-align: center !important;
+            }
+            ion-label{
+                text-align: center;
+                text-transform: none;
+                width: 100%;
+                margin: 0 auto !important;
+                max-width: 100%;
+                font-family: Gotham-Medium;
+                font-size: 17px;
+                height: 35px;
+                line-height: 2;
+            }
+}

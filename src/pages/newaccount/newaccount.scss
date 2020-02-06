@@ -1,0 +1,162 @@
+page-newaccount {
+ .jd-header-title{
+        text-align: center;
+    }
+    .toolbar-background {
+        background-color:#74CECE;
+    }
+    .toolbar-title{
+        font-size: 20px;
+        color: white;
+        font-weight: 700;
+    }
+    .jd-left-btn{
+        color: white;
+        font-size: 18px;
+    }
+    .jd-dp-div{
+        margin: 15px auto;
+        height: 125px;
+        width: 125px;
+        background-color: transparent;
+        background-image: url('../assets/user.svg');
+        border-radius: 50%;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+    .jd-dp-div1{
+        margin: 15px auto;
+        height: 125px;
+        width: 125px;
+        background-color: white;
+        border-radius: 50%;
+        background-image: url('../assets/user.svg');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+    
+
+    .jd-Terms{
+    font-size: 16px;
+    color: #203864;
+    font-family: Gotham-Medium;
+    padding-left: 10px;
+    }
+    .jd-profile-div{
+        width: 100%;
+        height: auto;
+        background-size: 125px 125px;
+        padding-bottom: 20px;
+        background-repeat: no-repeat;
+        background-position-x: center;
+        background-position-y: 18px;
+        text-align: center;
+        margin: auto;
+        background-image: url(../assets/user.svg);
+        position: relative;
+        padding-top: 3px;
+    }
+    ion-label{
+    p{
+        height: 26px;
+    padding-top: 5px;
+    }
+    }
+    .jb-profile-short{
+      font-size: 30px;
+    margin-top: 15px;
+    margin-bottom: 5px;
+    font-family: Gotham-Bold;
+    color:rgba(128, 128, 128, 0.47843137254901963);
+    }
+    .jd-edit-dp{
+        font-family: Gotham-Medium;
+        position: absolute !important;
+        bottom: -5px !important;
+        border-bottom-left-radius: 42px;
+        border-bottom-right-radius: 42px;
+        left: 0px !important;
+        height: 26px !important;
+        font-size: 12px;
+          span{
+            font-family: Gotham-Medium;
+        }
+    }
+    .jd-profile-name{
+        font-size: 20px;
+        color: white;
+        font-family: Gotham-Medium;
+        margin-bottom: 30px;
+    }
+    .jd-logout-btn{
+        width: 70%;
+        margin: auto;
+        font-family: Gotham-Medium;
+        background-color: #04235c;
+        border-radius: 5px;
+        span{
+            font-family: Gotham-Medium;
+        }
+    }
+    .jd-arrow-item{
+        text-align: right;
+    }
+    .item{
+        padding: 0px !important;
+        border-bottom: 1px solid #dedede !important;
+        color: #0070c0 !important
+    }
+    .jd-item-block{
+         font-family: Gotham-Medium;
+        padding-left: 10px;
+        font-size: 16px;
+        color: #203864;
+        span{
+        font-family: Gotham-Book;
+        font-size:14px;
+        }
+    }
+    .jd-item-block1{
+        font-family: Gotham-Medium;
+        font-size: 16px;
+        color: #203864;
+        span{
+        font-family: Gotham-Book;
+        font-size:14px;
+        }
+    }
+    .jd-custom-icon{
+        margin-left: 10px !important;
+    }
+    .item-block .item-inner{
+    border-bottom: none !important;
+    background-image: url('../assets/right-arrow.svg');
+    padding-right: 32px;
+    background-position: right 14px center;
+    background-position: right calc(14px + constant(safe-area-inset-right)) center;
+    background-position: right calc(14px + env(safe-area-inset-right)) center;
+    background-repeat: no-repeat;
+    background-size: 14px 14px;
+    }
+
+    .UserImg{
+        height: 100px;
+        width: 100px;
+        margin: auto;
+        margin-bottom: 10px !important;
+}
+
+.UserImage{
+    border-radius: 50%;
+    width: 100%;
+    height: 100%;
+}
+[ion-fixed] {
+    height: 100%;
+}
+
+
+
+}

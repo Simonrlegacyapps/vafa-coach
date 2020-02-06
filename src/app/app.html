@@ -1,0 +1,27 @@
+<ion-menu [content]="content">
+  <ion-header class="jb-menu-header">
+    <ion-toolbar>
+      <img src="assets/imgs/menuIcon/menuTitle.png">
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-content>
+    <ion-list>
+       <ion-item  menuClose ion-item [class]="accountselect" (click)="accessDenied()">
+        <!-- <span> -->
+        <img src="assets/imgs/menuIcon/userIcon.png">
+        <p>My Account</p>
+      <!-- </span> -->
+      </ion-item> 
+      <ion-item menuClose ion-item *ngFor="let p of pages" [class]="p.itemseleted" (click)="openPage(p)">
+        <img src="{{p.icon}}">
+        <p>{{p.title}}</p>
+      </ion-item>
+    </ion-list>
+
+  </ion-content>
+
+</ion-menu>
+
+<!-- Disable swipe-to-go-back because it's poor UX to combine STGB with side menus -->
+<ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>
