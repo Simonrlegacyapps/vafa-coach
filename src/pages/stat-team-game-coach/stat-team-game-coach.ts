@@ -3,12 +3,11 @@ import { IonicPage, NavController, NavParams, Content, AlertController, Platform
 import { AjaxProvider } from '../../providers/ajax/ajax';
 import { CommomfunctionProvider } from '../../providers/commomfunction/commomfunction';
 import { Events } from 'ionic-angular';
-import { KeysPipe } from '../../pipes/keys/keys';
 import { Storage } from '@ionic/storage';
 import { InAppBrowser } from '@ionic-native/in-app-browser';
 import { LocalDataProvider } from '../../providers/local-data/local-data';
 import { ProductListProvider } from '../../providers/product-list/product-list';
-import { StreamingMedia, StreamingVideoOptions, StreamingAudioOptions } from '@ionic-native/streaming-media';
+import { StreamingMedia} from '@ionic-native/streaming-media';
 import 'datatables.net';
 import 'datatables.net-fixedcolumns';
 import 'datatables.net-fixedheader';
@@ -1901,7 +1900,7 @@ export class StatTeamGameCoachPage {
 
                         if (quaterHScore[0] !== '0.0') {
                             let q1Score = quaterHScore[0].split(".");
-                            let q1HTot = (parseInt(q1Score[0]) * 6) + parseInt(q1Score[1]);
+                            let q1HTot: any = ((parseInt(q1Score[0])) * 6) + parseInt(q1Score[1]);
                             $('.totalHoMeScores').html(q1HTot);
                             //console.log('q1-'+q1HTot);
 
@@ -1911,7 +1910,7 @@ export class StatTeamGameCoachPage {
                             let q2Score = quaterHScore[1].split(".");
                             let q2G = parseInt(q1Score[0]) + parseInt(q2Score[0]);
                             let q2RB = parseInt(q1Score[1]) + parseInt(q2Score[1]);
-                            let q2HTot = q2G * 6 + q2RB;
+                            let q2HTot: any = q2G * 6 + q2RB;
                             $('.totalHoMeScores').html(q2HTot);
                             //console.log('q2-'+q2HTot);
                         }
@@ -1921,7 +1920,7 @@ export class StatTeamGameCoachPage {
                             let q3Score = quaterHScore[2].split(".");
                             let q3G = parseInt(q1Score[0]) + parseInt(q2Score[0]) + parseInt(q3Score[0]);
                             let q3RB = parseInt(q1Score[1]) + parseInt(q2Score[1]) + parseInt(q3Score[1]);
-                            let q3HTot = q3G * 6 + q3RB;
+                            let q3HTot: any = q3G * 6 + q3RB;
                             $('.totalHoMeScores').html(q3HTot);
                             //console.log('q3-'+q3HTot);
                         }
@@ -1932,7 +1931,7 @@ export class StatTeamGameCoachPage {
                             let q4Score = quaterHScore[3].split(".");
                             let q4G = parseInt(q1Score[0]) + parseInt(q2Score[0]) + parseInt(q3Score[0]) + parseInt(q4Score[0]);
                             let q4RB = parseInt(q1Score[1]) + parseInt(q2Score[1]) + parseInt(q3Score[1]) + parseInt(q4Score[1]);
-                            let q4HTot = q4G * 6 + q4RB;
+                            let q4HTot: any = q4G * 6 + q4RB;
                             $('.totalHoMeScores').html(q4HTot);
                             //console.log('q4-'+q4HTot);
                         }
@@ -2137,7 +2136,7 @@ export class StatTeamGameCoachPage {
                         //To display total scores
                         if (quaterAScore[0] !== '0.0') {
                             let q1Score = quaterAScore[0].split(".");
-                            let q1ATot = (parseInt(q1Score[0]) * 6) + parseInt(q1Score[1]);
+                            let q1ATot: any = (parseInt(q1Score[0]) * 6) + parseInt(q1Score[1]);
                             $('.totalAwAyScores').html(q1ATot);
                         }
                         if (quaterAScore[1] !== '0.0') {
@@ -2145,7 +2144,7 @@ export class StatTeamGameCoachPage {
                             let q2Score = quaterAScore[1].split(".");
                             let q2G = parseInt(q1Score[0]) + parseInt(q2Score[0]);
                             let q2RB = parseInt(q1Score[1]) + parseInt(q2Score[1]);
-                            let q2ATot = (q2G * 6) + q2RB;
+                            let q2ATot: any = (q2G * 6) + q2RB;
                             $('.totalAwAyScores').html(q2ATot);
                         }
                         if (quaterAScore[2] !== '0.0') {
@@ -2154,7 +2153,7 @@ export class StatTeamGameCoachPage {
                             let q3Score = quaterAScore[2].split(".");
                             let q3G = parseInt(q1Score[0]) + parseInt(q2Score[0]) + parseInt(q3Score[0]);
                             let q3RB = parseInt(q1Score[1]) + parseInt(q2Score[1]) + parseInt(q3Score[1]);
-                            let q3ATot = (q3G * 6) + q3RB;
+                            let q3ATot: any = (q3G * 6) + q3RB;
                             $('.totalAwAyScores').html(q3ATot);
                         }
                         if (quaterAScore[3] !== '0.0') {
@@ -2164,7 +2163,7 @@ export class StatTeamGameCoachPage {
                             let q4Score = quaterAScore[3].split(".");
                             let q4G = parseInt(q1Score[0]) + parseInt(q2Score[0]) + parseInt(q3Score[0]) + parseInt(q4Score[0]);
                             let q4RB = parseInt(q1Score[1]) + parseInt(q2Score[1]) + parseInt(q3Score[1]) + parseInt(q4Score[1]);
-                            let q4ATot = (q4G * 6) + q4RB;
+                            let q4ATot: any = (q4G * 6) + q4RB;
                             $('.totalAwAyScores').html(q4ATot);
                         }
                         //END:Away Team total scores calculations
@@ -2181,7 +2180,7 @@ export class StatTeamGameCoachPage {
                 let merged = homeTeamScore.concat(awayTeamScore);
 
                 let scores = [];
-                let i = 1, goalHScore = 0, rbBHscore = 0, totalHScore = 0, goalAScore = 0, rbBAscore = 0, totalAScore = 0, actualTime, splitTime, minuteVal, totalSec;
+                let i = 1, goalHScore: any = 0, rbBHscore: any = 0, totalHScore: any = 0, goalAScore: any = 0, rbBAscore: any = 0, totalAScore: any = 0, actualTime: any, splitTime: any, minuteVal: any, totalSec: any;
                 let newMerge = [];
 
 
@@ -2190,9 +2189,9 @@ export class StatTeamGameCoachPage {
                 };
                 let cmp1 = function (x, y) {
                     data = x.split(":");
-                    let data_time1 = parseInt(parseInt(data[0] * 60) + data[1]);
+                    let data_time1 = (parseInt(data[0]) * 60) + data[1];
                     data = y.split(":");
-                    let data_time2 = parseInt(parseInt(data[0] * 60) + data[1]);
+                    let data_time2 = (parseInt(data[0]) * 60) + data[1];
                     return data_time1 > data_time2 ? 1 : data_time1 < data_time2 ? -1 : 0;
 
                 };
@@ -2215,17 +2214,17 @@ export class StatTeamGameCoachPage {
                 //console.log('==old merged ARRAY=='); console.log(merged);console.log(merged.length);console.log('======');console.log('==new merged ARRAY==');console.log(newMerge);console.log(newMerge.length);
                 //let res;
                 let finalQr = 0;
-                let timeTotalGlobal = 0;
+                let timeTotalGlobal: any = 0;
                 let qrTimeLimit = Array();
-                let flagchk = true;
-                let temp = 1;
+                let flagchk: boolean = true;
+                let temp: any = 1;
                 let tempMin = 0;
-                let maxScore = 0;
+                let maxScore: any = 0;
                 let tempQr = 1;
                 let tempValue = 0;
                 let minSore = 0;
-                let minScore = 0;
-                let timeDuration = 26;
+                let minScore: any = 0;
+                let timeDuration: any = 26;
                 $.each(newMerge, function (key3, value3) {
 
                     if (flagchk) {
@@ -2242,11 +2241,11 @@ export class StatTeamGameCoachPage {
 
                             temp = value3.quater;
 
-                            let actualTime1 = newMerge[key3 - 1].act_time;
+                            let actualTime1: any = newMerge[key3 - 1].act_time;
                             actualTime1 = actualTime1.split(":");
 
 
-                            qrTimeLimit[temp] = parseInt(qrTimeLimit[temp - 1]) + parseInt(actualTime1[0] * 60) + parseInt(actualTime1[1]);
+                            qrTimeLimit[temp] = parseInt(qrTimeLimit[temp - 1]) + (parseInt(actualTime1[0]) * 60) + parseInt(actualTime1[1]);
 
 
                         }
@@ -2259,7 +2258,7 @@ export class StatTeamGameCoachPage {
                     splitTime = actualTime.split(":");
 
                     minuteVal = splitTime[1];
-                    let TotalSec = parseInt(parseInt(splitTime[0] * 60) + parseInt(splitTime[1]));
+                    let TotalSec = (parseInt(splitTime[0]) * 60) + parseInt(splitTime[1]);
                     totalSec = (minuteVal / 60).toFixed(2);
 
                     let TotalTime = parseFloat(splitTime[0] + (splitTime[1]) / 60);
@@ -2284,8 +2283,8 @@ export class StatTeamGameCoachPage {
 
                        }*/
 
-                    let addQrTime = (value3.quater - 1) * timeDuration * 60;
-                    timeTotalGlobal = parseInt(parseInt(splitTime[0] * 60) + parseInt(splitTime[1]) + parseInt(addQrTime));
+                    let addQrTime: any = (value3.quater - 1) * timeDuration * 60;
+                    timeTotalGlobal = (parseInt(splitTime[0]) * 60) + parseInt(splitTime[1]) + parseInt(addQrTime);
 
 
 
@@ -2294,43 +2293,43 @@ export class StatTeamGameCoachPage {
                         if (value3.quater == '1') {
                             if (value3.stat_id == '1') {
                                 // goalHScore+=6;
-                                goalHScore = parseInt(parseInt(goalHScore) + 6);
+                                goalHScore = parseInt(goalHScore) + 6;
 
                             }
                             else {
                                 //rbBHscore+=1;
-                                rbBHscore = parseInt(parseInt(rbBHscore) + 1);
+                                rbBHscore = parseInt(rbBHscore) + 1;
                             }
                         }
                         else if (value3.quater == '2') {
                             if (value3.stat_id == '1') {
                                 //goalHScore+=6;
-                                goalHScore = parseInt(parseInt(goalHScore) + 6);
+                                goalHScore = parseInt(goalHScore) + 6;
 
                             }
                             else {
                                 // rbBHscore+=1;
-                                rbBHscore = parseInt(parseInt(rbBHscore) + 1);
+                                rbBHscore = parseInt(rbBHscore) + 1;
                             }
                         }
                         else if (value3.quater == '3') {
                             if (value3.stat_id == '1') {
                                 // goalHScore+=6;
-                                goalHScore = parseInt(parseInt(goalHScore) + 6);
+                                goalHScore = parseInt(goalHScore) + 6;
                             }
                             else {
                                 //rbBHscore+=1;
-                                rbBHscore = parseInt(parseInt(rbBHscore) + 1);
+                                rbBHscore = parseInt(rbBHscore) + 1;
                             }
                         }
                         else if (value3.quater == '4') {
                             if (value3.stat_id == '1') {
                                 //goalHScore+=6;
-                                goalHScore = parseInt(parseInt(goalHScore) + 6);
+                                goalHScore = parseInt(goalHScore) + 6;
                             }
                             else {
                                 // rbBHscore+=1;
-                                rbBHscore = parseInt(parseInt(rbBHscore) + 1);
+                                rbBHscore = parseInt(rbBHscore) + 1;
                             }
                         }
                         totalHScore = parseInt(goalHScore + rbBHscore);
@@ -2347,44 +2346,44 @@ export class StatTeamGameCoachPage {
                             let q1Flag = true;
                             if (value3.stat_id == '1') {
                                 // goalHScore-=6;
-                                goalHScore = parseInt(parseInt(goalHScore) - 6);
+                                goalHScore = parseInt(goalHScore) - 6;
                             }
                             else {
                                 //rbBHscore-=1;
-                                rbBHscore = parseInt(parseInt(rbBHscore) - 1);
+                                rbBHscore = parseInt(rbBHscore) - 1;
                             }
                         }
                         else if (value3.quater == '2') {
                             let q2Flag = true;
                             if (value3.stat_id == '1') {
                                 //goalHScore-=6;
-                                goalHScore = parseInt(parseInt(goalHScore) - 6);
+                                goalHScore = parseInt(goalHScore) - 6;
                             }
                             else {
                                 //rbBHscore-=1;
-                                rbBHscore = parseInt(parseInt(rbBHscore) - 1);
+                                rbBHscore = parseInt(rbBHscore) - 1;
                             }
                         }
                         else if (value3.quater == '3') {
                             let q3Flag = true;
                             if (value3.stat_id == '1') {
                                 //goalHScore-=6;
-                                goalHScore = parseInt(parseInt(goalHScore) - 6);
+                                goalHScore = parseInt(goalHScore) - 6;
                             }
                             else {
                                 // rbBHscore-=1;
-                                rbBHscore = parseInt(parseInt(rbBHscore) - 1);
+                                rbBHscore = parseInt(rbBHscore) - 1;
                             }
                         }
                         else if (value3.quater == '4') {
                             let q4Flag = true;
                             if (value3.stat_id == '1') {
                                 //goalHScore-=6;
-                                goalHScore = parseInt(parseInt(goalHScore) - 6);
+                                goalHScore = parseInt(goalHScore) - 6;
                             }
                             else {
                                 rbBHscore -= 1;
-                                rbBHscore = parseInt(parseInt(rbBHscore) - 1);
+                                rbBHscore = parseInt(rbBHscore) - 1;
                             }
                         }
                         totalHScore = parseInt(goalHScore + rbBHscore);
@@ -2509,7 +2508,7 @@ export class StatTeamGameCoachPage {
 
                 if (Math.abs(minScore) > maxScore) maxScore = Math.abs(minScore);
 
-                maxScore = parseInt(maxScore + 5);
+                maxScore = parseInt(maxScore) + 5;
                 let modifedScore = [[0, 0]];
                 let lastTempValue = 0;
                 $.each(scores, function (index, item) {
@@ -2740,7 +2739,7 @@ export class StatTeamGameCoachPage {
                 let aEffVal = this.awayTeamScoreStat['I50'];
                 let aDiv = aAdd / aEffVal;
                 //alert(hAdd+"......"+hEffVal+"......"+hDiv)
-                if (isNaN(hDiv) || hDiv == 'Infinity') {
+                if (isNaN(hDiv) || hDiv == Infinity) {
                     hDiv = 0;
                     this.hEFF = (hDiv * 100).toFixed(2);
                     this.homeEFF = parseInt(this.hEFF.split('.')[0]);
@@ -2754,7 +2753,7 @@ export class StatTeamGameCoachPage {
                     //alert(this.hEFF+"=="+this.homeEFF+"=="+this.homeEFFWidth)
                 }
 
-                if (isNaN(aDiv) || aDiv == 'Infinity') {
+                if (isNaN(aDiv) || aDiv == Infinity) {
                     aDiv = 0;
                     this.aEFF = (aDiv * 100).toFixed(2);
                     this.awayEFF = parseInt(this.aEFF.split('.')[0]);
@@ -2879,8 +2878,8 @@ export class StatTeamGameCoachPage {
             this.stats[key].awayTeamOnlyColor = 'gray';
             let maxAway = 5;
 
-            let modifedMaxValue = parseFloat(barValueH + maxAway);
-            let percentageUnit = parseFloat(100 / modifedMaxValue);
+            let modifedMaxValue: any = barValueH + maxAway;
+            let percentageUnit: any = parseFloat(100 / modifedMaxValue);
 
             if (barValueA == 0)
                 this.stats[key].awayTeamWidth = "22%";
@@ -2992,9 +2991,8 @@ export class StatTeamGameCoachPage {
             fixtureId: this.fixture_id,
             adv_title: 'Stats-Club'
         }).subscribe((res) => {
-
-            console.log('1' + res);
-            $('#playerStatsTable').dataTable().fnDestroy();
+            let table: any = $('#playerStatsTable').dataTable();
+            table.fnDestroy();
             this.getplayerscoreplayer(res);
         }, error => {
             // this.cmnfun.showToast('Some thing Unexpected happen please try again');
@@ -3009,9 +3007,9 @@ export class StatTeamGameCoachPage {
     }
     getGBData(g_value, b_value, rb_value, key, obj, k_value, h_value) {
 
-        let goal = 0;
-        let b = 0;
-        let rb = 0;
+        let goal: any = 0;
+        let b: any = 0;
+        let rb: any = 0;
 
         let k = 0;
         let h = 0;
@@ -3023,12 +3021,12 @@ export class StatTeamGameCoachPage {
         if (k_value == undefined) k = 0; else k = k_value;
         if (h_value == undefined) h = 0; else h = h_value;
 
-        this.homeAwayTeamPlayerWithScore[key].GB = parseInt(parseInt(goal * 6) + parseInt(b + rb));
-        this.homeTeamPlayers1[key].GB = parseFloat(parseInt(parseInt(goal * 6) + parseInt(b + rb)));
+        this.homeAwayTeamPlayerWithScore[key].GB = ((parseInt(goal) * 6) + parseInt(b + rb));
+        this.homeTeamPlayers1[key].GB = parseFloat((parseInt(goal) * 6) + parseInt(b + rb));
 
         //this.homeTeamPlayers1[key].D = parseInt(k_value + h_value) ;
 
-        let GB_score = goal + "." + parseInt(b + rb);
+        let GB_score: any = goal + "." + parseInt(b + rb);
         if (GB_score == 0)
             return "0.0";
         else
