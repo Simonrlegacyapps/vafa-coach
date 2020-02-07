@@ -16,8 +16,7 @@ import { YoutubeVideoPlayer } from '@ionic-native/youtube-video-player';
 import { ThemeableBrowser } from '@ionic-native/themeable-browser';
 import { environment } from '../../environments/environment';
 import { FirebaseAnalyticsProvider } from '../../providers/firebase-analytics/firebase-analytics';
-
-// import * as $ from 'jquery';
+import * as $ from 'jquery';
 // import 'datatables.net';
 // import 'datatables.net-fixedcolumns';
 // import 'jquery-flot'
@@ -1222,8 +1221,7 @@ export class InnermatchcenterPage {
 
 
         let scores = [];
-        let i = 1, goalHScore = 0, rbBHscore = 0, totalHScore = 0, goalAScore = 0, rbBAscore = 0, totalAScore = 0, actualTime, splitTime, minuteVal, totalSec;
-        let newMerge = [];
+        let i = 1, goalHScore = 0, rbBHscore = 0, totalHScore = 0, actualTime, splitTime, minuteVal, totalSec;
 
         let cmp2 = function (x, y) {
             return x > y ? 1 : x < y ? -1 : 0;
@@ -1295,18 +1293,11 @@ export class InnermatchcenterPage {
 
             }
             else {
-
                 if (temp != value3.quater) {
-
                     temp = value3.quater;
-
                     let actualTime2 = this.newMerge[key3 - 1].act_time;
-
                     let actualTime1 = actualTime2.split(":");
-
                     qrTimeLimit[temp] = parseInt(qrTimeLimit[temp - 1]) + (parseInt(actualTime1[0]) * 60) + parseInt(actualTime1[1]);
-
-
                 }
             }
 
@@ -1317,18 +1308,10 @@ export class InnermatchcenterPage {
             splitTime = actualTime.split(":");
 
             minuteVal = splitTime[1];
-            let TotalSec = (parseInt(splitTime[0]) * 60) + parseInt(splitTime[1]);
             totalSec = (minuteVal / 60).toFixed(2);
-
-            let TotalTime = parseFloat(splitTime[0] + (splitTime[1]) / 60);
-
 
             let addQrTime = (value3.quater - 1) * timeDuration * 60;
             timeTotalGlobal = parseInt((splitTime[0] * 60) + (splitTime[1]) + (addQrTime));
-
-
-
-            // alert(actualTime+","+TotalSec+"--"+timeTotalGlobal);
             if ((value3.team_type) == 'home') {
                 if (value3.quater == '1') {
                     if (value3.stat_id == '1') {
@@ -2158,7 +2141,7 @@ export class InnermatchcenterPage {
                 let merged = homeTeamScore.concat(awayTeamScore);
 
                 let scores = [];
-                let i = 1, goalHScore:any = 0, rbBHscore:any = 0, totalHScore:any = 0, goalAScore = 0, rbBAscore = 0, totalAScore = 0, actualTime:any, splitTime:any, minuteVal:any, totalSec;
+                let i = 1, goalHScore: any = 0, rbBHscore: any = 0, totalHScore: any = 0, goalAScore = 0, rbBAscore = 0, totalAScore = 0, actualTime: any, splitTime: any, minuteVal: any, totalSec;
                 let newMerge = [];
 
 
@@ -2197,7 +2180,7 @@ export class InnermatchcenterPage {
                 let flagchk = true;
                 let temp = 1;
                 let tempMin = 0;
-                let maxScore = 0;
+                let maxScore: any = 0;
                 let tempQr = 1;
                 let tempValue = 0;
                 let minSore = 0;
@@ -2228,21 +2211,12 @@ export class InnermatchcenterPage {
 
                         }
                     }
-
-
                     finalQr = value3.quater;
                     actualTime = value3.act_time;
-
                     splitTime = actualTime.split(":");
-
                     minuteVal = splitTime[1];
-                    let TotalSec = ((parseInt(splitTime[0]) * 60) + parseInt(splitTime[1]));
                     totalSec = (minuteVal / 60).toFixed(2);
-
-                    let TotalTime = parseFloat(splitTime[0] + (splitTime[1]) / 60);
-
                     /*
-                
                        if(tempQr == value3.quater)
                        {
                            timeTotalGlobal=parseInt(parseInt(splitTime[0]*60)+parseInt(splitTime[1])+parseInt(tempMin));
@@ -2264,9 +2238,6 @@ export class InnermatchcenterPage {
                     let addQrTime: any = (value3.quater - 1) * timeDuration * 60;
                     timeTotalGlobal = ((parseInt(splitTime[0]) * 60) + parseInt(splitTime[1]) + parseInt(addQrTime));
 
-
-
-                    // alert(actualTime+","+TotalSec+"--"+timeTotalGlobal);
                     if ((value3.team_type) == 'home') {
                         if (value3.quater == '1') {
                             if (value3.stat_id == '1') {
@@ -2276,38 +2247,38 @@ export class InnermatchcenterPage {
                             }
                             else {
                                 //rbBHscore+=1;
-                                rbBHscore = parseInt(parseInt(rbBHscore) + 1);
+                                rbBHscore = parseInt(rbBHscore) + 1;
                             }
                         }
                         else if (value3.quater == '2') {
                             if (value3.stat_id == '1') {
                                 //goalHScore+=6;
-                                goalHScore = parseInt(parseInt(goalHScore) + 6);
+                                goalHScore = parseInt(goalHScore) + 6;
 
                             }
                             else {
                                 // rbBHscore+=1;
-                                rbBHscore = parseInt(parseInt(rbBHscore) + 1);
+                                rbBHscore = parseInt(rbBHscore) + 1;
                             }
                         }
                         else if (value3.quater == '3') {
                             if (value3.stat_id == '1') {
                                 // goalHScore+=6;
-                                goalHScore = parseInt(parseInt(goalHScore) + 6);
+                                goalHScore = parseInt(goalHScore) + 6;
                             }
                             else {
                                 //rbBHscore+=1;
-                                rbBHscore = parseInt(parseInt(rbBHscore) + 1);
+                                rbBHscore = parseInt(rbBHscore) + 1;
                             }
                         }
                         else if (value3.quater == '4') {
                             if (value3.stat_id == '1') {
                                 //goalHScore+=6;
-                                goalHScore = parseInt(parseInt(goalHScore) + 6);
+                                goalHScore = parseInt(goalHScore) + 6;
                             }
                             else {
                                 // rbBHscore+=1;
-                                rbBHscore = parseInt(parseInt(rbBHscore) + 1);
+                                rbBHscore = parseInt(rbBHscore) + 1;
                             }
                         }
                         totalHScore = parseInt(goalHScore + rbBHscore);
@@ -2324,44 +2295,44 @@ export class InnermatchcenterPage {
                             let q1Flag = true;
                             if (value3.stat_id == '1') {
                                 // goalHScore-=6;
-                                goalHScore = parseInt(parseInt(goalHScore) - 6);
+                                goalHScore = parseInt(goalHScore) - 6;
                             }
                             else {
                                 //rbBHscore-=1;
-                                rbBHscore = parseInt(parseInt(rbBHscore) - 1);
+                                rbBHscore = parseInt(rbBHscore) - 1;
                             }
                         }
                         else if (value3.quater == '2') {
                             let q2Flag = true;
                             if (value3.stat_id == '1') {
                                 //goalHScore-=6;
-                                goalHScore = parseInt(parseInt(goalHScore) - 6);
+                                goalHScore = parseInt(goalHScore) - 6;
                             }
                             else {
                                 //rbBHscore-=1;
-                                rbBHscore = parseInt(parseInt(rbBHscore) - 1);
+                                rbBHscore = parseInt(rbBHscore) - 1;
                             }
                         }
                         else if (value3.quater == '3') {
                             let q3Flag = true;
                             if (value3.stat_id == '1') {
                                 //goalHScore-=6;
-                                goalHScore = parseInt(parseInt(goalHScore) - 6);
+                                goalHScore = parseInt(goalHScore) - 6;
                             }
                             else {
                                 // rbBHscore-=1;
-                                rbBHscore = parseInt(parseInt(rbBHscore) - 1);
+                                rbBHscore = parseInt(rbBHscore) - 1;
                             }
                         }
                         else if (value3.quater == '4') {
                             let q4Flag = true;
                             if (value3.stat_id == '1') {
                                 //goalHScore-=6;
-                                goalHScore = parseInt(parseInt(goalHScore) - 6);
+                                goalHScore = parseInt(goalHScore) - 6;
                             }
                             else {
                                 rbBHscore -= 1;
-                                rbBHscore = parseInt(parseInt(rbBHscore) - 1);
+                                rbBHscore = parseInt(rbBHscore) - 1;
                             }
                         }
                         totalHScore = parseInt(goalHScore + rbBHscore);
@@ -2572,8 +2543,8 @@ export class InnermatchcenterPage {
                 // alert("hh");
                 console.log(ticks1);
                 console.log(modifedScore);
-                let plotObj = $.plot($("#scoreChart"), [{ data: modifedScore }], options);
-                let plotObj1 = $.plot($("#scoreChartmin"), [{ data: modifedScore }], options);
+                $.plot($("#scoreChart"), [{ data: modifedScore }], options);
+                $.plot($("#scoreChartmin"), [{ data: modifedScore }], options);
 
                 $("#scoreChartmin").hide();
                 $("#scoreChartminh").hide();
@@ -2954,8 +2925,8 @@ export class InnermatchcenterPage {
             this.stats[key].awayTeamOnlyColor = 'gray';
             let maxAway = 5;
 
-            let modifedMaxValue = parseFloat(barValueH + maxAway);
-            let percentageUnit = parseFloat(100 / modifedMaxValue);
+            let modifedMaxValue: any = parseFloat(barValueH + maxAway);
+            let percentageUnit: any = parseFloat(100 / modifedMaxValue);
 
             if (barValueA == 0)
                 this.stats[key].awayTeamWidth = "22%";
@@ -2979,12 +2950,9 @@ export class InnermatchcenterPage {
             let maxAway = 5;
 
 
-            let modifedMaxValue = parseFloat(barValueA + maxAway);
+            let modifedMaxValue: any = parseFloat(barValueA + maxAway);
             modifedMaxValue = parseFloat(barValueA + maxAway);
             let percentageUnit = parseFloat(100 / modifedMaxValue);
-
-
-
 
             this.stats[key].awayTeamWidth = parseFloat(percentageUnit * barValueA) + "%";
 
@@ -2995,38 +2963,29 @@ export class InnermatchcenterPage {
                     this.stats[key].homeTeamWidth = "22%";
                 else
                     this.stats[key].homeTeamWidth = parseFloat(percentageUnit * barValueH) + "%";
-
             }
         }
 
         else if ((awayBarsSpanVal == homeBarsSpanVal) && (awayBarsSpanVal != 0 || homeBarsSpanVal != 0)) {
-
             this.stats[key].awayTeamColor = 'Orange';
             this.stats[key].homeTeamColor = 'Orange';
-
 
             let maxAway = 5;
             let modifedMaxValue = parseFloat(awayBarsSpanVal + maxAway);
 
-            let percentageUnit = parseFloat(100 / modifedMaxValue);
+            let percentageUnit: any = parseFloat(100 / modifedMaxValue);
             this.stats[key].awayTeamWidth = parseFloat(percentageUnit * awayBarsSpanVal) + "%";
             this.stats[key].homeTeamWidth = parseFloat(percentageUnit * homeBarsSpanVal) + "%";
-
         }
         else if (awayBarsSpanVal == 0 || homeBarsSpanVal == 0) {
             this.stats[key].awayTeamColor = 'orange';
             this.stats[key].homeTeamColor = 'orange';
             this.stats[key].awayTeamWidth = '20%';
             this.stats[key].homeTeamWidth = '20%';
-
         }
-
-
-
     }
     selectstats(item) {
         this.showAd = false;
-        console.log("hh");
         if (item == 'team') {
             this.selectedOption = ['all'];
             this.ga.trackView('Stats Teams - Game');
@@ -3056,15 +3015,10 @@ export class InnermatchcenterPage {
                 this.cmnfun.showLoader('Please wait...');
                 this.gotoplayers();
             }
-
-
-
-
         }
     }
 
     gotoplayers() {
-
         this.fixture_id = this.details.fixture_id;
         this.stateRoundNo = this.details.fixture_id.roundNo;
         this.ajax.postaction('get-player-score', {
@@ -3088,11 +3042,9 @@ export class InnermatchcenterPage {
         this.sortBY('GB');
     }
     getGBData(g_value, b_value, rb_value, key, obj, k_value, h_value) {
-
-
-        let goal = 0;
-        let b = 0;
-        let rb = 0;
+        let goal: any = 0;
+        let b: any = 0;
+        let rb: any = 0;
 
         let k = 0;
         let h = 0;
@@ -3104,12 +3056,12 @@ export class InnermatchcenterPage {
         if (k_value == undefined) k = 0; else k = k_value;
         if (h_value == undefined) h = 0; else h = h_value;
 
-        this.homeAwayTeamPlayerWithScore[key].GB = parseInt(parseInt(goal * 6) + parseInt(b + rb));
-        this.homeTeamPlayers1[key].GB = parseFloat(parseInt(parseInt(goal * 6) + parseInt(b + rb)));
+        this.homeAwayTeamPlayerWithScore[key].GB = (parseInt(goal) * 6) + parseInt(b + rb);
+        this.homeTeamPlayers1[key].GB = (parseInt(goal) * 6) + parseInt(b + rb);
 
         //this.homeTeamPlayers1[key].D = parseInt(k_value + h_value) ;
 
-        let GB_score = goal + "." + parseInt(b + rb);
+        let GB_score: any = goal + "." + parseInt(b + rb);
         if (GB_score == 0)
             return "0.0";
         else
@@ -3139,53 +3091,33 @@ export class InnermatchcenterPage {
         } else {
             this.reverse = false;
             this.orderByFieldName = stat;
-            //$(this).addClass("active1");
         }
-
     }
 
     getValue(key, statScore, statName) {
-
         if (statScore == undefined || statScore == 'undefined') {
             this.homeAwayTeamPlayerWithScore[key][statName] = 0;
             this.homeTeamPlayers1[key][statName] = 0;
-
             return 0;
-        }
-
-
-        else {
+        } else {
             this.homeAwayTeamPlayerWithScore[key][statName] = parseInt(this.homeAwayTeamPlayerWithScore[key][statName]);
-
             if (isNaN(statScore)) return 0; else return statScore;
-
-
-
         }
-
     }
+
     getValueD(key, statScore1, statScore2, statName, pn) {
         let Disposal = 0;
         let H = 0;
         let K = 0;
-
         if (statScore1 == undefined || statScore1 == 'undefined') {
             K = 0;
-
-
         } else {
-
-
             K = statScore1;
         }
 
         if (statScore2 == undefined || statScore2 == 'undefined') {
             H = 0;
-
-
         } else {
-
-
             H = statScore2;
         }
 
@@ -3279,7 +3211,7 @@ export class InnermatchcenterPage {
         this.homeTeamPlayers.forEach((value, index) => {
             //alert("homePlayerId"+value.player_id)
 
-            let fullName = value.fullName;
+            // let fullName = value.fullName;
             let first_name = value.first_name
             let res = first_name.split(" ");
             let playerName = first_name.substring(0, 1) + ". " + value.surname;
@@ -3301,7 +3233,7 @@ export class InnermatchcenterPage {
         this.awayTeamPlayers.forEach((value, index) => {
             //alert("homePlayerId"+value.player_id)
 
-            let fullName = value.fullName;
+            // let fullName = value.fullName;
             let first_name = value.first_name;
             let res = first_name.split(" ");
             let playerName = first_name.substring(0, 1) + ". " + value.surname;

@@ -7,13 +7,13 @@ import { Storage } from '@ionic/storage';
 import { InAppBrowser } from '@ionic-native/in-app-browser';
 import { LocalDataProvider } from '../../providers/local-data/local-data';
 import { ProductListProvider } from '../../providers/product-list/product-list';
-import { StreamingMedia} from '@ionic-native/streaming-media';
+import { StreamingMedia } from '@ionic-native/streaming-media';
 import 'datatables.net';
 import 'datatables.net-fixedcolumns';
 import 'datatables.net-fixedheader';
 import { environment } from '../../environments/environment';
 import { FirebaseAnalyticsProvider } from '../../providers/firebase-analytics/firebase-analytics';
-// import * as $ from 'jquery';
+import * as $ from 'jquery';
 // import 'datatables.net';
 // import 'datatables.net-fixedcolumns';
 // import 'jquery-flot'
@@ -2590,11 +2590,8 @@ export class StatTeamGameCoachPage {
                     },
                     colors: ["rgb(33,186,38)"],
                 };
-                // alert("hh");
-
-                console.log(modifedScore);
-                let plotObj = $.plot($("#scoreChart"), [{ data: modifedScore }], options);
-                let plotObj1 = $.plot($("#scoreChartmin"), [{ data: modifedScore }], options);
+                $.plot($("#scoreChart"), [{ data: modifedScore }], options);
+                $.plot($("#scoreChartmin"), [{ data: modifedScore }], options);
 
                 $("#scoreChartmin").hide();
                 $("#scoreChartminh").hide();
@@ -2975,15 +2972,9 @@ export class StatTeamGameCoachPage {
                 this.cmnfun.showLoading('Please wait...');
                 this.gotoplayers();
             }
-
-
-
-
         }
     }
-
     gotoplayers() {
-
         this.fixture_id = this.details.fixture_id;
         this.stateRoundNo = this.details.fixture_id.roundNo;
         this.ajax.postaction('get-player-score', {
@@ -3022,7 +3013,7 @@ export class StatTeamGameCoachPage {
         if (h_value == undefined) h = 0; else h = h_value;
 
         this.homeAwayTeamPlayerWithScore[key].GB = ((parseInt(goal) * 6) + parseInt(b + rb));
-        this.homeTeamPlayers1[key].GB = parseFloat((parseInt(goal) * 6) + parseInt(b + rb));
+        this.homeTeamPlayers1[key].GB = ((parseInt(goal) * 6) + parseInt(b + rb));
 
         //this.homeTeamPlayers1[key].D = parseInt(k_value + h_value) ;
 
@@ -3239,9 +3230,7 @@ export class StatTeamGameCoachPage {
             let windowWidth = (window.innerWidth);
             let windowHeight = (window.innerHeight) - 129;
             $(document).ready(function () {
-
-
-                let table = $('#playerStatsTable').DataTable({
+                $('#playerStatsTable').DataTable({
                     scrollY: windowHeight,
                     scrollX: true,
                     scrollCollapse: true,
@@ -3271,146 +3260,83 @@ export class StatTeamGameCoachPage {
                         leftColumns: 1,
                         rightColumns: 0
                     }
-
                 });
-
-
             });
-
-
             $(".homeTeam").parent().removeClass("sorting_asc");
-
-
-
             $('.homeTeam').on('click', function () {
-                // this.sortBYType("home");  home players
-                console.log("hhjhjh");
-
                 if ($(this).hasClass("activated1")) {
                     console.log("kjkjnbjjhhh");
                     $(this).removeClass("activated1");
                     $(".homeTeam").addClass("activated1");
                     $("#playerStatsTable tbody tr").each(function () {
-                        // alert($(this).children("td").eq(0).attr('data-t'));
-                        //    this.homeTeamPlayers1.forEach(obj => {
-                        //     if(obj.type=='home'){
-                        //         this.homeTeamPlayers1.push(obj);
-                        //         console.log(this.homeTeamPlayers1);
-                        //     }
-                        // })
                         if ($(this).children("td").eq(0).attr('data-t') == 'home') {
                             $(this).show();
-
-
-
                         } else {
-
                             $(this).hide();
                         }
-
                     })
-
                 } else {
                     console.log("hhhmjkjjl");
                     $(this).addClass("activated1");
 
                     $("#playerStatsTable tbody tr").each(function () {
                         //   alert($(this).children("td").eq(0).attr('data-t'));
-
                         if ($(this).children("td").eq(0).attr('data-t') == 'away') {
-
                             $(this).show();
-
                         } else {
-
                             $(this).hide();
                         }
-
                     })
 
                     if ($('#btn1').hasClass("activated1") && $('#btn2').hasClass("activated1")) {
                         $("#playerStatsTable tbody tr").each(function () {
                             $(this).show();
-
                         });
-
                     }
-
-
                 }
-
-
             });
 
             $('.awayTeam1').on('click', function () {
-
                 console.log("hhh");
                 if ($(this).hasClass("activated1")) {
                     console.log("hhh");
-
                     $(this).removeClass("activated1");
                     $(".awayTeam1").addClass("activated1");
                     $("#playerStatsTable tbody tr").each(function () {
-
-
                         if ($(this).children("td").eq(0).attr('data-t') == 'away') {
                             $(this).show();
-
-
                         } else {
-
                             $(this).hide();
                         }
-
-                    })
-
-
+                    });
                 } else {
-
                     console.log("hhuhijh");
                     $(this).addClass("activated1");
-
                     $("#playerStatsTable tbody tr").each(function () {
                         // alert($(this).children("td").eq(0).attr('data-t'));
-
                         if ($(this).children("td").eq(0).attr('data-t') == 'home') {
-
                             $(this).show();
-
                         } else {
-
                             $(this).hide();
                         }
-
                     })
                     if ($('#btn1').hasClass("activated1") && $('#btn2').hasClass("activated1")) {
                         $("#playerStatsTable tbody tr").each(function () {
                             $(this).show();
-
                         });
                     }
-
                 }
                 // this.sortBYType("away");
             });
-
-
-
-
         }, 1000);
         // $ionicLoading.hide();
-
-
         //Player End
         this.cmnfun.HideLoading();
     }
-
-
     // sort function
     SelectedSort(val) {
         this.selectedOption = val;
     }
-
     // toggle switch
     notify() {
         console.log("Toggled: " + this.isToggled);
