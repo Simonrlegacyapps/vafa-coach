@@ -1676,7 +1676,7 @@ export class InnermatchcenterPage {
             accessKey: 'QzEnDyPAHT12asHb4On6HH2016',
             fixtureId: this.fixture_id,
             adv_title: 'Game Details'
-        }).subscribe((data) => {
+        }).subscribe((data: any) => {
             this.cmnfun.hideLoader();
             this.data = data
             this.matchStatus = this.data.fixureData.status;
@@ -1878,7 +1878,7 @@ export class InnermatchcenterPage {
 
                         if (quaterHScore[0] !== '0.0') {
                             let q1Score = quaterHScore[0].split(".");
-                            let q1HTot = (parseInt(q1Score[0]) * 6) + parseInt(q1Score[1]);
+                            let q1HTot: any = (parseInt(q1Score[0]) * 6) + parseInt(q1Score[1]);
                             $('.totalHoMeScores').html(q1HTot);
                             //console.log('q1-'+q1HTot);
 
@@ -1888,7 +1888,7 @@ export class InnermatchcenterPage {
                             let q2Score = quaterHScore[1].split(".");
                             let q2G = parseInt(q1Score[0]) + parseInt(q2Score[0]);
                             let q2RB = parseInt(q1Score[1]) + parseInt(q2Score[1]);
-                            let q2HTot = q2G * 6 + q2RB;
+                            let q2HTot: any = q2G * 6 + q2RB;
                             $('.totalHoMeScores').html(q2HTot);
                             //console.log('q2-'+q2HTot);
                         }
@@ -1898,7 +1898,7 @@ export class InnermatchcenterPage {
                             let q3Score = quaterHScore[2].split(".");
                             let q3G = parseInt(q1Score[0]) + parseInt(q2Score[0]) + parseInt(q3Score[0]);
                             let q3RB = parseInt(q1Score[1]) + parseInt(q2Score[1]) + parseInt(q3Score[1]);
-                            let q3HTot = q3G * 6 + q3RB;
+                            let q3HTot: any = q3G * 6 + q3RB;
                             $('.totalHoMeScores').html(q3HTot);
                             //console.log('q3-'+q3HTot);
                         }
@@ -1909,7 +1909,7 @@ export class InnermatchcenterPage {
                             let q4Score = quaterHScore[3].split(".");
                             let q4G = parseInt(q1Score[0]) + parseInt(q2Score[0]) + parseInt(q3Score[0]) + parseInt(q4Score[0]);
                             let q4RB = parseInt(q1Score[1]) + parseInt(q2Score[1]) + parseInt(q3Score[1]) + parseInt(q4Score[1]);
-                            let q4HTot = q4G * 6 + q4RB;
+                            let q4HTot: any = q4G * 6 + q4RB;
                             $('.totalHoMeScores').html(q4HTot);
                             //console.log('q4-'+q4HTot);
                         }
@@ -2114,7 +2114,7 @@ export class InnermatchcenterPage {
                         //To display total scores
                         if (quaterAScore[0] !== '0.0') {
                             let q1Score = quaterAScore[0].split(".");
-                            let q1ATot = (parseInt(q1Score[0]) * 6) + parseInt(q1Score[1]);
+                            let q1ATot: any = (parseInt(q1Score[0]) * 6) + parseInt(q1Score[1]);
                             $('.totalAwAyScores').html(q1ATot);
                         }
                         if (quaterAScore[1] !== '0.0') {
@@ -2122,7 +2122,7 @@ export class InnermatchcenterPage {
                             let q2Score = quaterAScore[1].split(".");
                             let q2G = parseInt(q1Score[0]) + parseInt(q2Score[0]);
                             let q2RB = parseInt(q1Score[1]) + parseInt(q2Score[1]);
-                            let q2ATot = (q2G * 6) + q2RB;
+                            let q2ATot: any = (q2G * 6) + q2RB;
                             $('.totalAwAyScores').html(q2ATot);
                         }
                         if (quaterAScore[2] !== '0.0') {
@@ -2131,7 +2131,7 @@ export class InnermatchcenterPage {
                             let q3Score = quaterAScore[2].split(".");
                             let q3G = parseInt(q1Score[0]) + parseInt(q2Score[0]) + parseInt(q3Score[0]);
                             let q3RB = parseInt(q1Score[1]) + parseInt(q2Score[1]) + parseInt(q3Score[1]);
-                            let q3ATot = (q3G * 6) + q3RB;
+                            let q3ATot: any = (q3G * 6) + q3RB;
                             $('.totalAwAyScores').html(q3ATot);
                         }
                         if (quaterAScore[3] !== '0.0') {
@@ -2141,7 +2141,7 @@ export class InnermatchcenterPage {
                             let q4Score = quaterAScore[3].split(".");
                             let q4G = parseInt(q1Score[0]) + parseInt(q2Score[0]) + parseInt(q3Score[0]) + parseInt(q4Score[0]);
                             let q4RB = parseInt(q1Score[1]) + parseInt(q2Score[1]) + parseInt(q3Score[1]) + parseInt(q4Score[1]);
-                            let q4ATot = (q4G * 6) + q4RB;
+                            let q4ATot: any = (q4G * 6) + q4RB;
                             $('.totalAwAyScores').html(q4ATot);
                         }
                         //END:Away Team total scores calculations
@@ -2158,7 +2158,7 @@ export class InnermatchcenterPage {
                 let merged = homeTeamScore.concat(awayTeamScore);
 
                 let scores = [];
-                let i = 1, goalHScore = 0, rbBHscore = 0, totalHScore = 0, goalAScore = 0, rbBAscore = 0, totalAScore = 0, actualTime, splitTime, minuteVal, totalSec;
+                let i = 1, goalHScore:any = 0, rbBHscore:any = 0, totalHScore:any = 0, goalAScore = 0, rbBAscore = 0, totalAScore = 0, actualTime:any, splitTime:any, minuteVal:any, totalSec;
                 let newMerge = [];
 
 
@@ -2167,9 +2167,9 @@ export class InnermatchcenterPage {
                 };
                 let cmp1 = function (x, y) {
                     data = x.split(":");
-                    let data_time1 = parseInt(parseInt(data[0] * 60) + data[1]);
+                    let data_time1: any = ((parseInt(data[0]) * 60) + data[1]);
                     data = y.split(":");
-                    let data_time2 = parseInt(parseInt(data[0] * 60) + data[1]);
+                    let data_time2: any = ((parseInt(data[0]) * 60) + data[1]);
                     return data_time1 > data_time2 ? 1 : data_time1 < data_time2 ? -1 : 0;
 
                 };
@@ -2219,11 +2219,11 @@ export class InnermatchcenterPage {
 
                             temp = value3.quater;
 
-                            let actualTime1 = newMerge[key3 - 1].act_time;
+                            let actualTime1: any = newMerge[key3 - 1].act_time;
                             actualTime1 = actualTime1.split(":");
 
 
-                            qrTimeLimit[temp] = parseInt(qrTimeLimit[temp - 1]) + parseInt(actualTime1[0] * 60) + parseInt(actualTime1[1]);
+                            qrTimeLimit[temp] = parseInt(qrTimeLimit[temp - 1]) + (parseInt(actualTime1[0]) * 60) + parseInt(actualTime1[1]);
 
 
                         }
@@ -2236,13 +2236,13 @@ export class InnermatchcenterPage {
                     splitTime = actualTime.split(":");
 
                     minuteVal = splitTime[1];
-                    let TotalSec = parseInt(parseInt(splitTime[0] * 60) + parseInt(splitTime[1]));
+                    let TotalSec = ((parseInt(splitTime[0]) * 60) + parseInt(splitTime[1]));
                     totalSec = (minuteVal / 60).toFixed(2);
 
                     let TotalTime = parseFloat(splitTime[0] + (splitTime[1]) / 60);
 
                     /*
-
+                
                        if(tempQr == value3.quater)
                        {
                            timeTotalGlobal=parseInt(parseInt(splitTime[0]*60)+parseInt(splitTime[1])+parseInt(tempMin));
@@ -2258,11 +2258,11 @@ export class InnermatchcenterPage {
                             //console.log("tempMin- Q"+value3.quater+" "+tempMin);
                             //console.log('tempQr neq='+timeTotalGlobal);
                             //console.log("================");
-
+                
                        }*/
 
-                    let addQrTime = (value3.quater - 1) * timeDuration * 60;
-                    timeTotalGlobal = parseInt(parseInt(splitTime[0] * 60) + parseInt(splitTime[1]) + parseInt(addQrTime));
+                    let addQrTime: any = (value3.quater - 1) * timeDuration * 60;
+                    timeTotalGlobal = ((parseInt(splitTime[0]) * 60) + parseInt(splitTime[1]) + parseInt(addQrTime));
 
 
 
@@ -2271,7 +2271,7 @@ export class InnermatchcenterPage {
                         if (value3.quater == '1') {
                             if (value3.stat_id == '1') {
                                 // goalHScore+=6;
-                                goalHScore = parseInt(parseInt(goalHScore) + 6);
+                                goalHScore = parseInt(goalHScore) + 6;
 
                             }
                             else {
@@ -3249,9 +3249,9 @@ export class InnermatchcenterPage {
         /*angular.forEach(this.awayTeamPlayers,function(value,index){
                //alert(value.type);
                if(value.type == undefined || value.type == '' || value.type == ''){
-
+    
                this.awayTeamPlayers[index].type ="away" ;
-
+    
                }
         });*/
 
