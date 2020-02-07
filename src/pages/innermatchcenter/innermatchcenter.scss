@@ -2442,7 +2442,9 @@ z-index: -1;
 .fillBar.greenFill {
     background-color: #61b972;
 }
-
+.fillBar{
+  min-width: 50px;
+}
      .nomalFormMidTitle {
     color: #7d849a;
     padding: 5px 0 0;
