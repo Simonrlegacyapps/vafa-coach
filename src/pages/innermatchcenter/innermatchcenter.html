@@ -577,17 +577,17 @@
         <thead class="tst-left">
           <tr>
             <th class="jb-sorting">
-              <button class="button button-clear allTeam activated2 activated3" (click)="sortBYType('all')">
+              <button class="button button-clear allTeam activated2 activated3" (click)="sortBYType('all')" value="All">
                 All
               </button>
 
               <button [id]="btn10" class="button button-clear playerStatLeftTeam homeTeam activated1"
-                (click)="sortBYType('home')">
+                (click)="sortBYType('home')" value="homeTeam">
                 <img src="{{path}}{{cutPath(homeTeam.team_image)}}" class="img-storke" />
               </button>
 
               <button [id]="btn20" class="button button-clear playerStatRightTeam awayTeam1 activated1 "
-                (click)="sortBYType('away')">
+                (click)="sortBYType('away')" value="awayTeam1">
                 <img src="{{path}}{{cutPath(awayTeam.team_image)}}" class="img-storke" />
               </button>
             </th>
