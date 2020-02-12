@@ -3619,8 +3619,8 @@ export class InnermatchcenterPage {
             quaters: this.CoachQ,
             adv_title: 'Stats-Club'
         }).subscribe((res) => {
-            this.cmnfun.hideLoader();
-            $('#playerStatsTable').DataTable().destroy();
+            // this.cmnfun.hideLoader();
+            // $('#playerStatsTable').DataTable().destroy();
             $('#playerStatsTable').DataTable().destroy();
             this.getplayerscoreplayer(res);
         }, error => {
