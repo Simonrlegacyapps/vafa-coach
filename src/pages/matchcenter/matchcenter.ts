@@ -929,33 +929,29 @@ export class MatchcenterPage {
           this.serverYear != this.sysYear) &&
         manual_score_recording == 0
       ) {
-        //  $ionicPopup.alert({
-        //   title: '',
-        //   template: '<p style="text-align:center;">Check back again when this game is Live or Completed</p>'
-        // });
-        // let alert = this.alertCtrl.create({
-        //   subTitle: "Check back again when this game is Live or Completed",
-        //   buttons: ["Ok"],
-        //   cssClass: "jb-alert"
-        // });
-        // alert.present();
-
-        clearInterval(this.Interval1);
-        clearInterval(this.Interval2);
-        this.navCtrl.push("InnermatchcenterPage", {
-          details: {
-            fixture_id: fictureId,
-            roundNo: this.roundNo,
-            match_status: this.matchStatus,
-            manual_score_recording: manual_score_recording,
-            roundName: this.roundName,
-            awateam_id: awateamid,
-            hometeam_id: hometeamid,
-            competion_id: competionid
-          },
-          year: this.selectd_yr,
-          parentPage: this
+        let alert = this.alertCtrl.create({
+          subTitle: "Check back again when this game is Live or Completed",
+          buttons: ["Ok"],
+          cssClass: "jb-alert"
         });
+        alert.present();
+
+        // clearInterval(this.Interval1);
+        // clearInterval(this.Interval2);
+        // this.navCtrl.push("InnermatchcenterPage", {
+        //   details: {
+        //     fixture_id: fictureId,
+        //     roundNo: this.roundNo,
+        //     match_status: this.matchStatus,
+        //     manual_score_recording: manual_score_recording,
+        //     roundName: this.roundName,
+        //     awateam_id: awateamid,
+        //     hometeam_id: hometeamid,
+        //     competion_id: competionid
+        //   },
+        //   year: this.selectd_yr,
+        //   parentPage: this
+        // });
       }
     } else {
       clearInterval(this.Interval1);
