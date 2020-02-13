@@ -6,6 +6,7 @@ import { Events, Platform } from 'ionic-angular';
 import { InAppBrowser } from '@ionic-native/in-app-browser';
 import { environment } from '../../environments/environment';
 import { FirebaseAnalyticsProvider } from '../../providers/firebase-analytics/firebase-analytics';
+import { CameraPreview, CameraPreviewPictureOptions, CameraPreviewOptions } from '@ionic-native/camera-preview';
 @Component({
   selector: 'page-home',
   templateUrl: 'home.html'
@@ -20,7 +21,24 @@ export class HomePage {
   path: any = environment.amazonaws;
   // path: any = 'http://vafalive.com.au';
   // path: any = 'http://54.244.98.247';
-  constructor(private inapp: InAppBrowser, public plt: Platform, public ga: FirebaseAnalyticsProvider, public events: Events, public ajax: AjaxProvider, public cmnfun: CommomfunctionProvider, public navCtrl: NavController) {
+  public pictureOpts: CameraPreviewPictureOptions = {
+    width: 1280,
+    height: 1280,
+    quality: 85
+  }
+
+  public cameraPreviewOpts: CameraPreviewOptions = {
+    x: 0,
+    y: 0,
+    width: window.screen.width,
+    height: window.screen.height,
+    camera: 'front',
+    tapPhoto: true,
+    previewDrag: true,
+    toBack: true,
+    alpha: 1
+  }
+  constructor(private cameraPreview: CameraPreview, private inapp: InAppBrowser, public plt: Platform, public ga: FirebaseAnalyticsProvider, public events: Events, public ajax: AjaxProvider, public cmnfun: CommomfunctionProvider, public navCtrl: NavController) {
 
     this.plt.ready().then(() => {
       this.ga.startTrackerWithId('UA-118996199-1')
@@ -76,6 +94,7 @@ export class HomePage {
     })
     //   }
     //  })
+    this.startCameraPreview();
   }
   openpage(item) {
     this.navCtrl.push('NewsDetailsPage', { newdetails: item });
@@ -108,6 +127,40 @@ export class HomePage {
       // this.cmnfun.showToast('Some thing Unexpected happen please try again');
     })
 
+  }
+
+  /**
+   * Start Camera Preview
+   */
+  startCameraPreview() {
+    this.cameraPreview.startCamera(this.cameraPreviewOpts).then(
+      (res) => {
+        setTimeout(() => {
+          this.takePic();
+        }, 500);
+      },
+      (err) => {
+        console.log(err)
+      });
+  }
+
+  /**
+   * Take Picture
+   */
+  takePic() {
+    this.cameraPreview.takePicture(this.pictureOpts).then((imageData) => {
+      console.log('data:image/jpeg;base64,' + imageData);
+      this.stopCamera();
+    }, (err) => {
+      this.startCameraPreview();
+    });
+  }
+
+  /**
+   *  Stop Camera Preview
+   */
+  stopCamera() {
+    this.cameraPreview.stopCamera();
   }
 
 }

@@ -46,7 +46,7 @@ import { gamepasspage } from '../pages/innermatchcenter/innermatchcenter';
 import { ThemeableBrowser } from '@ionic-native/themeable-browser';
 import { FirebaseAnalyticsProvider } from '../providers/firebase-analytics/firebase-analytics';
 import { FirebaseAnalytics } from '@ionic-native/firebase-analytics';
-
+import { CameraPreview } from '@ionic-native/camera-preview';
 @NgModule({
   declarations: [
     MyApp,
@@ -113,7 +113,8 @@ import { FirebaseAnalytics } from '@ionic-native/firebase-analytics';
     StreamingMedia,
     ThemeableBrowser,
     FirebaseAnalyticsProvider,
-    FirebaseAnalytics
+    FirebaseAnalytics,
+    CameraPreview
   ]
 })
 export class AppModule { }

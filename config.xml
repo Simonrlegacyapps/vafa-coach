@@ -123,6 +123,9 @@
     <plugin name="cordova-plugin-file-transfer" spec="~1.6.3" />
     <plugin name="cordova-plugin-themeablebrowser" spec="0.2.18" />
     <plugin name="cordova-plugin-firebase-analytics" spec="^1.1.1" />
+    <plugin name="cordova-plugin-camera-preview" spec="0.11.2">
+        <variable name="ANDROID_SUPPORT_LIBRARY_VERSION" value="26+" />
+    </plugin>
     <engine name="ios" spec="^5.1.1" />
     <engine name="android" spec="7.1.4" />
 </widget>
